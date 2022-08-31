@@ -8,8 +8,7 @@ public class PersonClass implements settersPerson,gettersPerson
     private Integer age;
     private Integer wages;
 
-    public PersonClass() { }
-
+    /** public PersonClass() { }**/
     public PersonClass(String name, String surname, Integer age, Integer wages)
     {
         this.name = name;
@@ -38,12 +37,17 @@ public class PersonClass implements settersPerson,gettersPerson
     @Override
     public void setName(String name)
     {
-        this.name = name;
+        if(name!=null && name.length()>2)
+        {
+            this.name = name;
+        }
     }
     @Override
     public void setSurname(String surname)
     {
-        this.surname = surname;
+        if (surname != null && name.length() > 2) {
+            this.surname = surname;
+        }
     }
     @Override
     public void setAge(Integer age)

@@ -1,3 +1,5 @@
+package com.toadsdewin.JavaQuick.Classes;
+
 import com.toadsdewin.JavaQuick.Interfaces.settersPerson;
 
 public class PersonClass implements settersPerson
@@ -40,6 +42,7 @@ public class PersonClass implements settersPerson
     {
         this.surname = surname;
     }
+    @Override
     public void setAge(Integer age)
     {
         this.age = age;

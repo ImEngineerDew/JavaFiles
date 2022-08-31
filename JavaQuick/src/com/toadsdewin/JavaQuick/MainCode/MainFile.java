@@ -1,5 +1,5 @@
 package com.toadsdewin.JavaQuick.MainCode;
-
+import com.toadsdewin.JavaQuick.Classes.PersonClass;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class MainFile
 {
     public static void main (String args[])
     {
-        /**The PersonClass is a Java file that was selected
+        /**The com.toadsdewin.JavaQuick.Classes.PersonClass is a Java file that was selected
          * for working with those ArrayList
          * creating an object of the ArrayList class
          */
@@ -15,7 +15,7 @@ public class MainFile
         Scanner object = new Scanner(System.in);
         PersonClass persona;
 
-        System.out.print("¿Cuántos datos vas a ingresar: ");
+        System.out.print("¿Cuántos datos vas a ingresar?: ");
         int length = object.nextInt();
 
         object.nextLine();
@@ -38,9 +38,9 @@ public class MainFile
             persona = new PersonClass(name, surname, age, wage);
             chains.add(persona);
         }
-        /** PersonClass is the method that get the basic info
+        /** com.toadsdewin.JavaQuick.Classes.PersonClass is the method that get the basic info
          *  the 'i' variable indicates the position in the foreach
-         *  chains is an object from ArrayList, that owns the PersonClass class
+         *  chains is an object from ArrayList, that owns the com.toadsdewin.JavaQuick.Classes.PersonClass class
          */
         for (PersonClass i: chains) {
             System.out.println("Data: "+i.toString());

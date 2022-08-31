@@ -15,6 +15,9 @@ public class MainFile
         Scanner object = new Scanner(System.in);
         PersonClass persona;
 
+        String name,surname;
+        Integer wage,age=0;
+
         System.out.print("¿Cuántos datos vas a ingresar?: ");
         int length = object.nextInt();
 
@@ -23,16 +26,16 @@ public class MainFile
         for (int i = 0; i < length; i++) {
 
             System.out.print("Ingrese su nombre: ");
-            String name = object.nextLine();
+            name = object.nextLine();
 
             System.out.print("Ingrese su apellido: ");
-            String surname = object.nextLine();
+            surname = object.nextLine();
 
             System.out.print("Ingrese su edad: ");
-            Integer age = object.nextInt();
+            age = object.nextInt();
 
             System.out.print("Ingrese su sueldo: ");
-            Integer wage = object.nextInt();
+            wage = object.nextInt();
 
             object.nextLine();
             persona = new PersonClass(name, surname, age, wage);
@@ -42,9 +45,16 @@ public class MainFile
          *  the 'i' variable indicates the position in the foreach
          *  chains is an object from ArrayList, that owns the com.toadsdewin.JavaQuick.Classes.PersonClass class
          */
-        for (PersonClass i: chains) {
-            /**System.out.println("Data: "+i.toString());**/
-            System.out.println("Data: "+i.getName()+" "+i.getSurname()+" "+i.getAge()+" "+i.getWages());
+
+        if(age<18)
+        {
+            System.out.println("Usted es menor de edad");
+        }
+        else {
+            for (PersonClass i : chains) {
+                /**System.out.println("Data: "+i.toString());**/
+                System.out.println(i.getName() + " " + i.getSurname() + " " + i.getAge() + " " + i.getWages());
+            }
         }
    }
 }

@@ -18,12 +18,15 @@ public class PersonClass implements settersPerson,gettersPerson
         this.wages = wages;
     }
 
+    @Override
     public String getName() {
         return name;
     }
+    @Override
     public String getSurname () {
         return surname;
     }
+    @Override
     public Integer getAge () {
         return age;
     }

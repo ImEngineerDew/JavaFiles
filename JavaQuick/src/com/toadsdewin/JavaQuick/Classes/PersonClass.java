@@ -1,8 +1,7 @@
 package com.toadsdewin.JavaQuick.Classes;
+import com.toadsdewin.JavaQuick.Interfaces.*;
 
-import com.toadsdewin.JavaQuick.Interfaces.settersPerson;
-
-public class PersonClass implements settersPerson
+public class PersonClass implements settersPerson,gettersPerson
 {
     private String name;
     private String surname;
@@ -28,7 +27,7 @@ public class PersonClass implements settersPerson
     public Integer getAge () {
         return age;
     }
-    public Integer wages () {
+    public Integer getWages () {
         return wages;
     }
 

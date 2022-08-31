@@ -43,7 +43,8 @@ public class MainFile
          *  chains is an object from ArrayList, that owns the com.toadsdewin.JavaQuick.Classes.PersonClass class
          */
         for (PersonClass i: chains) {
-            System.out.println("Data: "+i.toString());
+            /**System.out.println("Data: "+i.toString());**/
+            System.out.println("Data: "+i.getName()+" "+i.getSurname()+" "+i.getAge()+" "+i.getWages());
         }
    }
 }

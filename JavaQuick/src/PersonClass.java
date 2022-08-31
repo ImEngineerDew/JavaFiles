@@ -1,4 +1,6 @@
-public class PersonClass
+import com.toadsdewin.JavaQuick.Interfaces.settersPerson;
+
+public class PersonClass implements settersPerson
 {
     private String name;
     private String surname;
@@ -28,10 +30,12 @@ public class PersonClass
         return wages;
     }
 
+    @Override
     public void setName(String name)
     {
         this.name = name;
     }
+    @Override
     public void setSurname(String surname)
     {
         this.surname = surname;

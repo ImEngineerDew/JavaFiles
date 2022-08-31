@@ -1,3 +1,5 @@
+package com.toadsdewin.JavaQuick.MainCode;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

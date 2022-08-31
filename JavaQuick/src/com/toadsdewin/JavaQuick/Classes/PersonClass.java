@@ -30,6 +30,7 @@ public class PersonClass implements settersPerson,gettersPerson
     public Integer getAge () {
         return age;
     }
+    @Override
     public Integer getWages () {
         return wages;
     }

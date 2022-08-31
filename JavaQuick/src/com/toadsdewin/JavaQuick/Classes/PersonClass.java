@@ -52,7 +52,13 @@ public class PersonClass implements settersPerson,gettersPerson
     @Override
     public void setAge(Integer age)
     {
-        this.age = age;
+        if(age<18)
+        {
+            System.out.println("You're a child!");
+        }
+        else {
+            this.age = age;
+        }
     }
     public void setWages(Integer wages)
     {

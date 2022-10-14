@@ -12,10 +12,10 @@ public class Main
         /**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::**/
         do {
             System.out.println("ArrayList manipulator");
+            System.out.println("0. Exit the app!");
             System.out.println("1. Create an ArrayList");
             System.out.println("2. Show your ArrayList");
             System.out.println("3. Remove a specific Array");
-            System.out.println("0. Exit the app!");
 
             Integer option = object.nextInt();
 
@@ -32,16 +32,19 @@ public class Main
                     Integer textLimit = object.nextInt();                           /*Determinate the quantity of spaces in an array*/
 
                     object.nextLine();
+                    System.out.println("Write any text: ");
                     for (int i = 0; i < textLimit; i++)
                     {
-                        System.out.println("Write any text: ");
                         String cadena = object.nextLine();
                         cadena2.add(cadena);
                     }
                     break;
 
                 case 2:
-                    System.out.println(cadena2.toString());
+                    for(String newTrack: cadena2)
+                    {
+                        System.out.println(newTrack);
+                    }
                     break;
 
                 case 3:

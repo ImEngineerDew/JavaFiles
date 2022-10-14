@@ -46,9 +46,7 @@ public class Main
 
                 case 3:
                     System.out.println("What string do you want to remove: ");
-                    System.out.println(cadena2.toString());
-                    Integer removeArray = object.nextInt();
-
+                    int removeArray = object.nextInt();
                     cadena2.remove(removeArray);
                     break;
             }

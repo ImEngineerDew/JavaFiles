@@ -18,8 +18,9 @@ public class PersonClass implements settersPerson,gettersPerson
     }
 
     @Override
-    public String getName() {
-        return name;
+    public String getName()
+    {
+       return name;
     }
     @Override
     public String getSurname () {
@@ -37,28 +38,17 @@ public class PersonClass implements settersPerson,gettersPerson
     @Override
     public void setName(String name)
     {
-        if(name!=null && name.length()>2)
-        {
-            this.name = name;
-        }
+        this.name = name;
     }
     @Override
     public void setSurname(String surname)
     {
-        if (surname != null && name.length() > 2) {
-            this.surname = surname;
-        }
+        this.surname = surname;
     }
     @Override
     public void setAge(Integer age)
     {
-        if(age<18)
-        {
-            System.out.println("You're a child!");
-        }
-        else {
-            this.age = age;
-        }
+       this.age = age;
     }
     public void setWages(Integer wages)
     {

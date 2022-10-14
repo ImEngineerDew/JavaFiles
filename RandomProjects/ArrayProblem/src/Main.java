@@ -14,16 +14,25 @@ public class Main
             System.out.println("ArrayList manipulator");
             System.out.println("1. Create an ArrayList");
             System.out.println("2. Show your ArrayList");
+            System.out.println("0. Exit the app!");
 
             Integer option = object.nextInt();
 
-            switch (option) {
+            switch (option)
+            {
+                case 0:
+                    System.out.println("Good bye!");
+                    isFinished = true;
+                    break;
+
                 case 1:
+                    cadena2.clear();                                                /*Blows up the previous array*/
                     System.out.println("Write the limit of objects to iterate: ");
-                    Integer textLimit = object.nextInt();
+                    Integer textLimit = object.nextInt();                           /*Determinate the quantity of spaces in an array*/
 
                     object.nextLine();
-                    for (int i = 0; i < textLimit; i++) {
+                    for (int i = 0; i < textLimit; i++)
+                    {
                         System.out.println("Write any text: ");
                         String cadena = object.nextLine();
                         cadena2.add(cadena);

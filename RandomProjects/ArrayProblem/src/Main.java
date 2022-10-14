@@ -8,6 +8,7 @@ public class Main
         Scanner object = new Scanner(System.in);
 
         boolean isFinished = false;
+        int textLimit = 0;
 
         /**::::::::::::::::::::::::::::::::::::::::::::::::::::::::::**/
         do {
@@ -29,7 +30,7 @@ public class Main
                 case 1:
                     cadena2.clear();                                                /*Blows up the previous array*/
                     System.out.println("Write the limit of objects to iterate: ");
-                    Integer textLimit = object.nextInt();                           /*Determinate the quantity of spaces in an array*/
+                    textLimit = object.nextInt();                           /*Determinate the quantity of spaces in an array*/
 
                     object.nextLine();
                     System.out.println("Write any text: ");
@@ -41,6 +42,7 @@ public class Main
                     break;
 
                 case 2:
+                    System.out.println("Position"+" "+"Stored data");
                     for(String newTrack: cadena2)
                     {
                         System.out.println(newTrack);

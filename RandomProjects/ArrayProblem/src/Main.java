@@ -14,6 +14,7 @@ public class Main
             System.out.println("ArrayList manipulator");
             System.out.println("1. Create an ArrayList");
             System.out.println("2. Show your ArrayList");
+            System.out.println("3. Remove a specific Array");
             System.out.println("0. Exit the app!");
 
             Integer option = object.nextInt();
@@ -41,6 +42,14 @@ public class Main
 
                 case 2:
                     System.out.println(cadena2.toString());
+                    break;
+
+                case 3:
+                    System.out.println("What string do you want to remove: ");
+                    System.out.println(cadena2.toString());
+                    Integer removeArray = object.nextInt();
+
+                    cadena2.remove(removeArray);
                     break;
             }
         } while (!isFinished);

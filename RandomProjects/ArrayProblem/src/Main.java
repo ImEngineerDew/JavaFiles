@@ -18,7 +18,7 @@ public class Main
             System.out.println("2. Show your ArrayList");
             System.out.println("3. Remove a specific Array");
 
-            Integer option = object.nextInt();
+            int option = object.nextInt();
 
             switch (option)
             {
@@ -43,6 +43,7 @@ public class Main
 
                 case 2:
                     System.out.println("Position"+" "+"Stored data");
+
                     for(String newTrack: cadena2)
                     {
                         System.out.println(newTrack);

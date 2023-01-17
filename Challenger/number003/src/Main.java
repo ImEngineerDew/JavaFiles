@@ -6,7 +6,7 @@ public class Main {
     {
         Scanner object = new Scanner(System.in);
 
-        System.out.println("Write the lengths of arrays: ");
+        System.out.print("Write the lengths of arrays: ");
         int length = object.nextInt();
 
         int resA = 0;
@@ -15,17 +15,17 @@ public class Main {
         Integer vectorA[] = new Integer[length];
         Integer vectorB[] = new Integer[length];
 
-        System.out.print("Write the values of vector A: ");
         for(int i=0; i<vectorA.length; i++)
         {
+            System.out.print("Write the values of vector A: ");
             vectorA[i] = object.nextInt();
         }
         System.out.print("Values of vector A: ");
         System.out.println(Arrays.toString(vectorA));
 
-        System.out.println("Write the values of vector B: ");
         for(int j=0; j<vectorB.length; j++)
         {
+            System.out.print("Write the values of vector B: ");
             vectorB[j] = object.nextInt();
         }
         System.out.print("Values of vector B: ");

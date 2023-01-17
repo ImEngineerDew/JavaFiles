@@ -8,15 +8,11 @@ public class Main {
 
         System.out.print("Write the lengths of arrays: ");
         int length = object.nextInt();
-
-        int resA = 0;
-        int resB = 0;
-
         int i,j=0;
 
         Integer vectorA[] = new Integer[length];
-        Integer vectorB[] = new Integer[length];
-        Integer resultVector [] = new Integer[length];
+        Integer vectorB[] = new Integer[vectorA.length];
+        Integer resultVector [] = new Integer[vectorA.length];
 
         for(i=0; i<vectorA.length; i++)
         {
@@ -29,22 +25,18 @@ public class Main {
             System.out.print("Write the values of vector B: ");
             vectorB[j] = object.nextInt();
         }
+
+        for(int k=0; k<resultVector.length;k++)
+        {
+            resultVector[k]= vectorA[k]+vectorB[k];
+        }
         System.out.println();
         System.out.print("Values of vector A: ");
         System.out.println(Arrays.toString(vectorA));
         System.out.print("Values of vector B: ");
         System.out.println(Arrays.toString(vectorB));
 
-        for(int k=0; k<vectorA.length;k++)
-        {
-            for(int l=0; l<vectorB.length;l++)
-            {
-                resultVector[l] = vectorA[i]+vectorB[j];
-            }
-        }
+        System.out.print("Values added: ");
         System.out.println(Arrays.toString(resultVector));
-
-        System.out.print("Values of vector B: ");
-        System.out.println(Arrays.toString(vectorB));
     }
 }

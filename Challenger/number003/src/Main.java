@@ -15,11 +15,20 @@ public class Main {
         Integer vectorA[] = new Integer[length];
         Integer vectorB[] = new Integer[length];
 
+        System.out.print("Write the values of vector A: ");
         for(int i=0; i<vectorA.length; i++)
         {
             vectorA[i] = object.nextInt();
         }
         System.out.print("Values of vector A: ");
         System.out.println(Arrays.toString(vectorA));
+
+        System.out.println("Write the values of vector B: ");
+        for(int j=0; j<vectorB.length; j++)
+        {
+            vectorB[j] = object.nextInt();
+        }
+        System.out.print("Values of vector B: ");
+        System.out.println(Arrays.toString(vectorB));
     }
 }

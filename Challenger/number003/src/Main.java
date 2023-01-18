@@ -23,9 +23,17 @@ public class Main {
             vectorB[i] = object.nextInt();
         }
 
+        System.out.println();
+        System.out.print("Values of vector A: ");
+        System.out.println(Arrays.toString(vectorA));
+        System.out.print("Values of vector B: ");
+        System.out.println(Arrays.toString(vectorB));
+        System.out.print("Values added: ");
+
         for(j=0; j<resultVector.length;j++)
         {
             resultVector[j] = vectorA[j]+vectorB[j];
+            System.out.print(" "+resultVector[j]);
         }
         /**
 
@@ -40,13 +48,5 @@ public class Main {
             resultVector[k]= vectorA[k]+vectorB[k];
         }
          **/
-        System.out.println();
-        System.out.print("Values of vector A: ");
-        System.out.println(Arrays.toString(vectorA));
-        System.out.print("Values of vector B: ");
-        System.out.println(Arrays.toString(vectorB));
-
-        System.out.print("Values added: ");
-        System.out.println(Arrays.toString(resultVector));
-    }
+     }
 }

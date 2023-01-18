@@ -8,7 +8,7 @@ public class Main {
 
         System.out.print("Write the lengths of arrays: ");
         int length = object.nextInt();
-        int i,j=0;
+        int i,j;
 
         Integer vectorA[] = new Integer[length];
         Integer vectorB[] = new Integer[vectorA.length];
@@ -36,7 +36,7 @@ public class Main {
             System.out.print(" "+resultVector[j]);
         }
         /**
-
+         This is a comment code
         for(j=0; j<vectorB.length; j++)
         {
             System.out.print("Write the values of vector B: ");

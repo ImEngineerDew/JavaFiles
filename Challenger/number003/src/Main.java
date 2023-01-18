@@ -18,7 +18,16 @@ public class Main {
         {
             System.out.print("Write the values of vector A: ");
             vectorA[i] = object.nextInt();
+
+            System.out.print("Write the values of vector B: ");
+            vectorB[i] = object.nextInt();
         }
+
+        for(j=0; j<resultVector.length;j++)
+        {
+            resultVector[j] = vectorA[j]+vectorB[j];
+        }
+        /**
 
         for(j=0; j<vectorB.length; j++)
         {
@@ -30,6 +39,7 @@ public class Main {
         {
             resultVector[k]= vectorA[k]+vectorB[k];
         }
+         **/
         System.out.println();
         System.out.print("Values of vector A: ");
         System.out.println(Arrays.toString(vectorA));

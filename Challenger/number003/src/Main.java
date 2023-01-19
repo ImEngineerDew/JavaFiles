@@ -35,18 +35,5 @@ public class Main {
             resultVector[j] = vectorA[j]+vectorB[j];
             System.out.print(" "+resultVector[j]);
         }
-        /**
-         This is a comment code
-        for(j=0; j<vectorB.length; j++)
-        {
-            System.out.print("Write the values of vector B: ");
-            vectorB[j] = object.nextInt();
-        }
-
-        for(int k=0; k<resultVector.length;k++)
-        {
-            resultVector[k]= vectorA[k]+vectorB[k];
-        }
-         **/
-     }
+    }
 }

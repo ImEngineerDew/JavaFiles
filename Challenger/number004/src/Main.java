@@ -45,7 +45,7 @@ public class Main
         Arrays.sort(resV);
         for(j=0; j<resV.length;j++)
         {
-            System.out.print(resV[j]+" ");
+            System.out.print("Numbers: "+resV[j]+" ");
         }
     }
 }

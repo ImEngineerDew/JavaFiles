@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main
 {
     public Integer lengthArray(int amount)
@@ -40,6 +42,10 @@ public class Main
                 resV[i] = valB[i];
             }
         }
-        System.out.print("Values compared: "+resV[i]);
+        Arrays.sort(resV);
+        for(j=0; j<resV.length;j++)
+        {
+            System.out.print(resV[j]+" ");
+        }
     }
 }

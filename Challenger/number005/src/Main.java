@@ -25,19 +25,23 @@ public class Main {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
 
-            if(vecA[i]<vecC[i])
+            if(vecA[i]<vecB[i])
             {
-                System.out.println("This value is minor");
-                vecX[i] = vecA[i];
+                if(vecA[i]<vecC[i])
+                {
+                    vecX[i] = vecA[i];
+                }
+                else
+                {
+                    vecX[i] = vecC[i];
+                }
             }
-            else if (vecB[i]<vecC[i])
+            else if(vecB[i]<vecC[i])
             {
-                System.out.println("This value is minor");
                 vecX[i] = vecB[i];
             }
-            else if(vecC[i]<vecB[i])
+            else
             {
-                System.out.println("This value is minor");
                 vecX[i] = vecC[i];
             }
         }

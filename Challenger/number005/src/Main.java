@@ -3,6 +3,8 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner object = new Scanner(System.in);
+
+        System.out.print("Write the amount of array: ");
         int value = object.nextInt();
         int i;
 
@@ -25,23 +27,23 @@ public class Main {
 
             if(vecA[i]<vecC[i])
             {
-                System.out.print("This value is minor");
+                System.out.println("This value is minor");
                 vecX[i] = vecA[i];
             }
             else if (vecB[i]<vecC[i])
             {
-                System.out.print("This value is minor");
+                System.out.println("This value is minor");
                 vecX[i] = vecB[i];
             }
             else if(vecC[i]<vecB[i])
             {
-                System.out.print("This value is minor");
+                System.out.println("This value is minor");
                 vecX[i] = vecC[i];
             }
         }
-        System.out.print("Values of A: "+Arrays.toString(vecA));
-        System.out.print("Values of B: "+Arrays.toString(vecB));
-        System.out.print("Values of C: "+Arrays.toString(vecC));
-        System.out.print("Values split: "+Arrays.toString(vecX));
+        System.out.println("Values of A: "+Arrays.toString(vecA));
+        System.out.println("Values of B: "+Arrays.toString(vecB));
+        System.out.println("Values of C: "+Arrays.toString(vecC));
+        System.out.println("Values split: "+Arrays.toString(vecX));
     }
 }

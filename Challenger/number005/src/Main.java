@@ -22,9 +22,26 @@ public class Main {
 
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
+
+            if(vecA[i]<vecC[i])
+            {
+                System.out.print("This value is minor");
+                vecX[i] = vecA[i];
+            }
+            else if (vecB[i]<vecC[i])
+            {
+                System.out.print("This value is minor");
+                vecX[i] = vecB[i];
+            }
+            else if(vecC[i]<vecB[i])
+            {
+                System.out.print("This value is minor");
+                vecX[i] = vecC[i];
+            }
         }
         System.out.print("Values of A: "+Arrays.toString(vecA));
         System.out.print("Values of B: "+Arrays.toString(vecB));
         System.out.print("Values of C: "+Arrays.toString(vecC));
+        System.out.print("Values split: "+Arrays.toString(vecX));
     }
 }

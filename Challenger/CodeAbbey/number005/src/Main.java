@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner object = new Scanner(System.in);
-        /**
+
         System.out.print("Write the amount of array: ");
         int value = object.nextInt();
         int i;
@@ -51,7 +51,5 @@ public class Main {
         System.out.println("Values of B: "+Arrays.toString(vecB));
         System.out.println("Values of C: "+Arrays.toString(vecC));
         System.out.println("Values split: "+Arrays.toString(vecX));
-
-         **/
     }
 }

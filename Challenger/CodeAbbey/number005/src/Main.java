@@ -7,6 +7,10 @@ public class Main {
         ArrayList<Integer> arrayA = new ArrayList<>();
         ArrayList<Integer> arrayB = new ArrayList<>();
         ArrayList<Integer> arrayC = new ArrayList<>();
+
+        ArrayList<Integer> arrayX = new ArrayList<>();
+
+       
         /**
         System.out.print("Write the amount of array: ");
         int value = object.nextInt();

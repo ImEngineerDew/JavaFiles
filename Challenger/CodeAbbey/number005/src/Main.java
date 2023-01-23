@@ -27,6 +27,30 @@ public class Main {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
 
+            if(vecA[i]<vecB[i])
+            {
+                vecX[i] = vecA[i];
+            }
+            else if(vecA[i]<vecC[i])
+            {
+                vecX[i] = vecA[i];
+            }
+            else if(vecB[i]<vecA[i])
+            {
+                vecX[i] = vecB[i];
+            }
+            else if(vecB[i]<vecC[i])
+            {
+                vecX[i] = vecB[i];
+            }
+            else if(vecC[i]<vecA[i])
+            {
+                vecX[i] = vecC[i];
+            }
+            else
+            {
+                vecX[i] = vecC[i];
+            }
             /**
             if(vecA[i]<vecB[i])
             {

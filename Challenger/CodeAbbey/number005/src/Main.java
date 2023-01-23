@@ -1,16 +1,10 @@
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args)
     {
         Scanner object = new Scanner(System.in);
-        ArrayList<Integer> arrayA = new ArrayList<>();
-        ArrayList<Integer> arrayB = new ArrayList<>();
-        ArrayList<Integer> arrayC = new ArrayList<>();
-
-        ArrayList<Integer> arrayX = new ArrayList<>();
-
-       
         /**
         System.out.print("Write the amount of array: ");
         int value = object.nextInt();

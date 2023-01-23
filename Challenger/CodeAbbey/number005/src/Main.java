@@ -73,10 +73,11 @@ public class Main {
             }
         }
         **/
-
+        }
         System.out.println("Values of A: "+Arrays.toString(vecA));
         System.out.println("Values of B: "+Arrays.toString(vecB));
         System.out.println("Values of C: "+Arrays.toString(vecC));
         System.out.println("Values split: "+Arrays.toString(vecX));
+
     }
 }

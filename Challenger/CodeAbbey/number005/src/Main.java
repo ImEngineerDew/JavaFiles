@@ -27,6 +27,7 @@ public class Main {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
 
+            /**
             if(vecA[i]<vecB[i])
             {
                 if(vecA[i]<vecC[i])
@@ -47,6 +48,8 @@ public class Main {
                 vecX[i] = vecC[i];
             }
         }
+        **/
+
         System.out.println("Values of A: "+Arrays.toString(vecA));
         System.out.println("Values of B: "+Arrays.toString(vecB));
         System.out.println("Values of C: "+Arrays.toString(vecC));

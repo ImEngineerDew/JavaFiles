@@ -1,9 +1,13 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args)
     {
         Scanner object = new Scanner(System.in);
-
+        ArrayList<Integer> arrayA = new ArrayList<>();
+        ArrayList<Integer> arrayB = new ArrayList<>();
+        ArrayList<Integer> arrayC = new ArrayList<>();
+        /**
         System.out.print("Write the amount of array: ");
         int value = object.nextInt();
         int i;
@@ -49,5 +53,7 @@ public class Main {
         System.out.println("Values of B: "+Arrays.toString(vecB));
         System.out.println("Values of C: "+Arrays.toString(vecC));
         System.out.println("Values split: "+Arrays.toString(vecX));
+
+         **/
     }
 }

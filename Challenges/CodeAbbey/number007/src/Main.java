@@ -2,9 +2,9 @@ import java.util.*;
 
 public class Main
 {
-    public Double fahrenheitToCelsius(double fahrenheit,double celsius)
+    public Double fahrenheitToCelsius(double fahrenheit)
     {
-        celsius = (fahrenheit - 32)/1.8;
+        double celsius = (fahrenheit - 32)/1.8;
 
         return celsius;
     }
@@ -19,11 +19,15 @@ public class Main
 
         Double fahrenheit[] = new Double[value];
         Double celsius[] = new Double[fahrenheit.length];
+        Double celsiusRounded [] = new Double[fahrenheit.length];
 
         for(i=0; i< fahrenheit.length;i++)
         {
             fahrenheit[i] = object.nextDouble();
-
+            celsius[i] = conversion.fahrenheitToCelsius(fahrenheit[i]);
+            celsiusRounded[i] = Math.round(celsius[i]);
         }
+        System.out.println("Fahrenheit degrees :"+Arrays.toString(fahrenheit));
+        System.out.print("Celsius degrees: "+Arrays.toString(celsius));
     }
 }

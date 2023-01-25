@@ -1,6 +1,5 @@
 import java.util.*;
 import java.lang.*;
-
 public class Main
 {
     public Double fahrenheitToCelsius(double fahrenheit)
@@ -35,7 +34,6 @@ public class Main
         {
             rndC.append(celsiusRounded[j]).append(" ");
         }
-
 
         System.out.println("Fahrenheit degrees :"+Arrays.toString(fahrenheit));
         System.out.print("Celsius degrees: "+rndC);

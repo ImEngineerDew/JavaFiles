@@ -25,9 +25,9 @@ public class Main
         {
             fahrenheit[i] = object.nextDouble();
             celsius[i] = conversion.fahrenheitToCelsius(fahrenheit[i]);
-            celsiusRounded[i] = Math.round(celsius[i]);
+            celsiusRounded[i] = (double) Math.round(celsius[i]);
         }
         System.out.println("Fahrenheit degrees :"+Arrays.toString(fahrenheit));
-        System.out.print("Celsius degrees: "+Arrays.toString(celsius));
+        System.out.print("Celsius degrees: "+Arrays.toString(celsiusRounded));
     }
 }

@@ -27,9 +27,11 @@ public class Main {
             celsius[i] = conversion.fahrenheitToCelsius(fahrenheit[i]);
             celsiusRounded[i] = Math.round(celsius[i]);
         }
+
         for (int j = 0; j < celsiusRounded.length; j++) {
             rndC.append(celsiusRounded[j]).append(" ");
         }
+
         System.out.println("Fahrenheit degrees :" + Arrays.toString(fahrenheit));
         System.out.print("Celsius degrees: " + rndC);
     }

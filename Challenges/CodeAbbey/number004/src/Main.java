@@ -21,24 +21,31 @@ public class Main {
         Integer[] valB = new Integer[valA.length];
         Integer[] resV = new Integer[valA.length];
 
+        StringBuffer sorted = new StringBuffer();
+
         for (i = 0; i < valA.length; i++) {
             System.out.print("Write the values of A: ");
             valA[i] = object.nextInt();
-
+        }
+        System.out.println();
+        for (i = 0; i < valB.length; i++) {
             System.out.print("Write the values of B: ");
             valB[i] = object.nextInt();
 
             if (valA[i] < valB[i]) {
-                System.out.println("The value is minor");
+                //System.out.println("The value is minor");
                 resV[i] = valA[i];
             } else if (valA[i] > valB[i]) {
-                System.out.println("The value is major");
+                //System.out.println("The value is major");
                 resV[i] = valB[i];
             }
         }
+        System.out.println(" ");
         Arrays.sort(resV);
-        for (j = 0; j < resV.length; j++) {
-            System.out.print("Numbers: " + resV[j] + " ");
+
+        for (int k = 0; k < resV.length; k++) {
+            sorted.append(resV[k]).append(" ");
         }
+        System.out.println("Result numbers: " + sorted);
     }
 }

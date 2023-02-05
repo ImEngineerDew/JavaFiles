@@ -1,22 +1,21 @@
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner object = new Scanner(System.in);
 
         System.out.print("Write the amount of array: ");
         int value = object.nextInt();
         int i;
 
-        Integer vecA[] = new Integer[value];
-        Integer vecB[] = new Integer[vecA.length];
-        Integer vecC[] = new Integer[vecA.length];
+        Integer[] vecA = new Integer[value];
+        Integer[] vecB = new Integer[vecA.length];
+        Integer[] vecC = new Integer[vecA.length];
 
-        Integer vecX[] = new Integer[vecA.length];
+        Integer[] vecX = new Integer[vecA.length];
 
-        for(i=0;i<vecA.length;i++)
-        {
+        for (i = 0; i < vecA.length; i++) {
             System.out.print("Write the values of A: ");
             vecA[i] = object.nextInt();
 
@@ -26,25 +25,16 @@ public class Main {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
 
-            if(vecA[i]<vecB[i])
-            {
-                if(vecA[i]<vecC[i])
-                {
+            if (vecA[i] < vecB[i]) {
+                if (vecA[i] < vecC[i]) {
                     vecX[i] = vecA[i];
-                }
-                else
-                {
+                } else {
                     vecX[i] = vecC[i];
                 }
-            }
-            else
-            {
-                if(vecB[i]<vecC[i])
-                {
+            } else {
+                if (vecB[i] < vecC[i]) {
                     vecX[i] = vecB[i];
-                }
-                else
-                {
+                } else {
                     vecX[i] = vecC[i];
                 }
             }
@@ -54,15 +44,16 @@ public class Main {
         StringBuffer vectorB = new StringBuffer();
         StringBuffer vectorC = new StringBuffer();
 
-        for(int j=0;i<vecA.length;j++)
-        {
+        for (int j = 0; i < vecA.length; j++) {
             vectorA.append(vecA[j]).append(" ");
         }
+        for (int k = 0; k < vecB.length; k++) {
+            vectorB.append(vecB[k]).append(" ");
+        }
 
-
-        System.out.println("Values of A: "+Arrays.toString(vecA));
-        System.out.println("Values of B: "+Arrays.toString(vecB));
-        System.out.println("Values of C: "+Arrays.toString(vecC));
-        System.out.println("Values split: "+vecX[i]);
+        System.out.println("Values of A: " + vectorA);
+        System.out.println("Values of B: " + vectorB);
+        System.out.println("Values of C: " + Arrays.toString(vecC));
+        System.out.println("Values split: " + vecX[i]);
     }
 }

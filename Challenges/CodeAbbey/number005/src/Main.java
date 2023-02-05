@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -18,10 +17,13 @@ public class Main {
         for (i = 0; i < vecA.length; i++) {
             System.out.print("Write the values of A: ");
             vecA[i] = object.nextInt();
+        }
 
+        for (i = 0; i < vecB.length; i++) {
             System.out.print("Write the values of B: ");
             vecB[i] = object.nextInt();
-
+        }
+        for (i = 0; i < vecC.length; i++) {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
 
@@ -44,16 +46,20 @@ public class Main {
         StringBuffer vectorB = new StringBuffer();
         StringBuffer vectorC = new StringBuffer();
 
-        for (int j = 0; i < vecA.length; j++) {
+        for (int j = 0; j < vecA.length; j++) {
             vectorA.append(vecA[j]).append(" ");
         }
         for (int k = 0; k < vecB.length; k++) {
             vectorB.append(vecB[k]).append(" ");
         }
+        for(int h=0; h< vecC.length;h++)
+        {
+            vectorC.append(vecC[h]).append(" ");
+        }
 
         System.out.println("Values of A: " + vectorA);
         System.out.println("Values of B: " + vectorB);
-        System.out.println("Values of C: " + Arrays.toString(vecC));
-        System.out.println("Values split: " + vecX[i]);
+        System.out.println("Values of C: " + vectorC);
+        //System.out.println("Values split: " + vecX[i]);
     }
 }

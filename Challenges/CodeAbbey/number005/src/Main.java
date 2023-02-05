@@ -14,6 +14,11 @@ public class Main {
 
         Integer[] vecX = new Integer[vecA.length];
 
+        StringBuffer vectorA = new StringBuffer();
+        StringBuffer vectorB = new StringBuffer();
+        StringBuffer vectorC = new StringBuffer();
+        StringBuffer vectorX = new StringBuffer();
+
         System.out.println(" ");
         for (i = 0; i < vecA.length; i++) {
             System.out.print("Write the values of A: ");
@@ -44,23 +49,23 @@ public class Main {
             }
         }
 
-        StringBuffer vectorA = new StringBuffer();
-        StringBuffer vectorB = new StringBuffer();
-        StringBuffer vectorC = new StringBuffer();
-
         for (int j = 0; j < vecA.length; j++) {
             vectorA.append(vecA[j]).append(" ");
         }
         for (int k = 0; k < vecB.length; k++) {
             vectorB.append(vecB[k]).append(" ");
         }
-        for (int h = 0; h < vecC.length; h++) {
-            vectorC.append(vecC[h]).append(" ");
+        for (int l = 0; l < vecC.length; l++) {
+            vectorC.append(vecC[l]).append(" ");
+        }
+        for (int m = 0; m < vecX.length; m++) {
+            vectorX.append(vecX[m]).append(" ");
         }
 
+        System.out.println(" ");
         System.out.println("Values of A: " + vectorA);
         System.out.println("Values of B: " + vectorB);
         System.out.println("Values of C: " + vectorC);
-        System.out.println("Values split: " + vecX[i]);
+        System.out.println("Values split: " + vectorX);
     }
 }

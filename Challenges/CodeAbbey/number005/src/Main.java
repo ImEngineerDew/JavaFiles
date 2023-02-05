@@ -14,15 +14,17 @@ public class Main {
 
         Integer[] vecX = new Integer[vecA.length];
 
+        System.out.println(" ");
         for (i = 0; i < vecA.length; i++) {
             System.out.print("Write the values of A: ");
             vecA[i] = object.nextInt();
         }
-
+        System.out.println(" ");
         for (i = 0; i < vecB.length; i++) {
             System.out.print("Write the values of B: ");
             vecB[i] = object.nextInt();
         }
+        System.out.println(" ");
         for (i = 0; i < vecC.length; i++) {
             System.out.print("Write the values of C: ");
             vecC[i] = object.nextInt();
@@ -52,14 +54,13 @@ public class Main {
         for (int k = 0; k < vecB.length; k++) {
             vectorB.append(vecB[k]).append(" ");
         }
-        for(int h=0; h< vecC.length;h++)
-        {
+        for (int h = 0; h < vecC.length; h++) {
             vectorC.append(vecC[h]).append(" ");
         }
 
         System.out.println("Values of A: " + vectorA);
         System.out.println("Values of B: " + vectorB);
         System.out.println("Values of C: " + vectorC);
-        //System.out.println("Values split: " + vecX[i]);
+        System.out.println("Values split: " + vecX[i]);
     }
 }

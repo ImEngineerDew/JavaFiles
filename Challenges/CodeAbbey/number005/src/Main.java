@@ -49,6 +49,17 @@ public class Main {
                 }
             }
         }
+
+        StringBuffer vectorA = new StringBuffer();
+        StringBuffer vectorB = new StringBuffer();
+        StringBuffer vectorC = new StringBuffer();
+
+        for(int j=0;i<vecA.length;j++)
+        {
+            vectorA.append(vecA[j]).append(" ");
+        }
+
+
         System.out.println("Values of A: "+Arrays.toString(vecA));
         System.out.println("Values of B: "+Arrays.toString(vecB));
         System.out.println("Values of C: "+Arrays.toString(vecC));

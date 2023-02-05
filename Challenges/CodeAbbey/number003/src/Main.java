@@ -27,13 +27,10 @@ public class Main {
             System.out.print("Write the values of vector B: ");
             vectorB[i] = object.nextInt();
         }
-        System.out.println(" ");
         for (int n = 0; n < resultVector.length; n++) {
             resultVector[n] = vectorA[n] + vectorB[n];
             //System.out.print(" " + resultVector[n]);
         }
-        System.out.println(" ");
-
         for (j = 0; j < vectorA.length; j++) {
             vecA.append(vectorA[j]).append(" ");
         }

@@ -1,24 +1,27 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class Main
-{
-    public static void main(String[] args)
-    {
-        Scanner object = new Scanner(System.in);
-        Integer result=0;
 
-        System.out.println("Write the lengths of array: ");
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer vector = new StringBuffer();
+        Scanner object = new Scanner(System.in);
+        Integer result = 0;
+
+        System.out.print("Write the lengths of array: ");
         int length = object.nextInt();
 
-        Integer array[] = new Integer[length];
+        Integer[] array = new Integer[length];
 
-        System.out.println("Write the numbers: ");
-        for(int i=0; i<array.length; i++)
-        {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print("Write the numbers: ");
             array[i] = object.nextInt();
             result += array[i];
         }
-        System.out.println(Arrays.toString(array));
-        System.out.println(result);
+        for (int j = 0; j < array.length; j++) {
+            vector.append(array[j]).append(" ");
+        }
+        System.out.println(" ");
+        System.out.println("Numbers of array: " + vector);
+        System.out.println("Result: " + result);
     }
 }

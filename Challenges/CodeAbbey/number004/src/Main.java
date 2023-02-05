@@ -1,14 +1,12 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main
-{
-    public Integer lengthArray(int amount)
-    {
+public class Main {
+    public Integer lengthArray(int amount) {
         return amount;
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         Main amountVec = new Main();
         Scanner object = new Scanner(System.in);
 
@@ -19,33 +17,28 @@ public class Main
 
         int i, j = 0;
 
-        Integer valA[] = new Integer[val];
-        Integer valB[] = new Integer [valA.length];
-        Integer resV[] = new Integer[valA.length];
+        Integer[] valA = new Integer[val];
+        Integer[] valB = new Integer[valA.length];
+        Integer[] resV = new Integer[valA.length];
 
-        for(i=0; i< valA.length; i++)
-        {
+        for (i = 0; i < valA.length; i++) {
             System.out.print("Write the values of A: ");
             valA[i] = object.nextInt();
 
             System.out.print("Write the values of B: ");
             valB[i] = object.nextInt();
 
-            if(valA[i]<valB[i])
-            {
+            if (valA[i] < valB[i]) {
                 System.out.println("The value is minor");
                 resV[i] = valA[i];
-            }
-            else if(valA[i]>valB[i])
-            {
+            } else if (valA[i] > valB[i]) {
                 System.out.println("The value is major");
                 resV[i] = valB[i];
             }
         }
         Arrays.sort(resV);
-        for(j=0; j<resV.length;j++)
-        {
-            System.out.print("Numbers: "+resV[j]+" ");
+        for (j = 0; j < resV.length; j++) {
+            System.out.print("Numbers: " + resV[j] + " ");
         }
     }
 }

@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.*;
 
 public class Main {
     public Double divisorOperation(int a, int b) {
@@ -35,15 +34,16 @@ public class Main {
         }
 
         StringBuffer rnd = new StringBuffer();
+        StringBuffer ntRnd = new StringBuffer();
 
         for (int j = 0; j < rounded.length; j++) {
             rnd.append(rounded[j]).append(" ");
         }
-        for(int k = 0; k<vectorDiv.length;k++){
-            rnd.append(vectorDiv[k]).append(" ");
+        for (int k = 0; k < vectorDiv.length; k++) {
+            ntRnd.append(vectorDiv[k]).append(" ");
         }
         System.out.println(" ");
         System.out.println("Rounded: " + rnd);
-        System.out.println("Not rounded: " + Arrays.toString(vectorDiv));
+        System.out.println("Not rounded: " + ntRnd);
     }
 }

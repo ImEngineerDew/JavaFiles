@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner obj = new Scanner(System.in);
+        int answer = 0;
         int i;
 
         Integer[] triangle = new Integer[3];
@@ -24,13 +25,16 @@ public class Main {
         Integer condThree = triangle[1] + triangle[2];
 
         if ((condOne) > triangle[2]) {
-            System.out.println("It does pass the condition a+b>c");
-        }
+            //System.out.println("It does pass the condition a+b>c");
             if ((condTwo) > triangle[1]) {
-                System.out.println("It does pass the condition a+c>b");
-            }
+                //System.out.println("It does pass the condition a+c>b");
                 if ((condThree) > triangle[0]) {
-                    System.out.println("It does pass the condition b+c>a");
+                    //System.out.println("It does pass the condition b+c>a");
                 }
+            }
+            System.out.println(answer + 1);
+        } else {
+            System.out.println(answer);
         }
     }
+}

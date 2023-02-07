@@ -23,6 +23,8 @@ public class Main {
         System.out.println("Side C: "+triangle[2]);
 
         Integer condOne = triangle[0]+triangle[1];
+        Integer condTwo = triangle[0]+triangle[2];
+        Integer condThree = triangle[1] +triangle[2];
 
         if((condOne)>triangle[2]) {
             System.out.println("It does pass the condition a+b>c");
@@ -30,12 +32,18 @@ public class Main {
         else {
             System.out.println("It doesn't pass the condition a+b>c");
         }
-        if((triangle[0]+triangle[2])>triangle[1]) {
+        if((condTwo)>triangle[1]) {
             System.out.println("It does pass the condition a+c>b");
         }
         else {
             System.out.println("It doesn't pass the condition a+c>b");
         }
-        if()
+        if((condThree)>triangle[0])
+        {
+            System.out.println("It does pass the condition b+c>a");
+        }
+        else {
+            System.out.println("It doesn't pass the condition b+c>a");
+        }
     }
 }

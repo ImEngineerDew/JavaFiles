@@ -26,7 +26,7 @@ public class Main {
 
         Integer condOne = tri.resultSum(triangle[0], triangle[1]);
         Integer condTwo = tri.resultSum(triangle[0],triangle[2]);
-        Integer condThree = tri.resultSum(triangle[2],triangle[3]);
+        Integer condThree = tri.resultSum(triangle[1],triangle[2]);
 
         /**Conditons to evaluate if the elements can build a triangle**/
 
@@ -40,8 +40,18 @@ public class Main {
             }
         }
         if(triangle[0]<triangle[1] && triangle[1]>triangle[2]) {
-            if(condOne>triangle[2])
+            if(condTwo>triangle[1])
             {
+                System.out.println(answer+1);
+            }
+            else
+            {
+                System.out.println(answer);
+            }
+        }
+        if(triangle[0]<triangle[2] && triangle[1]>triangle[2])
+        {
+            if(condOne>triangle[2]){
                 System.out.println(answer+1);
             }
             else

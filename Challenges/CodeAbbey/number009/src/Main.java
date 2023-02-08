@@ -37,5 +37,12 @@ public class Main {
         System.out.println("Side A: "+Arrays.toString(sideA));
         System.out.println("Side B: "+Arrays.toString(sideB));
         System.out.println("Side C: "+Arrays.toString(sideC));
+
+        /** Sums a+b > c**/
+        Integer caseA = tri.resultSum(sideA[i],sideB[i]);
+        /** Sums if a+c > b **/
+        Integer caseB = tri.resultSum(sideA[i],sideC[i]);
+        /** Sums if b+c > a **/
+        Integer caseC = tri.resultSum(sideB[i],sideC[i]);
     }
 }

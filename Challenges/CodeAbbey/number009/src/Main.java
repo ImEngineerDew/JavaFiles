@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
+
+    public Integer resultSum(int a, int b){
+        return a+b;
+    }
     public static void main(String[] args) {
 
+        Main tri = new Main();
         Scanner obj = new Scanner(System.in);
         int answer = 0;
         int i;
@@ -19,21 +24,10 @@ public class Main {
         System.out.println("Side B: " + triangle[1]);
         System.out.println("Side C: " + triangle[2]);
 
-        Integer condOne = triangle[0] + triangle[1];
-        Integer condTwo = triangle[0] + triangle[2];
-        Integer condThree = triangle[1] + triangle[2];
+        Integer condOne = tri.resultSum(triangle[0], triangle[1]);
+        Integer condTwo = tri.resultSum(triangle[0],triangle[2]);
+        Integer condThree = tri.resultSum(triangle[2],triangle[3]);
 
-        if ((condOne) > triangle[2]) {
-            //System.out.println("It does pass the condition a+b>c");
-            if ((condTwo) > triangle[1]) {
-                //System.out.println("It does pass the condition a+c>b");
-                if ((condThree) > triangle[0]) {
-                    //System.out.println("It does pass the condition b+c>a");
-                }
-            }
-            System.out.println(answer + 1);
-        } else {
-            System.out.println(answer);
-        }
+        /**Blank space**/
     }
 }

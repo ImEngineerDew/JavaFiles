@@ -2,62 +2,29 @@ import java.util.Scanner;
 
 public class Main {
 
-    public Integer resultSum(int a, int b){
-        return a+b;
+    public Integer resultSum(int a, int b) {
+        return a + b;
     }
+
     public static void main(String[] args) {
 
         Main tri = new Main();
         Scanner obj = new Scanner(System.in);
+        int size = obj.nextInt();
         int answer = 0;
         int i;
 
-        Integer[] triangle = new Integer[3];
+        Integer sideA[] = new Integer[size];
+        Integer sideB[] = new Integer[sideA.length];
+        Integer sideC[] = new Integer[sideA.length];
 
         for (i = 0; i < triangle.length; i++) {
-            System.out.print("Write the sides of triangle: ");
-            triangle[i] = obj.nextInt();
-            //sideC[i] = triangle[0]+triangle[1];
+            System.out.print("Write the side A of triangle: ");
+
         }
         System.out.println(" ");
         System.out.println("Side A: " + triangle[0]);
         System.out.println("Side B: " + triangle[1]);
         System.out.println("Side C: " + triangle[2]);
-
-        Integer condOne = tri.resultSum(triangle[0], triangle[1]);
-        Integer condTwo = tri.resultSum(triangle[0],triangle[2]);
-        Integer condThree = tri.resultSum(triangle[1],triangle[2]);
-
-        /**Conditons to evaluate if the elements can build a triangle**/
-
-        if(triangle[0]>triangle[1] && triangle[0]>triangle[2]) {
-            if(condThree>triangle[0])
-            {
-                System.out.println(answer+1);
-            }
-            else{
-                System.out.println(answer);
-            }
-        }
-        if(triangle[0]<triangle[1] && triangle[1]>triangle[2]) {
-            if(condTwo>triangle[1])
-            {
-                System.out.println(answer+1);
-            }
-            else
-            {
-                System.out.println(answer);
-            }
-        }
-        if(triangle[0]<triangle[2] && triangle[1]>triangle[2])
-        {
-            if(condOne>triangle[2]){
-                System.out.println(answer+1);
-            }
-            else
-            {
-                System.out.println(answer);
-            }
-        }
     }
 }

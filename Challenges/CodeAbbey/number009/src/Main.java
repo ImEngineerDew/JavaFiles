@@ -31,26 +31,18 @@ public class Main {
         int answer = 0;
 
         for (int k = 0; k < sum.length; k++) {
-            if ((sideA[k]+sideB[k]) > sideC[k])
-            {
-              if ((sideA[k]+sideC[k])>sideB[k])
-              {
-                 if ((sideB[k]+sideC[k])> sideA[k])
-                 {
-                        System.out.print(answer+1);
-                 }
-                 else {
-                 
+            if ((sideA[k] + sideB[k]) > sideC[k]) {
+                if ((sideA[k] + sideC[k]) > sideB[k]) {
+                    if ((sideB[k] + sideC[k]) > sideA[k]) {
+                        System.out.print(answer + 1);
+                    } else {
                         System.out.println(answer);
                     }
-                }
-                else {
-                    System.out.println("A+C>B is false");
+                } else {
                     System.out.println(answer);
                 }
             } else {
-                System.out.print(answer);
-                System.out.println("A+B>C is false");
+                System.out.println(answer);
             }
         }
     }

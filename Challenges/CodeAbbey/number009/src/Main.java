@@ -17,9 +17,9 @@ public class Main {
         int answer = 0;
         int i;
 
-        Integer sideA[] = new Integer[size];
-        Integer sideB[] = new Integer[sideA.length];
-        Integer sideC[] = new Integer[sideA.length];
+        Integer[] sideA = new Integer[size];
+        Integer[] sideB = new Integer[sideA.length];
+        Integer[] sideC = new Integer[sideA.length];
 
         for (i = 0; i < sideA.length; i++) {
             System.out.print("Write the side A of triangle: ");
@@ -33,10 +33,17 @@ public class Main {
             System.out.print("Write the side C of triangle: ");
             sideC[i] = obj.nextInt();
         }
-        //System.out.println("Side A: "+Arrays.toString(sideA));
-        //System.out.println("Side B: "+Arrays.toString(sideB));
-        //System.out.println("Side C: "+Arrays.toString(sideC));
-
-
+        /**Triangle # 1**/
+        for (int k = 0; k < sideC.length; k++) {
+            if (tri.resultSum(sideA[k], sideB[k]) > sideC[k]) {
+                if (tri.resultSum(sideA[k], sideC[k]) > sideB[k]) {
+                    if (tri.resultSum(sideB[k], sideC[k]) > sideA[k]) {
+                        System.out.println(answer + 1);
+                    }
+                }
+            } else {
+                System.out.println(answer);
+            }
+        }
     }
 }

@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -33,15 +32,15 @@ public class Main {
             if ((sideA[k] + sideB[k]) > sideC[k]) {
                 if ((sideA[k] + sideC[k]) > sideB[k]) {
                     if ((sideB[k] + sideC[k]) > sideA[k]) {
-                        System.out.print(1+" ");
+                        System.out.print(1 + " ");
                     } else {
-                        System.out.println(0+" ");
+                        System.out.print(0 + " ");
                     }
                 } else {
-                    System.out.println(0+" ");
+                    System.out.print(0 + " ");
                 }
             } else {
-                System.out.println(0+" ");
+                System.out.print(0 + " ");
             }
         }
     }

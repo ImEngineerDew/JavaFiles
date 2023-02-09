@@ -28,21 +28,20 @@ public class Main {
             sideC[i] = obj.nextLong();
         }
         /**Triangle # n**/
-        int answer = 0;
 
         for (int k = 0; k < sum.length; k++) {
             if ((sideA[k] + sideB[k]) > sideC[k]) {
                 if ((sideA[k] + sideC[k]) > sideB[k]) {
                     if ((sideB[k] + sideC[k]) > sideA[k]) {
-                        System.out.print(answer + 1);
+                        System.out.print(1+" ");
                     } else {
-                        System.out.println(answer);
+                        System.out.println(0+" ");
                     }
                 } else {
-                    System.out.println(answer);
+                    System.out.println(0+" ");
                 }
             } else {
-                System.out.println(answer);
+                System.out.println(0+" ");
             }
         }
     }

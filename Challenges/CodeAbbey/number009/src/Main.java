@@ -12,7 +12,7 @@ public class Main {
         Main tri = new Main();
         Scanner obj = new Scanner(System.in);
 
-        System.out.println("Write the size of array: ");
+        System.out.print("Write the size of array: ");
         int size = obj.nextInt();
         int answer = 0;
         int i;
@@ -38,11 +38,11 @@ public class Main {
             if (tri.resultSum(sideA[k], sideB[k]) > sideC[k]) {
                 if (tri.resultSum(sideA[k], sideC[k]) > sideB[k]) {
                     if (tri.resultSum(sideB[k], sideC[k]) > sideA[k]) {
-                        System.out.println(answer + 1);
+                        System.out.print(answer + 1+" ");
                     }
                 }
             } else {
-                System.out.println(answer);
+                System.out.print(answer);
             }
         }
     }

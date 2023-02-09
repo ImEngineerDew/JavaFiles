@@ -27,7 +27,7 @@ public class Main {
             System.out.print("Write the side C of triangle: ");
             sideC[i] = obj.nextLong();
         }
-        /**Triangle # 1**/
+        /**Triangle # n**/
         int answer = 0;
 
         for (int k = 0; k < sum.length; k++) {

@@ -4,16 +4,17 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner object = new Scanner(System.in);
+        System.out.println("Please write the number to split: ");
+        int num = object.nextInt();
 
-        System.out.println("Write the size of an array: ");
-        Integer size = object.nextInt();
+        String number = String.valueOf(num);
+        int i;
 
-        Integer number[] = new Integer[size];
-
-        for(int i=0; i< number.length; i++)
+        for(i=0; i< number.length(); i++)
         {
-            number[i] = object.nextInt();
+            int j = Character.digit(number.charAt(i),10);
+            System.out.println("Number splitted : "+j);
         }
-        System.out.println(Arrays.toString(number));
+        //System.out.println(Arrays.toString(number));
     }
 }

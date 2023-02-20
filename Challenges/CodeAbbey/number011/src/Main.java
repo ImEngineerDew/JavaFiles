@@ -6,6 +6,7 @@ public class Main {
         Scanner object = new Scanner(System.in);
         System.out.println("Please write the number to split: ");
         int num = object.nextInt();
+        int result [] = new int[3];
 
         String number = String.valueOf(num);
         int i;
@@ -13,7 +14,8 @@ public class Main {
         for(i=0; i< number.length(); i++)
         {
             int j = Character.digit(number.charAt(i),10);
-            System.out.println("Number splitted : "+j);
+            result[j]+=j;
+            System.out.print(result[j]);
         }
         //System.out.println(Arrays.toString(number));
     }

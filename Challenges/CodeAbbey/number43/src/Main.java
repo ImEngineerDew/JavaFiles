@@ -15,7 +15,14 @@ public class Main {
             randomGen = Math.random();
             diceNumber = (int)Math.round(randomGen*sizeArray);
 
-            arrayDice[i] = diceNumber;
+            if(diceNumber>=1)
+            {
+                arrayDice[i] = diceNumber;
+            }
+            else if(diceNumber<=6)
+            {
+                arrayDice[i] = diceNumber;
+            }
         }
         System.out.println("Random generated: "+randomGen);
         System.out.println("Pseudodice generated: "+ Arrays.toString(arrayDice));

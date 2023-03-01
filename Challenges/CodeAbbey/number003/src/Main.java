@@ -1,43 +1,6 @@
 import java.util.Scanner;
 public class Main {
 
-    public static void carryArray(Integer array[],Integer i)
-    {
-        if(i==array.length)
-        {
-            return;
-        }
-        System.out.println(array[i]);
-
-        carryArray(array,i+1);
-    }
-
-    public static void writeArray(Integer array[],Integer i, Scanner object)
-    {
-        if(i==array.length)
-        {
-            return;
-        }
-        System.out.println(array[i]);
-        object = new Scanner (System.in);
-        writeArray(array,i+1,object);
-    }
-    public static void main(String[] args) {
-        Scanner object = new Scanner(System.in);
-
-        System.out.print("Write the lengths of arrays: ");
-        int length = object.nextInt();
-        int i, j;
-
-
-        Integer[] vectorA = new Integer[length];
-        Integer[] vectorB = new Integer[vectorA.length];
-        Integer[] resultVector = new Integer[vectorA.length];
-
-        carryArray(vectorA,0);
-        carryArray(vectorB,0);
-        carryArray(resultVector, 0);
-
         /*
         StringBuffer vecA = new StringBuffer();
         StringBuffer vecB = new StringBuffer();

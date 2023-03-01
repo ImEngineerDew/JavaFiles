@@ -1,15 +1,14 @@
 import java.util.Scanner;
 public class Main {
-
     public static void readArray(Integer array[], Integer i)
     {
         if(i == array.length-1)
         {
-            System.out.print(array[i]+"");
+            //System.out.print(array[i]+" ");
         }
         else
         {
-            System.out.println(array[i]+"");
+            //System.out.println(array[i]+" ");
             readArray(array,i+1);
         }
     }
@@ -29,7 +28,7 @@ public class Main {
             return;
         }
         Integer res = arrayA[i]+arrayB[i];
-        System.out.print(res+"");
+        System.out.print(res+" ");
         resultSum(arrayA,arrayB,i+1);
     }
     public static void main(String args[]) {

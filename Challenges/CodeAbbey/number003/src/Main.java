@@ -5,24 +5,33 @@ public class Main {
     {
         if(i == array.length-1)
         {
-            System.out.print(array[i]);
+            System.out.print(array[i]+"");
         }
         else
         {
-            System.out.print(array[i]);
+            System.out.println(array[i]+"");
             readArray(array,i+1);
         }
     }
-    public static void writeArray(Integer array[],Integer i, Scanner object)
+    public static void writeArray(Integer array[],Integer i, Scanner object) {
+        if (i == array.length) {
+            return;
+        }
+        System.out.print("Write the elements of these vector: ");
+        array[i] = object.nextInt();
+        writeArray(array, i + 1, object);
+    }
+
+    public static void resultSum(Integer arrayA[],Integer arrayB[],Integer i)
     {
-        if(i == array.length)
+        if(i == arrayA.length || i == arrayB.length)
         {
             return;
         }
-        System.out.println("Write the elements of these vector: ");
-            array[i] = object.nextInt();
-            writeArray(array, i+1, object);
-        }
+        Integer res = arrayA[i]+arrayB[i];
+        System.out.print(res+"");
+        resultSum(arrayA,arrayB,i+1);
+    }
     public static void main(String args[]) {
 
         Scanner object = new Scanner(System.in);
@@ -39,5 +48,7 @@ public class Main {
 
        readArray(vectorA,0);
        readArray(vectorB,0);
+
+       resultSum(vectorA,vectorB,i);
     }
 }

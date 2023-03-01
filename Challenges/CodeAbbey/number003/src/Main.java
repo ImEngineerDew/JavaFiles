@@ -1,6 +1,18 @@
 import java.util.Scanner;
 public class Main {
-
+    public static void readingArray(Integer array[],Integer i)
+    {
+        if(i == (array.length)-1)
+        {
+            System.out.println(array[i]);
+        }
+        else
+        {
+            System.out.println(array[i]);
+            readingArray(array,0);
+        }
+    }
+    public static void main(String args[]) {
         /*
         StringBuffer vecA = new StringBuffer();
         StringBuffer vecB = new StringBuffer();

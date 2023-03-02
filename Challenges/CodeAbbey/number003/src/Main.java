@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -18,15 +17,10 @@ public class Main {
         /** read the arrays with Scanner object **/
         readArray(vectorA, vectorB, pos, object);
 
-        /** Show the arrays prior to sum **/
-        showArray(vectorA,vectorB, pos);
-
-        for (int i = 0; i < vectorR.length; i++) {
-            vectorR[i] = vectorA[i] + vectorB[i];
-        }
-        System.out.println(" ");
-        System.out.print(Arrays.toString(vectorR));
+        /** Print the sums of both arrays **/
+        resultSum(vectorA, vectorB, pos);
     }
+
     public static void showArray(Integer vectorA[], Integer vectorB[], Integer i) {
         if (i.equals(vectorA.length - 1) || i.equals(vectorB.length - 1)) {
             System.out.print(vectorA[i] + " ");
@@ -34,8 +28,17 @@ public class Main {
         } else {
             System.out.print(vectorA[i] + " ");
             System.out.print(vectorB[i] + " ");
-            showArray(vectorA, vectorB, i + 1);
+            showArray(vectorA, vectorB, i + 1);   /** Calling its method by themselves**/
         }
+    }
+
+    public static void resultSum(Integer vectorA[], Integer vectorB[], Integer i) {
+        if (i.equals(vectorA.length) || i.equals(vectorB.length)) {
+            return;
+        }
+        Integer res = vectorA[i] + vectorB[i];
+        System.out.print(res + " ");
+        resultSum(vectorA, vectorB, i + 1);        /** Calling its method by themselves**/
     }
 
     public static void readArray(Integer vectorA[], Integer vectorB[], Integer i, Scanner object) {
@@ -44,6 +47,6 @@ public class Main {
         }
         vectorA[i] = object.nextInt();
         vectorB[i] = object.nextInt();
-        readArray(vectorA, vectorB, i + 1, object);
+        readArray(vectorA, vectorB, i + 1, object); /** Calling its method by themselves**/
     }
 }

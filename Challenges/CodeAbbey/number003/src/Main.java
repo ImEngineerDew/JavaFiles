@@ -13,30 +13,49 @@ public class Main {
         /** Define the array and its size **/
         Integer vectorA[] = new Integer[size];
         Integer vectorB[] = new Integer[size];
-        readArray(vectorA, pos, object);
-        readArray(vectorB, pos, object);
+        Integer vectorR[] = new Integer[size];
+        readArray(vectorA,vectorB, pos, object);
 
         /** Show the arrays prior to sum **/
-        showArray(vectorA, pos);
-        showArray(vectorB, pos);
+        showArrayA(vectorA, pos);
+        showArrayB(vectorB, pos);
+
+        for(int i = 0; i<vectorR.length;i++)
+        {
+            vectorR[i] =  vectorA[i]+vectorB[i];
+        }
+        System.out.println(Arrays.toString(vectorR));
     }
-    public static void showArray(Integer vector[], Integer i) {
-        if (i.equals(vector.length - 1)) {
+    public static void showArrayA(Integer vectorA[], Integer i) {
+        if (i.equals(vectorA.length - 1)) {
             //System.out.println("Position " + i + ": " + vector[i]);
-            System.out.print(vector[i]+" ");
+            System.out.print(vectorA[i]+" ");
             System.out.println(" ");
         } else {
             //System.out.println("Position " + i + ": " + vector[i]);
-            System.out.print(vector[i]+" ");
-            showArray(vector, i + 1);
+            System.out.print(vectorA[i]+" ");
+            showArrayA(vectorA, i + 1);
         }
     }
-    public static void readArray(Integer vector[], Integer i, Scanner object) {
-        if (i.equals(vector.length)) {
+    public static void showArrayB(Integer vectorB[], Integer i) {
+        if (i.equals(vectorB.length - 1)) {
+            //System.out.println("Position " + i + ": " + vector[i]);
+            System.out.print(vectorB[i]+" ");
+            System.out.println(" ");
+        } else {
+            //System.out.println("Position " + i + ": " + vector[i]);
+            System.out.print(vectorB[i]+" ");
+            showArrayA(vectorB, i + 1);
+        }
+    }
+    public static void readArray(Integer vectorA[],Integer vectorB[], Integer i, Scanner object) {
+        if (i.equals(vectorA.length) || i.equals(vectorB.length)) {
             return;
         }
-        System.out.print("Write the numbers on the position " + i + ": ");
-        vector[i] = object.nextInt();
-        readArray(vector, i + 1, object);
+        System.out.print("Write the numbers on the position " + i + "of vectorA: ");
+        vectorA[i] = object.nextInt();
+        System.out.print("Write the numbers on the position " + i + "of vectorB: ");
+        vectorB[i] = object.nextInt();
+        readArray(vectorA,vectorB, i + 1, object);
     }
 }

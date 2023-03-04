@@ -24,16 +24,24 @@ public class recursiveCountCharacters {
     String vectorString[] = new String[size];
     Integer charCounter[] = new Integer[vectorString.length];
 
-    readVectorString(vectorString, index, objeto);
+    readVectorString(vectorString, frase, index, objeto);
   }
-  public static void readVectorString(String vectorX[], Integer i, Scanner object) {
-    if (i == vectorX.length) {
+
+  public static void readVectorString(String vectorX[], String quote, Integer index, Scanner object) {
+    if (index.equals(vectorX.length)) {
       return;
     }
-    System.out.println("Write your quote: ");
-    vectorX[i] = object.nextLine();
+    quote = object.nextLine();
 
-    System.out.println(vectorX[i]);
-    readVectorString(vectorX, i + 1, object);
+    readVectorString(vectorX, quote, index + 1, object);
+  }
+
+  public static void showVectorString(String vectorX[], Integer index) {
+    if (index.equals(vectorX.length - 1)) {
+      System.out.println(vectorX[index]);
+    } else {
+      System.out.println(vectorX[index]);
+      showVectorString(vectorX, index + 1);
+    }
   }
 }

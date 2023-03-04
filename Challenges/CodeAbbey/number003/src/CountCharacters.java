@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CountCharacters {
@@ -28,15 +27,21 @@ public class CountCharacters {
       for (int k = 0; k < quote.length(); k++) {
         if (quote.charAt(k) == aWord) {
           counter++;
+        } else if (quote.charAt(k) == eWord) {
+          counter++;
         }
-        else if (quote.charAt(k) == eWord)
-        {
+        else if (quote.charAt(k) == iWord) {
+          counter++;
+        }
+        else if (quote.charAt(k) == oWord) {
+          counter++;
+        }
+        else if (quote.charAt(k) == uWord) {
           counter++;
         }
         charCounter[i] = counter;
       }
-      //System.out.println(counter);
+      System.out.println(charCounter[i].toString() + " ");
     }
-    System.out.println(Arrays.toString(charCounter));
   }
 }

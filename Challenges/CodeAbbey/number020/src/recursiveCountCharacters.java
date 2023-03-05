@@ -49,15 +49,7 @@ public class recursiveCountCharacters {
     readVectorString(vectorX, charCounter,index + 1, object);
   }
 
-  public static void showVectorString(String vectorX[], Integer index) {
-    if (index == vectorX.length - 1) {
-      System.out.print(vectorX[index] + " ");
-    } else {
-      System.out.print(vectorX[index] + " ");
-      showVectorString(vectorX, index + 1);
-    }
-  }
-
+  /** Recursive function that counts the number of vowels **/
   public static void countCharacters(Integer vector[], Integer index)
   {
     if(index==vector.length -1)

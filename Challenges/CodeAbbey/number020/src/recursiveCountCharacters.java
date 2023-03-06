@@ -14,11 +14,11 @@ public class recursiveCountCharacters {
     String vectorString[] = new String[size];
     Integer charCounter[] = new Integer[vectorString.length];
 
-    readVectorString(vectorString, charCounter,index,objeto);
-    countCharacters(charCounter,index);
+    readVectorString(vectorString, charCounter, index, objeto);
+    countCharacters(charCounter, index);
   }
 
-  public static void readVectorString(String vectorX[],Integer charCounter[], Integer index, Scanner object) {
+  public static void readVectorString(String vectorX[], Integer charCounter[], Integer index, Scanner object) {
     if (index == vectorX.length) {
       return;
     }
@@ -46,18 +46,18 @@ public class recursiveCountCharacters {
       }
       charCounter[index] = counter;
     }
-    readVectorString(vectorX, charCounter,index + 1, object);
+    readVectorString(vectorX, charCounter, index + 1, object);
   }
 
-  /** Recursive function that counts the number of vowels **/
-  public static void countCharacters(Integer vector[], Integer index)
-  {
-    if(index==vector.length -1)
-    {
-      System.out.print(vector[index]+" ");
-    }else {
-      System.out.print(vector[index]+" ");
-      countCharacters(vector,index+1);
+  /**
+   * Recursive function that counts the number of vowels
+   **/
+  public static void countCharacters(Integer vector[], Integer index) {
+    if (index == vector.length - 1) {
+      System.out.print(vector[index] + " ");
+    } else {
+      System.out.print(vector[index] + " ");
+      countCharacters(vector, index + 1);
     }
   }
 }

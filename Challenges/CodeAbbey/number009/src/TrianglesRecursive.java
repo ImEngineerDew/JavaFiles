@@ -16,6 +16,7 @@ public class TrianglesRecursive {
     readSideA(sideA, element, i);
     readSideB(sideB, element, i);
     readSideC(sideC, element, i);
+    checkS(sideA,sideB,sideC,i);
   }
 
   public static void readSideA(Long sideA[], Scanner object, Integer index) {
@@ -43,5 +44,25 @@ public class TrianglesRecursive {
     System.out.print("Write the length of side C: ");
     sideC[index] = object.nextLong();
     readSideC(sideC, object, index + 1);
+  }
+
+  public static void checkS(Long sdA[], Long sdB[], Long sdC[], Integer i){
+    if(i.equals(sdA.length)||i.equals(sdB.length)||i.equals(sdC.length)){
+      return;
+    }
+    if ((sdA[i] + sdB[i]) > sdC[i]) {
+      if ((sdA[i] + sdC[i]) > sdB[i]) {
+        if ((sdB[i] + sdC[i]) > sdA[i]) {
+          System.out.print(1 + " ");
+        } else {
+          System.out.print(0 + " ");
+        }
+      } else {
+        System.out.print(0 + " ");
+      }
+    } else {
+      System.out.print(0 + " ");
+    }
+    checkS(sdA,sdB,sdC,i+1);
   }
 }

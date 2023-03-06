@@ -15,15 +15,15 @@ public class TrianglesRecursive {
 
     readSideA(sideA, element, i);
     readSideB(sideB, element, i);
+    readSideC(sideC, element, i);
   }
 
   public static void readSideA(Long sideA[], Scanner object, Integer index) {
     if (index.equals(sideA.length)) {
       return;
     }
-    System.out.println("Write the length of side A: ");
+    System.out.print("Write the length of side A: ");
     sideA[index] = object.nextLong();
-    System.out.println(sideA[index]);
     readSideA(sideA, object, index + 1);
   }
 
@@ -31,9 +31,17 @@ public class TrianglesRecursive {
     if (index.equals(sideB.length)) {
       return;
     }
-    System.out.println("Write the length of side B: ");
+    System.out.print("Write the length of side B: ");
     sideB[index] = object.nextLong();
-    System.out.println(sideB[index]);
     readSideB(sideB, object, index + 1);
+  }
+
+  public static void readSideC(Long sideC[], Scanner object, Integer index) {
+    if (index.equals(sideC.length)) {
+      return;
+    }
+    System.out.print("Write the length of side C: ");
+    sideC[index] = object.nextLong();
+    readSideC(sideC, object, index + 1);
   }
 }

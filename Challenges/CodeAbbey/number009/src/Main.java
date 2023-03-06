@@ -17,12 +17,8 @@ public class Main {
         for (i = 0; i < sideA.length; i++) {
             System.out.print("Write the side A of triangle: ");
             sideA[i] = obj.nextLong();
-        }
-        for (i = 0; i < sideB.length; i++) {
             System.out.print("Write the side B of triangle: ");
             sideB[i] = obj.nextLong();
-        }
-        for (i = 0; i < sideC.length; i++) {
             System.out.print("Write the side C of triangle: ");
             sideC[i] = obj.nextLong();
         }

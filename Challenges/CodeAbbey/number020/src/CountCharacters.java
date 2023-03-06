@@ -3,14 +3,12 @@ import java.util.Scanner;
 
 public class CountCharacters {
   public static void main(String[] args) {
-
     char aWord = 'a';
     char eWord = 'e';
     char iWord = 'i';
     char oWord = 'o';
     char uWord = 'u';
     Scanner object = new Scanner(System.in);
-    Object objeto = new Object();
 
     System.out.println("Write the size of array: ");
     Integer size = object.nextInt();
@@ -25,17 +23,18 @@ public class CountCharacters {
 
       System.out.println("Write your quote: ");
       String quote = object.nextLine();
+      String quoteToLow = quote.toLowerCase();
 
-      for (int k = 0; k < quote.length(); k++) {
-        if (quote.charAt(k) == aWord) {
+      for (int k = 0; k < quoteToLow.length(); k++) {
+        if (quoteToLow.charAt(k) == aWord) {
           counter++;
-        } else if (quote.charAt(k) == eWord) {
+        } else if (quoteToLow.charAt(k) == eWord) {
           counter++;
-        } else if (quote.charAt(k) == iWord) {
+        } else if (quoteToLow.charAt(k) == iWord) {
           counter++;
-        } else if (quote.charAt(k) == oWord) {
+        } else if (quoteToLow.charAt(k) == oWord) {
           counter++;
-        } else if (quote.charAt(k) == uWord) {
+        } else if (quoteToLow.charAt(k) == uWord) {
           counter++;
         }
         charCounter[i] = counter;

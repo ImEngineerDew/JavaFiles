@@ -13,41 +13,24 @@ public class TrianglesRecursive {
     Long sideB[] = new Long[sideA.length];
     Long sideC[] = new Long[sideA.length];
 
-    readSideA(sideA, element, i);
-    readSideB(sideB, element, i);
-    readSideC(sideC, element, i);
-    checkS(sideA,sideB,sideC,i);
+    triRd(sideA, sideB, sideC, element, i);
+    checkS(sideA, sideB, sideC, i);
   }
 
-  public static void readSideA(Long sideA[], Scanner object, Integer index) {
-    if (index.equals(sideA.length)) {
+  public static void triRd(Long A[], Long B[], Long C[], Scanner sc, Integer i) {
+    if (i.equals(A.length) || (i.equals(B.length))|| (i.equals(C.length))) {
       return;
     }
     System.out.print("Write the length of side A: ");
-    sideA[index] = object.nextLong();
-    readSideA(sideA, object, index + 1);
-  }
-
-  public static void readSideB(Long sideB[], Scanner object, Integer index) {
-    if (index.equals(sideB.length)) {
-      return;
-    }
+    A[i] = sc.nextLong();
     System.out.print("Write the length of side B: ");
-    sideB[index] = object.nextLong();
-    readSideB(sideB, object, index + 1);
-  }
-
-  public static void readSideC(Long sideC[], Scanner object, Integer index) {
-    if (index.equals(sideC.length)) {
-      return;
-    }
+    B[i] = sc.nextLong();
     System.out.print("Write the length of side C: ");
-    sideC[index] = object.nextLong();
-    readSideC(sideC, object, index + 1);
+    C[i] = sc.nextLong();
+    triRd(A,B,C,sc,i+1);
   }
-
-  public static void checkS(Long sdA[], Long sdB[], Long sdC[], Integer i){
-    if(i.equals(sdA.length)||i.equals(sdB.length)||i.equals(sdC.length)){
+  public static void checkS(Long sdA[], Long sdB[], Long sdC[], Integer i) {
+    if (i.equals(sdA.length) || i.equals(sdB.length) || i.equals(sdC.length)) {
       return;
     }
     if ((sdA[i] + sdB[i]) > sdC[i]) {
@@ -63,6 +46,6 @@ public class TrianglesRecursive {
     } else {
       System.out.print(0 + " ");
     }
-    checkS(sdA,sdB,sdC,i+1);
+    checkS(sdA, sdB, sdC, i + 1);
   }
 }

@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class exampleTwoDim {
 
   public static void main(String args[]) {
-
     int i = 0, j = 0;
 
     Scanner obj = new Scanner(System.in);
@@ -16,6 +15,7 @@ public class exampleTwoDim {
 
     int resolution[] = bubbleRecursive(vectorList, i, j);
     showBubble(vectorList, i);
+
     System.out.println(resolution[1]);
     System.out.println(resolution[0]);
   }
@@ -47,7 +47,6 @@ public class exampleTwoDim {
       resolution[1] += next[1] + 1;
       return resolution;
     } else {
-      // Put here the bubbleSort
       int[] next = bubbleRecursive(vecRnd, j, k + 1);
       resolution[0] += next[0];
       resolution[1] += next[1];

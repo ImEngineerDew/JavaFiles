@@ -1,37 +1,52 @@
 import java.util.Scanner;
 
 public class exampleTwoDim {
+
   public static void main(String args[]) {
 
-    int i = 0,j=0;
+    int i = 0, j = 0;
+
     Scanner obj = new Scanner(System.in);
 
     System.out.print("Write the size of your array: ");
     int size = obj.nextInt();
 
     int vectorList[] = new int[size];
-    readArray(vectorList,i,obj);
-    bubbleRecursive(vectorList,i,j);
+    readArray(vectorList, i, obj);
+    bubbleRecursive(vectorList, i, j);
+    showBubble(vectorList, i);
   }
 
-  public static void readArray(int vecRnd[], int i, Scanner sc)
-  {
-    System.out.print("Write the numbers: ");
-    vecRnd[i] = sc.nextInt();
-    readArray(vecRnd,i,sc);
-  }
-
-  public static void bubbleRecursive(int vecRnd[], int i, int j) {
+  public static void showBubble(int vecRnd[], int i) {
     if (i == vecRnd.length) {
       return;
-    } else if (j == vecRnd.length) {
-      //Put here the bubbleSort
-      bubbleRecursive(vecRnd, i + 1, i + 1);
+    }
+    System.out.print(vecRnd[i] + " ");
+    showBubble(vecRnd, i + 1);
+  }
+
+  public static void readArray(int vecRnd[], int i, Scanner sc) {
+    if (i == vecRnd.length) {
+      return;
+    }
+    System.out.print("Write the numbers: ");
+    vecRnd[i] = sc.nextInt();
+    readArray(vecRnd, i + 1, sc);
+  }
+
+  public static void bubbleRecursive(int vecRnd[], int j, int k) {
+    if (j == vecRnd.length - 1) {
+      return;
+    } else if (k == vecRnd.length - j - 1) {
+      bubbleRecursive(vecRnd, j + 1, 0);
     } else {
-      if (j == i) {
-        System.out.print(vecRnd[j] + " ");
-      }
-      bubbleRecursive(vecRnd, i, j + 1);
+      //Put here the bubbleSort
+      if (vecRnd[k] > vecRnd[k + 1]) {
+        int flagHelper = vecRnd[k];
+        vecRnd[k] = vecRnd[k + 1];
+        vecRnd[k + 1] = flagHelper;
+        }
+      bubbleRecursive(vecRnd, j, k + 1);
     }
   }
 }

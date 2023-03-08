@@ -1,49 +1,31 @@
 import java.util.Scanner
 
-fun main() {
+fun main(args: Array<String>) {
   val element = Scanner(System.`in`)
-
   println("Write the size of your array: ")
-  val size = element.nextInt()
 
+  val size = element.nextInt()
   val i = 0
 
   val sideA = arrayOfNulls<Long>(size)
   val sideB = arrayOfNulls<Long>(sideA.size)
   val sideC = arrayOfNulls<Long>(sideA.size)
 
-  readSideA(sideA, element, i)
-  readSideB(sideB, element, i)
-  readSideC(sideC, element, i)
+  triRd(sideA, sideB, sideC, element, i)
   checkS(sideA, sideB, sideC, i)
 }
 
-
-fun readSideA(sideA: Array<Long?>, `object`: Scanner, index: Int) {
-  if (index == sideA.size) {
+fun triRd(A: Array<Long?>, B: Array<Long?>, C: Array<Long?>, sc: Scanner, i: Int) {
+  if (i == A.size || i == B.size || i == C.size) {
     return
   }
   print("Write the length of side A: ")
-  sideA[index] = `object`.nextLong()
-  readSideA(sideA, `object`, index + 1)
-}
-
-fun readSideB(sideB: Array<Long?>, `object`: Scanner, index: Int) {
-  if (index == sideB.size) {
-    return
-  }
+  A[i] = sc.nextLong()
   print("Write the length of side B: ")
-  sideB[index] = `object`.nextLong()
-  readSideB(sideB, `object`, index + 1)
-}
-
-fun readSideC(sideC: Array<Long?>, `object`: Scanner, index: Int) {
-  if (index == sideC.size) {
-    return
-  }
-  print("Write the length of side C: ")
-  sideC[index] = `object`.nextLong()
-  readSideC(sideC, `object`, index + 1)
+  B[i] = sc.nextLong()
+  print("Write the length of side C ")
+  C[i] = sc.nextLong()
+  triRd(A, B, C, sc, i + 1)
 }
 
 fun checkS(sdA: Array<Long?>, sdB: Array<Long?>, sdC: Array<Long?>, i: Int) {

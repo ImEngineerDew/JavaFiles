@@ -25,7 +25,7 @@ public class TrianglesRecursive {
     A[i] = sc.nextLong();
     System.out.print("Write the length of side B: ");
     B[i] = sc.nextLong();
-    System.out.print("Write the length of side C: ");
+    System.out.print("Write the length of side C ");
     C[i] = sc.nextLong();
     triRd(A,B,C,sc,i+1);
   }

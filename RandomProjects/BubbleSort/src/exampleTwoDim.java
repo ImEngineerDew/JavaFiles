@@ -13,8 +13,11 @@ public class exampleTwoDim {
 
     int vectorList[] = new int[size];
     readArray(vectorList, i, obj);
-    bubbleRecursive(vectorList, i, j);
+
+    int resolution[] = bubbleRecursive(vectorList, i, j);
     showBubble(vectorList, i);
+    System.out.println(resolution[1]);
+    System.out.println(resolution[0]);
   }
 
   public static void showBubble(int vecRnd[], int i) {
@@ -34,19 +37,27 @@ public class exampleTwoDim {
     readArray(vecRnd, i + 1, sc);
   }
 
-  public static void bubbleRecursive(int vecRnd[], int j, int k) {
+  public static int[] bubbleRecursive(int vecRnd[], int j, int k) {
+    int[] resolution = new int[]{0, 0};
     if (j == vecRnd.length - 1) {
-      return;
+      return resolution;
     } else if (k == vecRnd.length - j - 1) {
-      bubbleRecursive(vecRnd, j + 1, 0);
+      int[] next = bubbleRecursive(vecRnd, j + 1, 0);
+      resolution[0] += next[0];
+      resolution[1] += next[1] + 1;
+      return resolution;
     } else {
-      //Put here the bubbleSort
+      // Put here the bubbleSort
+      int[] next = bubbleRecursive(vecRnd, j, k + 1);
+      resolution[0] += next[0];
+      resolution[1] += next[1];
       if (vecRnd[k] > vecRnd[k + 1]) {
         int flagHelper = vecRnd[k];
         vecRnd[k] = vecRnd[k + 1];
         vecRnd[k + 1] = flagHelper;
-        }
-      bubbleRecursive(vecRnd, j, k + 1);
+        resolution[0]++;
+      }
+      return resolution;
     }
   }
 }

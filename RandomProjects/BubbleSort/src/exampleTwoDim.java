@@ -14,6 +14,7 @@ public class exampleTwoDim {
     showBubble(vectorList, 0);
   }
 
+  /** This recursive method can show the array **/
   public static void showBubble(Integer vecRnd[], Integer index) {
     if (index.equals(vecRnd.length)) {
       return;
@@ -22,6 +23,7 @@ public class exampleTwoDim {
     showBubble(vecRnd, index + 1);
   }
 
+  /** This recursive method read by keyboard the numbers on Scanner class **/
   public static void readArray(Integer vecRnd[],  Scanner sc,Integer index) {
     if (index.equals(vecRnd.length)) {
       return;

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
 
-    int i, k = 0;
+    int i;
     int swaps = 0, passes = 0;
     Scanner object = new Scanner(System.in);
 
@@ -18,16 +18,16 @@ public class Main {
       System.out.print("Write the numbers: ");
       vectorRandom[i] = object.nextInt();
     }
-
-    for (k = 0; k < vectorRandom.length - 1; k++) {
-      boolean isSwapped = false;
-      for (int l = 0; l < (vectorRandom.length) - k - 1; l++) {
+    boolean isSwapped = true;
+    for (int k = vectorRandom.length-1;  k > 0 && isSwapped; k--) {
+      isSwapped = false;
+      for (int l = 0; l < k; l++) {
         if (vectorRandom[l] > vectorRandom[l + 1]) {
           flagHelper = vectorRandom[l];
           vectorRandom[l] = vectorRandom[l + 1];
           vectorRandom[l + 1] = flagHelper;
-          swaps++;
           isSwapped = true;
+          swaps++;
         }
       }
       passes++;

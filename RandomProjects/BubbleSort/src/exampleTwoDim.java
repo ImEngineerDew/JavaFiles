@@ -9,9 +9,31 @@ public class exampleTwoDim {
     int size = obj.nextInt();
 
     Integer vectorList[] = new Integer[size];
+    Integer swapsAndPasses[] = new Integer[vectorList.length];
 
     readArray(vectorList, obj,0);
     showBubble(vectorList, 0);
+    bubbleSortRecursive(vectorList,0,swapsAndPasses);
+  }
+
+  public static void bubbleSortRecursive(Integer[] vectorRandom, int k, Integer[] swapsPasses) {
+    if (k == 0) {
+      return;
+    }
+    boolean isSwapped = false;
+    for (int l = 0; l < k; l++) {
+      if (vectorRandom[l] > vectorRandom[l + 1]) {
+        int flagHelper = vectorRandom[l];
+        vectorRandom[l] = vectorRandom[l + 1];
+        vectorRandom[l + 1] = flagHelper;
+        isSwapped = true;
+        swapsPasses[0]++; /** Increase swaps **/
+      }
+    }
+    swapsPasses[1]++; /** Increase passes **/
+    if (isSwapped) {
+      bubbleSortRecursive(vectorRandom, k-1, swapsPasses);
+    }
   }
 
   /** This recursive method can show the array **/

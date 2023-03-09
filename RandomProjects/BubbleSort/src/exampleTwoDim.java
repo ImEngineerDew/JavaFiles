@@ -12,7 +12,7 @@ public class exampleTwoDim {
 
     readArray(vectorList, obj, 0);
     showBubble(vectorList, 0);
-    bubbleSortRecursive(vectorList, size - 1, swapsAndPasses);
+    bubbleSrt(vectorList, size - 1, swapsAndPasses);
 
     System.out.println("Passes: " + swapsAndPasses[1]);
     System.out.println("Swaps: " + swapsAndPasses[0]);
@@ -36,23 +36,23 @@ public class exampleTwoDim {
     readArray(vecRnd, sc, index + 1);
   }
   /** This recursive method executes the bubblesort **/
-  public static void bubbleSortRecursive(Integer[] vectorRandom, Integer k, Integer[] swapsPasses) {
-    if (k.equals(0)) {
+  public static void bubbleSrt(Integer[] vecRnd, Integer k, Integer[] swapsPasses) {
+    if (k.equals(vecRnd.length)) {
       return;
     }
     boolean isSwapped = false;
     for (int l = 0; l < k; l++) {
-      if (vectorRandom[l] > vectorRandom[l + 1]) {
-        int flagHelper = vectorRandom[l];
-        vectorRandom[l] = vectorRandom[l + 1];
-        vectorRandom[l + 1] = flagHelper;
+      if (vecRnd[l] > vecRnd[l + 1]) {
+        int flagHelper = vecRnd[l];
+        vecRnd[l] = vecRnd[l + 1];
+        vecRnd[l + 1] = flagHelper;
         isSwapped = true;
         swapsPasses[0]++; /** Increase swaps **/
       }
     }
     swapsPasses[1]++; /** Increase passes **/
     if (isSwapped) {
-      bubbleSortRecursive(vectorRandom, k - 1, swapsPasses);
+      bubbleSrt(vecRnd, k - 1, swapsPasses);
     }
   }
 }

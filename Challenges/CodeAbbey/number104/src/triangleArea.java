@@ -25,7 +25,7 @@ public class triangleArea
     /** Check if the index is equals to length of our array result[] **/
     if(!index.equals(result.length))
     {
-      System.out.println(result[index]+" ");
+      System.out.printf("%.0f",result[index]+" ");
       resultTriangle(result,index+1);
     }
   }

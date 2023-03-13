@@ -1,3 +1,7 @@
+/*
+$ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
+*/
+
 import java.util.Scanner;
 
 fun main() {

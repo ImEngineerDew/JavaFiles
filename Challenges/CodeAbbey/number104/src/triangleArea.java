@@ -31,12 +31,11 @@ public class triangleArea
   }
   public static void readVector(Double vector[],Scanner sc ,Integer index)
   {
-    if(index.equals(vector.length))
+    if(!index.equals(vector.length))
     {
-      return;
+      vector[index] = sc.nextDouble();
+      readVector(vector,sc,index+1);
     }
-    vector[index] = sc.nextDouble();
-    readVector(vector,sc,index+1);
   }
   public static Double calculateArea(Double vector[])
   {

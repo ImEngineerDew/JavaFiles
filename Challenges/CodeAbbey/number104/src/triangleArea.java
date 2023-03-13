@@ -22,6 +22,7 @@ public class triangleArea
   }
   public static void resultTriangle(Double result[],Integer index)
   {
+    /** Check if the index is equals to length of our array result[] **/
     if(!index.equals(result.length))
     {
       System.out.println(result[index]+" ");
@@ -30,12 +31,14 @@ public class triangleArea
   }
   public static void readVector(Double vector[],Scanner sc ,Integer index)
   {
+    /** Check if the index is equals to length of our array vector[] **/
     if(!index.equals(vector.length))
     {
       vector[index] = sc.nextDouble();
       readVector(vector,sc,index+1);
     }
   }
+  /** This method must return an object of type Double that indicates the calculate the triangle area **/
   public static Double calculateArea(Double vector[])
   {
     Double result = 0.5*Math.abs(((vector[0]*vector[3])+(vector[2]*vector[5])

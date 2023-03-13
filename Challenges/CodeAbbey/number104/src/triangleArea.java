@@ -31,7 +31,7 @@ public class triangleArea
   }
   public static void readVector(Double vector[],Scanner sc ,Integer index)
   {
-    if(index == vector.length)
+    if(index.equals(vector.length))
     {
       return;
     }

@@ -27,7 +27,7 @@ fun resultTriangle(result: Array<Double?>, index: Int) {
   }
 }
 
-fun readVector(vector: Array<Double?>, scg: Scanner, index: Int) {
+fun readVector(vector: Array<Double?>, sc: Scanner, index: Int) {
   /** Check if the index is equals to length of our array vector[]  */
   if (index != vector.size) {
     vector[index] = sc.nextDouble()

@@ -22,12 +22,11 @@ public class triangleArea
   }
   public static void resultTriangle(Double result[],Integer index)
   {
-    if(index.equals(result.length))
+    if(!index.equals(result.length))
     {
-      return;
+      System.out.println(result[index]+" ");
+      resultTriangle(result,index+1);
     }
-    System.out.println(result[index]+" ");
-    resultTriangle(result,index+1);
   }
   public static void readVector(Double vector[],Scanner sc ,Integer index)
   {

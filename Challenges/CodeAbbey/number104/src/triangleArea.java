@@ -38,7 +38,7 @@ public class triangleArea
       readVector(vector,sc,index+1);
     }
   }
-  /** This method must return an object of type Double that indicates the calculate the triangle area **/
+  /** This method must return an object of type Double that indicates to calculate the triangle area **/
   public static Double calculateArea(Double vector[])
   {
     Double result = 0.5*Math.abs(((vector[0]*vector[3])+(vector[2]*vector[5])

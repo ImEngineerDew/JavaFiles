@@ -10,24 +10,19 @@ public class triangleArea
 
     Double result[] = new Double[sizeArr];
     Double vector[] = new Double[6];
-
-    /** This line code call the method readVector and invokes calculateArea to reading this vector **/
-    for(int i = 0; i<sizeArr;i++)
-    {
-      readVector(vector,obj,0);
-      result[i] = calculateArea(vector);
-    }
     /** This line code must print the result **/
-    resultTriangle(result,index);
+    result(result,vector,obj,index);
   }
-  public static void resultTriangle(Double result[],Integer index)
+  public static void result(Double res[],Double vec[],Scanner sc,Integer index)
   {
-    /** Check if the index is equals to length of our array result[] **/
-    if(!index.equals(result.length))
+    /** Check if the index is equals to length of our vector [] and result[] **/
+    if(!index.equals(res.length) && !index.equals(vec.length))
     {
-      System.out.printf("%.1f",result[index].doubleValue());
+      readVector(vec,sc,0);
+      res[index] = calculateArea(vec);
+      System.out.printf("%.1f",res[index].doubleValue());
       System.out.println(" ");
-      resultTriangle(result,index+1);
+      result(res,vec,sc,index+1);
     }
   }
   public static void readVector(Double vector[],Scanner sc ,Integer index)

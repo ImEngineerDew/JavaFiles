@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -7,30 +6,29 @@ public class Main {
     Scanner object = new Scanner(System.in);
 
     System.out.print("Write the size of your array: ");
-    Integer size = object.nextInt();
+    int size = object.nextInt();
 
-    Integer vector[] = new Integer[size];
-
-    Integer s = 0;
-    Integer a = 0, b = 0, c = 0;
+    int vector[] = new int[size];
 
     for (int i = 0; i < vector.length; i++) {
-      System.out.print("Write the number to calulate their squares: ");
-      s = object.nextInt();
-      vector[i] = s;
-    }
+      System.out.print("Write the number to calculate their squares: ");
+      int s = object.nextInt();
 
-    for (a = 1; a < s; a++) {
-      for (b = a + 1; b < s; b++) {
-        c= (int)Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
-        if(a+b+c==s)
-        {
-          if(c>a && c>b && Math.pow(a,2)+Math.pow(b,2) == Math.pow(c,2))
-          {
-            System.out.println(Math.pow(c,2));
+      int cSquared = 0;
+      for (int a = 1; a < s; a++) {
+        for (int b = a + 1; b < s; b++) {
+          int c = (int) Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+          if (a + b + c == s && c > a && c > b && Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
+            cSquared = (int) Math.pow(c, 2);
           }
         }
       }
+      vector[i] = cSquared;
+    }
+
+    System.out.println("Values of c squared:");
+    for (int i = 0; i < vector.length; i++) {
+      System.out.print(vector[i]+" ");
     }
   }
 }

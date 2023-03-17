@@ -9,7 +9,7 @@ public class Main {
       for (int n = 1; n < m; n++) {
         int a = (int)Math.pow(m,2) - n * n;
         int b = 2 * m * n;
-        int c = m * m + n * n;
+        int c =((int)Math.pow(m,2)) + ((int)Math.pow(n,2));
 
         if (a + b + c == s) {
           System.out.println(a + " " + b + " " + c);

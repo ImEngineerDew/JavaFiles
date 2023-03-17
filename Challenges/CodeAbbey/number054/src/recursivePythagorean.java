@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.math.BigInteger;
 
 public class recursivePythagorean {
   public static void main(String args[]) {
@@ -8,7 +7,7 @@ public class recursivePythagorean {
     System.out.print("Write the size of your array: ");
     Integer size = object.nextInt();
 
-    BigInteger pythagoras[] = new BigInteger[size];
+    Integer pythagoras[] = new Integer[size];
 
     readVector(pythagoras, object, 0);
 
@@ -17,19 +16,19 @@ public class recursivePythagorean {
     }
   }
 
-  public static void readVector(BigInteger vec[], Scanner sc, Integer index) {
+  public static void readVector(Integer vec[], Scanner sc, Integer index) {
     if (!index.equals(vec.length)) {
 
       System.out.print("Write the following numbers: ");
       Integer s = sc.nextInt();
-      Integer cSquared = calculateSquaresAux(BigInteger.valueOf(s),BigInteger.ONE,BigInteger.TWO);
+      Integer cSquared = calculateSquaresAux(s, 1, 2);
 
-      vec[index] = BigInteger.valueOf(cSquared);
+      vec[index] = cSquared;
       readVector(vec, sc, index + 1);
     }
   }
 
-  public static int calculateSquaresAux(BigInteger s, BigInteger a, BigInteger b) {
+  public static int calculateSquaresAux(int s, int a, int b) {
     if (a >= s || b >= s) {
       return 0;
     }

@@ -7,7 +7,7 @@ public class recursivePythagorean {
     System.out.print("Write the size of your array: ");
     Integer size = object.nextInt();
 
-    Integer pythagoras[] = new Integer[size];
+    Long pythagoras[] = new Long[size];
 
     readVector(pythagoras, object, 0);
 
@@ -16,31 +16,34 @@ public class recursivePythagorean {
     }
   }
 
-  public static void readVector(Integer vec[], Scanner sc, Integer index) {
+  public static void readVector(Long vec[], Scanner sc, Integer index) {
     if (!index.equals(vec.length)) {
 
       System.out.print("Write the following numbers: ");
-      Integer s = sc.nextInt();
-      Integer cSquared = calculateSquaresAux(s, 1, 2);
+      long s = sc.nextLong();
+      long cSquared = calculateSquaresAux(s, 1, 2);
 
-      vec[index] = cSquared;
+      if (cSquared != 0) {
+        vec[index] = cSquared;
+      } else {
+        System.out.println("No pythagorean triple found for the given sum.");
+      }
+
       readVector(vec, sc, index + 1);
+    } else {
+      System.out.println("Calculation finished.");
     }
   }
 
-  public static int calculateSquaresAux(int s, int a, int b) {
+  public static int calculateSquaresAux(long s, long a, long b) {
     if (a >= s || b >= s) {
       return 0;
     }
-    Integer cSquared = 0;
-    Integer c = (int)Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    long cSquared = 0;
+    long c = (int) Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     if (a + b + c == s && c > a && c > b && Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
-      cSquared = (int)Math.pow(c, 2);
+      cSquared = (int) Math.pow(c, 2);
     }
-    if (b == s-1) {
-      return (cSquared + calculateSquaresAux(s, a + 2, 0));
-    } else {
-      return (cSquared + calculateSquaresAux(s, a, b + 1));
-    }
+    return (int) (cSquared + calculateSquaresAux(s, a + 2, 0));
   }
 }

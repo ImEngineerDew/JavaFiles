@@ -1,3 +1,7 @@
+/*
+$ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
+*/
+
 import java.util.Scanner
 
 fun main() {
@@ -44,3 +48,10 @@ fun calculateSquaresAux(s: Long, m: Long, n: Long): Double {
   }
   return 0.0
 }
+
+/*
+$ cat DATA.lst | java -jar imengineerdew.jar
+48089301276025 80234029449025 76379576890681
+78128362950625 113352071836249 83115768736225
+90359568235225 46018924875625 37827580070569
+*/

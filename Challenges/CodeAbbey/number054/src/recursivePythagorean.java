@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class recursivePythagorean {
@@ -8,42 +9,36 @@ public class recursivePythagorean {
     Integer size = object.nextInt();
 
     Long pythagoras[] = new Long[size];
+    Long s = object.nextLong();
+    readVector(pythagoras, object, s, 0);
 
-    readVector(pythagoras, object, 0);
-
-    for (int i = 0; i < pythagoras.length; i++) {
-      System.out.println(pythagoras[i]);
-    }
+    System.out.println(Arrays.toString(pythagoras));
   }
 
-  public static void readVector(Long vec[], Scanner sc, Integer index) {
+  public static void readVector(Long vec[], Scanner sc, long s, Integer index) {
     if (!index.equals(vec.length)) {
-
-      System.out.print("Write the following numbers: ");
-      long s = sc.nextLong();
-      long cSquared = calculateSquaresAux(s, 1, 2);
-
-      if (cSquared != 0) {
-        vec[index] = cSquared;
-      } else {
-        System.out.println("No pythagorean triple found for the given sum.");
-      }
-
-      readVector(vec, sc, index + 1);
-    } else {
-      System.out.println("Calculation finished.");
+      vec[index] = calculateSquaresAux(s, 1, 2);
+      readVector(vec, sc, s, index + 1);
     }
   }
 
-  public static int calculateSquaresAux(long s, long a, long b) {
-    if (a >= s || b >= s) {
+  public static long calculateSquaresAux(long s, long m, long n) {
+    if (m >= Math.sqrt(s)) {
       return 0;
     }
+    if (n >= m) {
+      calculateSquaresAux(s, m + 1, 1);
+      return 0;
+    }
+    long a = (int) Math.pow(m, 2) - n * n;
+    long b = 2 * m * n;
+    long c = ((int) Math.pow(m, 2)) + ((int) Math.pow(n, 2));
     long cSquared = 0;
-    long c = (int) Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-    if (a + b + c == s && c > a && c > b && Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) {
+
+    if (a + b + c == s) {
+      System.out.println(a + " " + b + " " + c);
       cSquared = (int) Math.pow(c, 2);
     }
-    return (int) (cSquared + calculateSquaresAux(s, a + 2, 0));
+    return cSquared + calculateSquaresAux(s, m, n + 1);
   }
 }

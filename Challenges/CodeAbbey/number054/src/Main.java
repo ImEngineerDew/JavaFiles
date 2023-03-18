@@ -3,7 +3,18 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    int s = input.nextInt();
+
+
+    System.out.println("Write the size of your array: ");
+    Integer size = input.nextInt();
+
+    Long pythagorean[] = new Long[size];
+
+    long s = input.nextInt();
+
+    for(int i=0; i<pythagorean.length; i++) {
+      pythagorean[size] = s;
+    }
 
     for (int m = 2; m <= Math.sqrt(s); m++) {
       for (int n = 1; n < m; n++) {

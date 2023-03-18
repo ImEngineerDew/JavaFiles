@@ -30,21 +30,16 @@ fun showResult(vec: Array<Double?>, index: Int) {
 }
 
 fun calculateSquaresAux(s: Long, m: Long, n: Long): Double {
-  var m = m
-  var n = n
-  m = 2
-  while (m <= Math.sqrt(s.toDouble())) {
-    n = 1
-    while (n < m) {
-      val a = Math.pow(m.toDouble(), 2.0) - n * n
-      val b = 2.0 * m * n
+  for (m in 2..Math.sqrt(s.toDouble()).toInt()) {
+    for (n in 1 until m) {
+      val a = Math.pow(m.toDouble(), 2.0) - Math.pow(n.toDouble(), 2.0)
+      val b = 2.0 * m.toDouble() * n.toDouble()
       val c = Math.pow(m.toDouble(), 2.0) + Math.pow(n.toDouble(), 2.0)
       if (a + b + c == s.toDouble()) {
-        return Math.pow(c, 2.0)
+        val cSquared = Math.pow(c.toDouble(), 2.0)
+        return cSquared
       }
-      n++
     }
-    m++
   }
   return 0.0
 }

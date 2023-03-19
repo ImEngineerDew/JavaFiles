@@ -16,7 +16,7 @@ fun main() {
 fun readVector(vec: Array<Double?>, sc: Scanner, index: Int) {
   if (index != vec.size) {
     val s = sc.nextLong()
-    vec[index] = calculateSquaresAux(s, 1, 2)
+    vec[index] = calculateSquaresAux(s)
     readVector(vec, sc, index + 1)
   }
 }
@@ -29,14 +29,14 @@ fun showResult(vec: Array<Double?>, index: Int) {
   }
 }
 
-fun calculateSquaresAux(s: Long, m: Long, n: Long): Double {
+fun calculateSquaresAux(s: Long): Double {
   for (m in 2..Math.sqrt(s.toDouble()).toInt()) {
     for (n in 1 until m) {
       val a = Math.pow(m.toDouble(), 2.0) - Math.pow(n.toDouble(), 2.0)
       val b = 2.0 * m.toDouble() * n.toDouble()
       val c = Math.pow(m.toDouble(), 2.0) + Math.pow(n.toDouble(), 2.0)
       if (a + b + c == s.toDouble()) {
-        val cSquared = Math.pow(c.toDouble(), 2.0)
+        val cSquared = Math.pow(c, 2.0)
         return cSquared
       }
     }

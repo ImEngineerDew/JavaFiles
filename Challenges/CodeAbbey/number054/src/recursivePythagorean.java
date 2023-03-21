@@ -42,7 +42,7 @@ public class recursivePythagorean {
       }
       return calculateSquaresAux(s, m, n + 1);
     }
-    return calculateSquaresAux(s, m + 1, 1);
+    return calculateSquaresAux(s, m + 1, n);
   }
 }
 

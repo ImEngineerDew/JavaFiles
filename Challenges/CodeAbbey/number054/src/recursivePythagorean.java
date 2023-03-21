@@ -14,7 +14,7 @@ public class recursivePythagorean {
   public static void readVector(Double vec[], Scanner sc, Integer index) {
     if (!index.equals(vec.length)) {
       Long s = sc.nextLong();
-      vec[index] = calculateSquaresAux(s, 1, 2);
+      vec[index] = calculateSquaresAux(s, 2, 1);
       readVector(vec, sc, index + 1);
     }
   }
@@ -42,7 +42,7 @@ public class recursivePythagorean {
       }
       return calculateSquaresAux(s, m, n + 1);
     }
-    return calculateSquaresAux(s, m + 1, n);
+    return calculateSquaresAux(s, m + 1, 1);
   }
 }
 

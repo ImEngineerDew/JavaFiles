@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 fun readVector(vec: Array<Double?>, sc: Scanner, index: Int) {
   if (index != vec.size) {
     val s = sc.nextLong()
-    vec[index] = calculateSquaresAux(s, 1, 2)
+    vec[index] = calculateSquaresAux(s, 2, 1)
     readVector(vec, sc, index + 1)
   }
 }
@@ -40,7 +40,7 @@ fun calculateSquaresAux(s: Long, m: Long, n: Long): Double {
       Math.pow(c, 2.0)
     } else calculateSquaresAux(s, m, n + 1)
   }
-  return calculateSquaresAux(s, m + 1, n)
+  return calculateSquaresAux(s, m + 1, 1)
 }
 
 /*

@@ -2,7 +2,7 @@
 $ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
 */
 
-import java.util.*
+import java.util.Scanner
 
 fun main() {
   val `object` = Scanner(System.`in`)

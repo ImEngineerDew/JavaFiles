@@ -46,7 +46,7 @@ fun calculateSquaresAux(s: Long, m: Long = 2, n: Long = 1): Double {
 }
 
 /*
-$ cat DATA.lst | java -jar imengineerdew.jar
+$ cat DATA.lst | java -Xss256m -jar imengineerdew.jar
 48089301276025 80234029449025 76379576890681
 78128362950625 113352071836249 83115768736225
 90359568235225 46018924875625 37827580070569

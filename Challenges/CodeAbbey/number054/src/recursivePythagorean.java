@@ -28,18 +28,37 @@ public class recursivePythagorean {
   }
 
   public static Double calculateSquaresAux(long s, long m, long n) {
-    for (m = 2; m <= Math.sqrt(s); m++) {
-      for (n = 1; n < m; n++) {
-        Double a = Math.pow(m, 2) - n * n;
-        Double b = 2.0 * m * n;
-        Double c = (Math.pow(m, 2)) + (Math.pow(n, 2));
-
-        if (a + b + c == s) {
-          Double cSquared = Math.pow(c, 2);
-          return cSquared;
-        }
-      }
+    if (m > Math.sqrt(s)) {
+      return 0.0;
     }
-    return 0.0;
+    if (n < m) {
+      Double a = Math.pow(m, 2) - n * n;
+      Double b = 2.0 * m * n;
+      Double c = (Math.pow(m, 2)) + (Math.pow(n, 2));
+
+      if (a + b + c == s) {
+        Double cSquared = Math.pow(c, 2);
+        return cSquared;
+      }
+      return calculateSquaresAux(s, m, n + 1);
+    }
+    return calculateSquaresAux(s, m + 1, 1);
   }
 }
+
+    /**
+     for (m = 2; m <= Math.sqrt(s); m++) {
+     for (n = 1; n < m; n++) {
+     Double a = Math.pow(m, 2) - n * n;
+     Double b = 2.0 * m * n;
+     Double c = (Math.pow(m, 2)) + (Math.pow(n, 2));
+
+     if (a + b + c == s) {
+     Double cSquared = Math.pow(c, 2);
+     return cSquared;
+     }
+     }
+     }
+     return 0.0;
+     }
+     **/

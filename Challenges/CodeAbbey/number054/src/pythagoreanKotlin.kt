@@ -4,11 +4,10 @@ $ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
 
 import java.util.Scanner
 
-fun main() {
+fun main(args: Array<String>) {
   val `object` = Scanner(System.`in`)
   val size = `object`.nextInt()
   val pythagoras = arrayOfNulls<Double>(size)
-
   readVector(pythagoras, `object`, 0)
   showResult(pythagoras, 0)
 }
@@ -16,7 +15,7 @@ fun main() {
 fun readVector(vec: Array<Double?>, sc: Scanner, index: Int) {
   if (index != vec.size) {
     val s = sc.nextLong()
-    vec[index] = calculateSquaresAux(s)
+    vec[index] = calculateSquaresAux(s, 1, 2)
     readVector(vec, sc, index + 1)
   }
 }
@@ -29,7 +28,7 @@ fun showResult(vec: Array<Double?>, index: Int) {
   }
 }
 
-fun calculateSquaresAux(s: Long, m: Long = 2, n: Long = 1): Double {
+fun calculateSquaresAux(s: Long, m: Long, n: Long): Double {
   if (m > Math.sqrt(s.toDouble())) {
     return 0.0
   }
@@ -37,12 +36,11 @@ fun calculateSquaresAux(s: Long, m: Long = 2, n: Long = 1): Double {
     val a = Math.pow(m.toDouble(), 2.0) - n * n
     val b = 2.0 * m * n
     val c = Math.pow(m.toDouble(), 2.0) + Math.pow(n.toDouble(), 2.0)
-
     return if (a + b + c == s.toDouble()) {
       Math.pow(c, 2.0)
-    } else recursivePythagorean.calculateSquaresAux(s, m, n + 1)
+    } else calculateSquaresAux(s, m, n + 1)
   }
-  return recursivePythagorean.calculateSquaresAux(s, m + 1, n)
+  return calculateSquaresAux(s, m + 1, n)
 }
 
 /*

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class recursiveGCD {
@@ -10,7 +11,8 @@ public class recursiveGCD {
     Integer valB[] = new Integer[vector.length];
 
     readVector(valA, valB, object, 0);
-    showVector(valA, valB, 0);
+    Integer gcdVal[] = calculateGCD(valA,valB,0);
+    showVector(valA, valB, gcdVal,0);
   }
 
   public static void readVector(Integer vector[], Integer vectorB[], Scanner sc, Integer index) {
@@ -26,19 +28,19 @@ public class recursiveGCD {
 
   public static Integer[] calculateGCD(Integer[] vector, Integer[] vectorB, Integer index)
   {
-    Integer gcdValue [] = new Integer[vector.length];
-    if(!index.equals(vector) && !index.equals(vectorB));
-    {
-      gcdValue[index] = commonGreaterDivisor(vector[index],vectorB[index]);
-      calculateGCD(vector,vectorB,index+1);
+    if (index == vector.length) {
+      return new Integer[vector.length];
     }
+
+    Integer[] gcdValue = calculateGCD(vector, vectorB, index + 1);
+    gcdValue[index] = commonGreaterDivisor(vector[index], vectorB[index]);
     return gcdValue;
   }
 
-  public static void showVector(Integer vector[], Integer vectorB[], Integer index) {
+  public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer index) {
     if (!index.equals(vector.length)) {
-      System.out.println(vector[index] + " " + vectorB[index]);
-      showVector(vector, vectorB, index + 1);
+      System.out.println(vector[index] + " " + vectorB[index]+" = "+result[index]);
+      showVector(vector, vectorB, result,index + 1);
     }
   }
 

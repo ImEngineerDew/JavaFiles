@@ -11,6 +11,7 @@ public class recursiveGCD
        Integer valB[] = new Integer[vector.length];
 
        readVector(valA,valB,object,0);
+       showVector(valA,valB,0);
     }
 
     public static void readVector(Integer vector[],Integer vectorB[], Scanner sc, Integer index)
@@ -29,7 +30,8 @@ public class recursiveGCD
     public static void showVector(Integer vector[],Integer vectorB[], Integer index)
     {
        if(!index.equals(vector.length)) {
-         System.out.println(vector[index]+"  "+vectorB[index]);
+         System.out.print("Vector a: "+vector[index]+"  ");
+         System.out.print("Vector b: "+vectorB[index]+"  ");
          showVector(vector, vectorB,index + 1);
        }
     }

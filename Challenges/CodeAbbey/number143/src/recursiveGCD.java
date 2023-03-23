@@ -46,7 +46,7 @@ public class recursiveGCD {
 
   public static Integer commonGreaterDivisor(Integer a, Integer b) {
     if (a < b) {
-      return b % a;
+      return commonGreaterDivisor(b,a);
     } else if (b == 0) {
       return a;
     }

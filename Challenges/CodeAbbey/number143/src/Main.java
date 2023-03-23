@@ -12,10 +12,21 @@ public class Main {
 
     System.out.println("Write the third number: ");
     Integer thirdNumber = object.nextInt();
+
+    Integer GCDone = commonGreaterNumber(firstNumber, secondNumber);
+    Integer GCTwo = commonGreaterNumber(GCDone,thirdNumber);
+    System.out.println(GCTWO);
   }
 
-  public static Integer commonGreaterNumber(Integer a, Integer b)
-  {
-
+  public static Integer commonGreaterNumber(Integer a, Integer b) {
+    int result = 0;
+    if (a > b)
+    {
+      result = a % b;
+    } else if (a < b)
+    {
+      result =  b%a;
+    }
+    return result;
   }
 }

@@ -15,14 +15,15 @@ public class Main {
 
     Integer GCDone = commonGreaterDivisor(firstNumber, secondNumber);
     Integer GCTwo = commonGreaterDivisor(GCDone, thirdNumber);
-    System.out.println("The GCD of "+firstNumber+","+secondNumber+","+thirdNumber+": "+GCTwo);
+    System.out.println(GCTwo);
   }
 
   public static Integer commonGreaterDivisor(Integer a, Integer b) {
-    if (b == 0) {
+    if (a < b) {
+      return b % a;
+    } else if (b == 0) {
       return a;
-    } else {
-      return commonGreaterDivisor(b, a%b);
     }
+    return commonGreaterDivisor(b, a % b);
   }
 }

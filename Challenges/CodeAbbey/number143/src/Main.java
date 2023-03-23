@@ -13,20 +13,16 @@ public class Main {
     System.out.println("Write the third number: ");
     Integer thirdNumber = object.nextInt();
 
-    Integer GCDone = commonGreaterNumber(firstNumber, secondNumber);
-    Integer GCTwo = commonGreaterNumber(GCDone,thirdNumber;
-    System.out.println(GCTwo);
+    Integer GCDone = commonGreaterDivisor(firstNumber, secondNumber);
+    Integer GCTwo = commonGreaterDivisor(GCDone, thirdNumber);
+    System.out.println("The GCD of "+firstNumber+","+secondNumber+","+thirdNumber+": "+GCTwo);
   }
 
-  public static Integer commonGreaterNumber(Integer a, Integer b) {
-    int result = 0;
-    if (a > b)
-    {
-      result = a % b;
-    } else if (a < b)
-    {
-      result =  b%a;
+  public static Integer commonGreaterDivisor(Integer a, Integer b) {
+    if (b == 0) {
+      return a;
+    } else {
+      return commonGreaterDivisor(b, a%b);
     }
-    return commonGreaterNumber(a,b);
   }
 }

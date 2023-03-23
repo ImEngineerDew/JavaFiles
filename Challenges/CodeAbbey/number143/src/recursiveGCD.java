@@ -18,10 +18,10 @@ public class recursiveGCD
     {
         if(!index.equals(vector.length))
         {
-           System.out.println("Write the values of vector A: ");
+           System.out.print("Write the values of vector A: ");
            vector[index] = sc.nextInt();
 
-           System.out.println("Write the values of vector B: ");
+           System.out.print("Write the values of vector B: ");
            vectorB[index] = sc.nextInt();
            readVector(vector,vectorB,sc,index+1);
         }
@@ -30,8 +30,7 @@ public class recursiveGCD
     public static void showVector(Integer vector[],Integer vectorB[], Integer index)
     {
        if(!index.equals(vector.length)) {
-         System.out.print("Vector a: "+vector[index]+"  ");
-         System.out.print("Vector b: "+vectorB[index]+"  ");
+         System.out.println(vector[index]+" "+vectorB[index]);
          showVector(vector, vectorB,index + 1);
        }
     }

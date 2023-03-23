@@ -9,5 +9,18 @@ public class recursiveGCD
        Integer vector[] = new Integer[size];
        Integer valA[] = new Integer[vector.length];
        Integer valB[] = new Integer[vector.length];
+
+       readVector(valA,object,0);
+       readVector(valB,object,0);
     }
+
+    public static void readVector(Integer vector[], Scanner sc, Integer index)
+    {
+        if(!index.equals(vector.length))
+        {
+           vector[index] = sc.nextInt();
+           readVector(vector,sc,index+1);
+        }
+    }
+    
 }

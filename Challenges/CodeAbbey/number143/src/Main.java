@@ -14,8 +14,8 @@ public class Main {
     Integer thirdNumber = object.nextInt();
 
     Integer GCDone = commonGreaterNumber(firstNumber, secondNumber);
-    Integer GCTwo = commonGreaterNumber(GCDone,thirdNumber);
-    System.out.println(GCTWO);
+    Integer GCTwo = commonGreaterNumber(GCDone,thirdNumber;
+    System.out.println(GCTwo);
   }
 
   public static Integer commonGreaterNumber(Integer a, Integer b) {
@@ -27,6 +27,6 @@ public class Main {
     {
       result =  b%a;
     }
-    return result;
+    return commonGreaterNumber(a,b);
   }
 }

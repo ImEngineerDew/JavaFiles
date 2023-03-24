@@ -1,7 +1,7 @@
 import java.util.Scanner;
+
 public class modularRecursive {
-  public static void main(String args[])
-  {
+  public static void main(String args[]) {
     Scanner object = new Scanner(System.in);
     Integer size = object.nextInt();
 
@@ -9,33 +9,39 @@ public class modularRecursive {
     Long exp[] = new Long[base.length];
     Long module[] = new Long[base.length];
 
-    readVector(base,exp,module,object,0);
-   }
+    readVector(base, exp, module, object, 0);
+    Long calculateModule[] = modularCalculator(base, exp, module, 0);
+    showResults(calculateModule,0);
+  }
 
-  public static void readVector(Long vecA[],Long vecB[],Long vecC[],Scanner sc, Integer index)
-  {
-    if(!index.equals(vecA.length))
-    {
-      System.out.println("Please write the number in the vectorA: ");
-      vecA[index] = sc.nextInt();
-      System.out.println("Please write the number in the vectorB: ");
-      vecB[index] = sc.nextInt();
-      System.out.println("Please write the number in the vectorC: ");
-      vecC[index] = sc.nextInt();
+  public static void readVector(Long vecA[], Long vecB[], Long vecC[], Scanner sc, Integer index) {
+    if (!index.equals(vecA.length)) {
+      System.out.print("Please write the base: ");
+      vecA[index] = sc.nextLong();
+      System.out.print("Please write the exp: ");
+      vecB[index] = sc.nextLong();
+      System.out.print("Please write the module number: ");
+      vecC[index] = sc.nextLong();
 
-      readVector(vecA,vecB,vecC,sc,index+1);
+      readVector(vecA, vecB, vecC, sc, index + 1);
     }
   }
 
-  public static Long[] modularCalculator(Long base[],Long exp[],Long module[],Integer index)
-  {
-      if(index == base.length)
-      {
-        return new Long[base.length];
-      }
-      Long moduleC[] = modularCalculator(base,exp,module,index+1);
-      moduleC[index] = calculateModular(base[index],exp[index],module[index]);
-      return moduleC;
+  public static void showResults(Long result[], Integer index) {
+    if(!index.equals(result.length))
+    {
+      System.out.println(result[index]+" ");
+      showResults(result,index+1);
+    }
+  }
+
+  public static Long[] modularCalculator(Long base[], Long exp[], Long module[], Integer index) {
+    if (index == base.length) {
+      return new Long[base.length];
+    }
+    Long moduleC[] = modularCalculator(base, exp, module, index + 1);
+    moduleC[index] = calculateModular(base[index], exp[index], module[index]);
+    return moduleC;
   }
 
   public static Long calculateModular(Long base, Long exp, Long module) {
@@ -51,7 +57,6 @@ public class modularRecursive {
     if (exp % 2 == 1) {
       result = (result * base) % module;
     }
-    System.out.println(temporal);
     return result;
   }
 }

@@ -12,7 +12,7 @@ public class modularRecursive {
     readVector(base,exp,module,object,0);
    }
 
-  public static void readVector(Integer vecA[],Integer vecB[],Integer vecC[],Scanner sc, Integer index)
+  public static void readVector(Long vecA[],Long vecB[],Long vecC[],Scanner sc, Integer index)
   {
     if(!index.equals(vecA.length))
     {
@@ -29,9 +29,14 @@ public class modularRecursive {
 
   public static Long[] modularCalculator(Long base[],Long exp[],Long module[],Integer index)
   {
-
+      if(index == base.length)
+      {
+        return new Long[base.length];
+      }
+      Long moduleC[] = modularCalculator(base,exp,module,index+1);
+      moduleC[index] = calculateModular(base[index],exp[index],module[index]);
+      return moduleC;
   }
-
 
   public static Long calculateModular(Long base, Long exp, Long module) {
     if (module == 1) {

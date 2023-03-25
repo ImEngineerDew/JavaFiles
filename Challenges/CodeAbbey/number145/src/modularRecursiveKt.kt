@@ -1,22 +1,22 @@
 import java.util.Scanner
 
-fun main(args: Array<String>) {
+fun main() {
   val `object` = Scanner(System.`in`)
   val size = `object`.nextInt()
   val base = arrayOfNulls<Long>(size)
   val exp = arrayOfNulls<Long>(base.size)
   val module = arrayOfNulls<Long>(base.size)
-  readVector(base, exp, module, `object`, 0)
+  rV(base, exp, module, `object`, 0)
   val calculateModule = modularCalculator(base, exp, module, 0)
   showResults(calculateModule, 0)
 }
 
-fun readVector(vecA: Array<Long?>, vecB: Array<Long?>, vecC: Array<Long?>, sc: Scanner, index: Int) {
-  if (index != vecA.size) {
-    vecA[index] = sc.nextLong()
-    vecB[index] = sc.nextLong()
-    vecC[index] = sc.nextLong()
-    readVector(vecA, vecB, vecC, sc, index + 1)
+fun rV(A: Array<Long?>, B: Array<Long?>, C: Array<Long?>, s: Scanner, i: Int) {
+  if (i != A.size) {
+    A[i] = s.nextLong()
+    B[i] = s.nextLong()
+    C[i] = s.nextLong()
+    rV(A, B, C, s, i + 1)
   }
 }
 

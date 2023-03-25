@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class modularRecursive {
+public class modularRecursiveKt {
   public static void main(String args[]) {
     Scanner object = new Scanner(System.in);
     Integer size = object.nextInt();

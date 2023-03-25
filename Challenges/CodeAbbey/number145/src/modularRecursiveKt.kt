@@ -7,7 +7,7 @@ fun main() {
   val exp = arrayOfNulls<Long>(base.size)
   val module = arrayOfNulls<Long>(base.size)
   rV(base, exp, module, `object`, 0)
-  val calculateModule = modC(base, exp, module, 0)
+  val calculateModule = mC(base, exp, module, 0)
   showResults(calculateModule, 0)
 }
 
@@ -20,19 +20,19 @@ fun rV(A: Array<Long?>, B: Array<Long?>, C: Array<Long?>, s: Scanner, i: Int) {
   }
 }
 
-fun showResults(result: Array<Long?>, index: Int) {
+fun showResults(result: Array<Any>, index: Int) {
   if (index != result.size) {
     print(result[index].toString() + " ")
     showResults(result, index + 1)
   }
 }
 
-fun modC(base: Array<Long?>, exp: Array<Long?>, mod: Array<Long?>, i: Int): Array<Long?> {
-  if (i == base.size) {
-    return arrayOfNulls(base.size)
+fun mC(b: Array<Long?>, e: Array<Long?>, m: Array<Long?>, i: Int): Array<Any> {
+  if (i == b.size) {
+    return arrayOf(b.size)
   }
-  val moduleC = modC(base, exp, mod, i + 1)
-  moduleC[i] = calculateModular(base[i], exp[i], mod[i])
+  val moduleC = mC(b, e, m, i + 1)
+  moduleC[i] = calculateModular(b[i], e[i], m[i])
   return moduleC
 }
 

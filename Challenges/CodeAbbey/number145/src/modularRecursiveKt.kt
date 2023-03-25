@@ -1,3 +1,7 @@
+/*
+$ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
+*/
+
 import java.util.Scanner
 
 fun main() {
@@ -50,3 +54,11 @@ fun calculateModular(base: Long?, exp: Long?, module: Long?): Long {
   }
   return result
 }
+
+/*
+$ cat DATA.lst | java -jar imengineerdew.jar
+136367979 103171039 211726231 144849531 238404643
+67726704 108081372 118415791 9886996 142331618
+121855120 36435859 52644667 68896566 66501369
+139239273 162763634 87936671 122631119 2811626 52976820
+*/

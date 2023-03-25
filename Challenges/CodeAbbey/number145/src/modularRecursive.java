@@ -52,7 +52,7 @@ public class modularRecursive {
       return 1L;
     }
     Long temporal = calculateModular(base, exp / 2, module);
-    Long result = ((long) Math.pow(temporal, 2) % module);
+    Long result = ((temporal*temporal) % module);
 
     if (exp % 2 == 1) {
       result = (result * base) % module;

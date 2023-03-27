@@ -35,10 +35,11 @@ public class recursiveGCD {
     return gcdValue;
   }
 
-  public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer index) {
-    if (!index.equals(vector.length)) {
-      System.out.println(result[index]);
-      showVector(vector, vectorB, result, index + 1);
+  public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer i) {
+    if (!i.equals(vector.length)) {
+      Integer[] coe = bezoutCoefficients(vector[i], vectorB[i], vector[i], 1, 0, vectorB[i], 0, 1);
+      System.out.println(result[i]+" "+coe[1]+" "+coe[2]);
+      showVector(vector, vectorB, result, i + 1);
     }
   }
 
@@ -46,14 +47,11 @@ public class recursiveGCD {
     if (a < b) {
       return commonGreaterDivisor(b, a);
     } else if (b == 0) {
-      System.out.println("Bezout coefficients: " + 1 + " " + 0);
       return a;
     }
     Integer[] coefficients = bezoutCoefficients(a, b, a, 1, 0, b, 0, 1);
-    //System.out.println("Bezout coefficients: " + coefficients[1] + " " + coefficients[2]);
     return coefficients[0];
   }
-
 
   public static Integer[] bezoutCoefficients(Integer a, Integer b, Integer r, Integer s, Integer t, Integer previousR, Integer previousS, Integer previousT) {
     if (r == 0) {

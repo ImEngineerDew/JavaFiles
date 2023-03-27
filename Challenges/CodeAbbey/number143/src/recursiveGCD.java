@@ -4,6 +4,7 @@ public class recursiveGCD {
   public static void main(String args[]) {
     Scanner object = new Scanner(System.in);
     Integer size = object.nextInt();
+    Integer index = 0;
 
     Integer vector[] = new Integer[size];
     Integer valA[] = new Integer[vector.length];
@@ -11,7 +12,7 @@ public class recursiveGCD {
 
     readVector(valA, valB, object, 0);
     Integer gcdVal[] = calculateGCD(valA, valB, 0);
-    showVector(valA, valB, gcdVal, 0);
+    showVector(valA,valB,gcdVal,0);
   }
 
   public static void readVector(Integer vector[], Integer vectorB[], Scanner sc, Integer index) {
@@ -36,7 +37,7 @@ public class recursiveGCD {
 
   public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer index) {
     if (!index.equals(vector.length)) {
-      System.out.println(vector[index] + " " + vectorB[index] + " = " + result[index]);
+      System.out.println(result[index]);
       showVector(vector, vectorB, result, index + 1);
     }
   }
@@ -49,7 +50,7 @@ public class recursiveGCD {
       return a;
     }
     Integer[] coefficients = bezoutCoefficients(a, b, a, 1, 0, b, 0, 1);
-    System.out.println("Bezout coefficients: " + coefficients[1] + " " + coefficients[2]);
+    //System.out.println("Bezout coefficients: " + coefficients[1] + " " + coefficients[2]);
     return coefficients[0];
   }
 

@@ -29,12 +29,10 @@ public class recursiveGCD {
     if (index == vector.length) {
       return new Integer[vector.length];
     }
-
     Integer[] gcdValue = calculateGCD(vector, vectorB, index + 1);
     gcdValue[index] = commonGreaterDivisor(vector[index], vectorB[index]);
     return gcdValue;
   }
-
 
   public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer index) {
     if (!index.equals(vector.length)) {

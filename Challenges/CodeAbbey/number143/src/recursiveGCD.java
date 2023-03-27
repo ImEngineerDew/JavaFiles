@@ -11,33 +11,33 @@ public class recursiveGCD {
     Integer valB[] = new Integer[vector.length];
 
     rV(valA, valB, object, index);
-    Integer gcdVal[] = calculateGCD(valA, valB, index);
-    showV(valA, valB, gcdVal, index);
+    Integer gcdVal[] = calcGCD(valA, valB, index);
+    shV(valA, valB, gcdVal, index);
   }
 
-  public static void rV(Integer vector[], Integer vectorB[], Scanner sc, Integer i) {
-    if (!i.equals(vector.length)) {
-      vector[i] = sc.nextInt();
-      vectorB[i] = sc.nextInt();
+  public static void rV(Integer vA[], Integer vB[], Scanner sc, Integer indx) {
+    if (!indx.equals(vA.length)) {
+      vA[indx] = sc.nextInt();
+      vB[indx] = sc.nextInt();
 
-      rV(vector, vectorB, sc, i + 1);
+      rV(vA, vB, sc, indx + 1);
     }
   }
 
-  public static Integer[] calculateGCD(Integer[] vector, Integer[] vectorB, Integer index) {
-    if (index == vector.length) {
-      return new Integer[vector.length];
+  public static Integer[] calcGCD(Integer[] vA, Integer[] vB, Integer indx) {
+    if (indx == vA.length) {
+      return new Integer[vA.length];
     }
-    Integer[] gcdValue = calculateGCD(vector, vectorB, index + 1);
-    gcdValue[index] = commonGreaterDivisor(vector[index], vectorB[index]);
+    Integer[] gcdValue = calcGCD(vA, vB, indx + 1);
+    gcdValue[indx] = commonGreaterDivisor(vA[indx], vB[indx]);
     return gcdValue;
   }
 
-  public static void showV(Integer vector[], Integer vectorB[], Integer result[], Integer i) {
-    if (!i.equals(vector.length)) {
-      Integer[] coe = bezout(vector[i], vectorB[i], vector[i], 1, 0, vectorB[i], 0, 1);
-      System.out.println(result[i] + " " + coe[1] + " " + coe[2]);
-      showV(vector, vectorB, result, i + 1);
+  public static void shV(Integer vA[], Integer vB[], Integer rs[], Integer i) {
+    if (!i.equals(vA.length)) {
+      int[] coe = bezout(vA[i], vB[i], vA[i], 1, 0, vB[i], 0, 1);
+      System.out.println(rs[i] + " " + coe[1] + " " + coe[2]);
+      shV(vA, vB, rs, i + 1);
     }
   }
 
@@ -47,29 +47,29 @@ public class recursiveGCD {
     } else if (b == 0) {
       return a;
     }
-    Integer[] coefficients = bezout(a, b, a, 1, 0, b, 0, 1);
+    int[] coefficients = bezout(a, b, a, 1, 0, b, 0, 1);
     return coefficients[0];
   }
 
-  public static Integer[] bezout(Integer a, Integer b, Integer r, Integer s, Integer t, Integer previousR, Integer previousS, Integer previousT) {
+  static int[] bezout(int a, int b, int r, int s, int t, int x, int y, int z) {
     if (r == 0) {
-      Integer result[] = {previousR, previousS, previousT};
+      int result[] = {x, y, z};
       return result;
     } else {
-      Integer quotient = previousR / r;
-      Integer temp = previousR % r;
-      previousR = r;
+      int quotient = x / r;
+      int temp = x % r;
+      x = r;
       r = temp;
 
-      temp = previousS - quotient * s;
-      previousS = s;
+      temp = y - quotient * s;
+      y = s;
       s = temp;
 
-      temp = previousT - quotient * t;
-      previousT = t;
+      temp = z - quotient * t;
+      z = t;
       t = temp;
 
-      return bezout(a, b, r, s, t, previousR, previousS, previousT);
+      return bezout(a, b, r, s, t, x, y, z);
     }
   }
 }

@@ -35,7 +35,7 @@ fun calcGCD(vA: Array<Int?>, vB: Array<Int?>, index: Int): Array<Int?> {
 
 fun shV(vA: Array<Int?>, vB: Array<Int?>, rs: Array<Int?>, i: Int) {
   if (i != vA.size) {
-    val coe = bezout(vA[i]!!, vB[i]!!, vA[i]!!, 1, 0, vB[i]!!, 0, 1)
+    val coe = bezout(vA[i]!!, vB[i]!!)
     println(rs[i].toString() + " " + coe[1] + " " + coe[2])
     shV(vA, vB, rs, i + 1)
   }
@@ -47,34 +47,30 @@ fun commonGreaterDivisor(a: Int, b: Int): Int {
   } else if (b == 0) {
     return a
   }
-  val coefficients = bezout(a, b, a, 1, 0, b, 0, 1)
+  val coefficients = bezout(a, b)
   return coefficients[0]
 }
 
-fun bezout(
-  a: Int, b: Int, r: Int, s: Int, t: Int, x: Int, y: Int, z: Int
-): IntArray {
-  var r = r
-  var s = s
-  var t = t
-  var x = x
-  var y = y
-  var z = z
-  return if (r == 0) {
-    intArrayOf(x, y, z)
-  } else {
-    val quotient = x / r
-    var temp = x % r
-    x = r
-    r = temp
-    temp = y - quotient * s
-    y = s
-    s = temp
-    temp = z - quotient * t
-    z = t
-    t = temp
-    bezout(a, b, r, s, t, x, y, z)
+fun bezout(a: Int, b: Int): IntArray {
+  var r = a
+  var s = 1
+  var t = 0
+  var x = b
+  var y = 0
+  var z = 1
+  while (x != 0) {
+    val quotient = r / x
+    var temp = r % x
+    r = x
+    x = temp
+    temp = s - quotient * y
+    s = y
+    y = temp
+    temp = t - quotient * z
+    t = z
+    z = temp
   }
+  return intArrayOf(r, s, t)
 }
 
 /*

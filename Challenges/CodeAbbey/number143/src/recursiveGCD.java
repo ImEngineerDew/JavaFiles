@@ -10,26 +10,26 @@ public class recursiveGCD {
     Integer valA[] = new Integer[vector.length];
     Integer valB[] = new Integer[vector.length];
 
-    rV(valA, valB, object, index);
+    r(valA, valB, object, index);
     Integer gcdVal[] = calcGCD(valA, valB, index);
     shV(valA, valB, gcdVal, index);
   }
 
-  public static void rV(Integer vA[], Integer vB[], Scanner sc, Integer indx) {
-    if (!indx.equals(vA.length)) {
-      vA[indx] = sc.nextInt();
-      vB[indx] = sc.nextInt();
+  public static void r(Integer vA[], Integer vB[], Scanner sc, Integer index) {
+    if (!index.equals(vA.length)) {
+      vA[index] = sc.nextInt();
+      vB[index] = sc.nextInt();
 
-      rV(vA, vB, sc, indx + 1);
+      r(vA, vB, sc, index + 1);
     }
   }
 
-  public static Integer[] calcGCD(Integer[] vA, Integer[] vB, Integer indx) {
-    if (indx == vA.length) {
+  public static Integer[] calcGCD(Integer[] vA, Integer[] vB, Integer index) {
+    if (index == vA.length) {
       return new Integer[vA.length];
     }
-    Integer[] gcdValue = calcGCD(vA, vB, indx + 1);
-    gcdValue[indx] = commonGreaterDivisor(vA[indx], vB[indx]);
+    Integer[] gcdValue = calcGCD(vA, vB, index + 1);
+    gcdValue[index] = commonGreaterDivisor(vA[index], vB[index]);
     return gcdValue;
   }
 

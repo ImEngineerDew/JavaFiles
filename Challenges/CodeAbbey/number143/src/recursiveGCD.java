@@ -10,18 +10,16 @@ public class recursiveGCD {
     Integer valA[] = new Integer[vector.length];
     Integer valB[] = new Integer[vector.length];
 
-    readVector(valA, valB, object, 0);
-    Integer gcdVal[] = calculateGCD(valA, valB, 0);
-    showVector(valA,valB,gcdVal,0);
+    readVector(valA, valB, object, index);
+    Integer gcdVal[] = calculateGCD(valA, valB, index);
+    showV(valA, valB, gcdVal, index);
   }
 
   public static void readVector(Integer vector[], Integer vectorB[], Scanner sc, Integer index) {
     if (!index.equals(vector.length)) {
-      //System.out.print("Write the values of vector A: ");
       vector[index] = sc.nextInt();
-
-      //System.out.print("Write the values of vector B: ");
       vectorB[index] = sc.nextInt();
+
       readVector(vector, vectorB, sc, index + 1);
     }
   }
@@ -35,11 +33,11 @@ public class recursiveGCD {
     return gcdValue;
   }
 
-  public static void showVector(Integer vector[], Integer vectorB[], Integer result[], Integer i) {
+  public static void showV(Integer vector[], Integer vectorB[], Integer result[], Integer i) {
     if (!i.equals(vector.length)) {
-      Integer[] coe = bezoutCoefficients(vector[i], vectorB[i], vector[i], 1, 0, vectorB[i], 0, 1);
-      System.out.println(result[i]+" "+coe[1]+" "+coe[2]);
-      showVector(vector, vectorB, result, i + 1);
+      Integer[] coe = bezout(vector[i], vectorB[i], vector[i], 1, 0, vectorB[i], 0, 1);
+      System.out.println(result[i] + " " + coe[1] + " " + coe[2]);
+      showV(vector, vectorB, result, i + 1);
     }
   }
 
@@ -49,11 +47,11 @@ public class recursiveGCD {
     } else if (b == 0) {
       return a;
     }
-    Integer[] coefficients = bezoutCoefficients(a, b, a, 1, 0, b, 0, 1);
+    Integer[] coefficients = bezout(a, b, a, 1, 0, b, 0, 1);
     return coefficients[0];
   }
 
-  public static Integer[] bezoutCoefficients(Integer a, Integer b, Integer r, Integer s, Integer t, Integer previousR, Integer previousS, Integer previousT) {
+  public static Integer[] bezout(Integer a, Integer b, Integer r, Integer s, Integer t, Integer previousR, Integer previousS, Integer previousT) {
     if (r == 0) {
       Integer result[] = {previousR, previousS, previousT};
       return result;
@@ -71,7 +69,7 @@ public class recursiveGCD {
       previousT = t;
       t = temp;
 
-      return bezoutCoefficients(a, b, r, s, t, previousR, previousS, previousT);
+      return bezout(a, b, r, s, t, previousR, previousS, previousT);
     }
   }
 }

@@ -11,33 +11,33 @@ fun main() {
   val vector = arrayOfNulls<Int>(size)
   val valA = arrayOfNulls<Int>(vector.size)
   val valB = arrayOfNulls<Int>(vector.size)
-  r(valA, valB, `object`, index)
-  val gcdVal = calcGCD(valA, valB, index)
-  shV(valA, valB, gcdVal, index)
+  readVector(valA, valB, `object`, index)
+  val gcdVal = calculateGCD(valA, valB, index)
+  showVector(valA, valB, gcdVal, index)
 }
 
-fun r(vA: Array<Int?>, vB: Array<Int?>, sc: Scanner, index: Int) {
+fun readVector(vA: Array<Int?>, vB: Array<Int?>, sc: Scanner, index: Int) {
   if (index != vA.size) {
     vA[index] = sc.nextInt()
     vB[index] = sc.nextInt()
-    r(vA, vB, sc, index + 1)
+    readVector(vA, vB, sc, index + 1)
   }
 }
 
-fun calcGCD(vA: Array<Int?>, vB: Array<Int?>, index: Int): Array<Int?> {
+fun calculateGCD(vA: Array<Int?>, vB: Array<Int?>, index: Int): Array<Int?> {
   if (index == vA.size) {
     return arrayOfNulls(vA.size)
   }
-  val gcdValue = calcGCD(vA, vB, index + 1)
+  val gcdValue = calculateGCD(vA, vB, index + 1)
   gcdValue[index] = commonGreaterDivisor(vA[index]!!, vB[index]!!)
   return gcdValue
 }
 
-fun shV(vA: Array<Int?>, vB: Array<Int?>, rs: Array<Int?>, i: Int) {
+fun showVector(vA: Array<Int?>, vB: Array<Int?>, rs: Array<Int?>, i: Int) {
   if (i != vA.size) {
     val coe = bezout(vA[i]!!, vB[i]!!)
     println(rs[i].toString() + " " + coe[1] + " " + coe[2])
-    shV(vA, vB, rs, i + 1)
+    showVector(vA, vB, rs, i + 1)
   }
 }
 
@@ -100,4 +100,4 @@ $ cat DATA.lst | java -jar imengineerdew.jar
 1 -6531 1985
 2 6046 -6693
 18 1222 -381
- */
+*/

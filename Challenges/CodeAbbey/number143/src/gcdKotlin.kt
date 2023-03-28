@@ -8,7 +8,7 @@ typealias alpha = Int
 typealias beta = IntArray
 typealias delta = Array<Int?>
 
-fun main(args: Array<String>) {
+fun main() {
   val `object` = Scanner(System.`in`)
   val size = `object`.nextInt()
   val index = 0
@@ -56,23 +56,20 @@ fun commonGreaterDivisor(a: Int, b: Int): alpha {
 }
 
 fun bzt(a: Int, b: Int, r: Int, s: Int, t: Int, x: Int, y: Int, z: Int): beta {
-  if (r == 0) {
-    return intArrayOf(x, y, z)
+  return if (r == 0) {
+    intArrayOf(x, y, z)
   } else {
     val quotient = x / r
     var temp = x % r
-    var x = r
-    var r = temp
+    val otherR = temp
 
     temp = y - quotient * s
-    var y = s
-    var s = temp
+    val otherS = temp
 
     temp = z - quotient * t
-    var z = t
-    var t = temp
+    val otherT = temp
 
-    return bzt(a, b, r, s, t, x, y, z)
+    bzt(a, b, otherR, otherS, otherT, r, s, t)
   }
 }
 

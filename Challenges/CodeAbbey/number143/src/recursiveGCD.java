@@ -53,7 +53,7 @@ public class recursiveGCD {
 
   static int[] bezout(int a, int b, int r, int s, int t, int x, int y, int z) {
     if (r == 0) {
-      int result[] = {x, y, z};
+      int result[] = new int[r];
       return result;
     } else {
       int quotient = x / r;

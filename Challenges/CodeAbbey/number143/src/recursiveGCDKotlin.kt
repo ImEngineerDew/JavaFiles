@@ -35,7 +35,7 @@ fun calcGCD(vA: Array<Int?>, vB: Array<Int?>, index: Int): Array<Int?> {
 
 fun shV(vA: Array<Int?>, vB: Array<Int?>, rs: Array<Int?>, i: Int) {
   if (i != vA.size) {
-    val coe = bezout(vA[i]!!, vB[i]!!, vA[i]!!, 1, 0, vB[i]!!, 0, 1)
+    val coe = b(vA[i]!!, vB[i]!!, vA[i]!!, 1, 0, vB[i]!!, 0, 1)
     println(rs[i].toString() + " " + coe[1] + " " + coe[2])
     shV(vA, vB, rs, i + 1)
   }
@@ -47,13 +47,11 @@ fun commonGreaterDivisor(a: Int, b: Int): Int {
   } else if (b == 0) {
     return a
   }
-  val coefficients = bezout(a, b, a, 1, 0, b, 0, 1)
+  val coefficients = b(a, b, a, 1, 0, b, 0, 1)
   return coefficients[0]
 }
 
-fun bezout(
-  a: Int, b: Int, r: Int, s: Int, t: Int, x: Int, y: Int, z: Int
-): IntArray {
+fun b(a: Int, b: Int, r: Int, s: Int, t: Int, x: Int, y: Int, z: Int): IntArray {
   var r = r
   var s = s
   var t = t
@@ -73,7 +71,7 @@ fun bezout(
     temp = z - quotient * t
     z = t
     t = temp
-    bezout(a, b, r, s, t, x, y, z)
+    b(a, b, r, s, t, x, y, z)
   }
 }
 

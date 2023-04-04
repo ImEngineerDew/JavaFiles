@@ -14,13 +14,13 @@ public class piRecursive {
         BigInteger pi = BigInteger.ZERO;
 
         /** Space to call the recursive method **/
-        System.out.println(piRc(kValue,nValue,radio,diameter,1));
+        System.out.println(pi(kValue,nValue,radio,diameter,1));
     }
-    public static BigInteger piRc(int k, int n, BigInteger radio, BigInteger diameter, int i)
+    public static BigInteger pi(int k, int n, BigInteger rd, BigInteger dm, int i)
     {
         /** Prepare the BigInteger to calculate **/
-        BigInteger middle = diameter.divide(BigInteger.valueOf(2));
-        BigInteger newIssue = radio.pow(2).subtract(middle.pow(2));
+        BigInteger middle = dm.divide(BigInteger.valueOf(2));
+        BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
 
         BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
         BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2));
@@ -28,20 +28,20 @@ public class piRecursive {
         /** Convert the BigDecimal's to BigInteger **/
         BigInteger newRoot = root.toBigInteger();
         BigInteger newPowMiddle = powMiddle.toBigInteger();
-        diameter = newPowMiddle.add(radio.subtract(newRoot).pow(2)).sqrt();
+        dm = newPowMiddle.add(rd.subtract(newRoot).pow(2)).sqrt();
 
         /** Let's calculate the pi number **/
         BigInteger sixValue = BigInteger.valueOf(6);
         BigInteger divideByTwo = BigInteger.TWO;
         BigInteger productPi = BigInteger.valueOf(2).pow(n);
-        BigInteger pi = diameter.multiply(sixValue).multiply(productPi).divide(divideByTwo);
+        BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if(i==n)
         {
             return pi;
         }
         else {
-            return piRc(k,n,radio,diameter, i+1);
+            return pi(k,n,rd,dm, i+1);
         }
     }
 }

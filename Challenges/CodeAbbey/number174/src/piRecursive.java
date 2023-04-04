@@ -11,34 +11,26 @@ public class piRecursive{
 
       int index = 0;
 
-      BigInteger radio = BigInteger.valueOf(10).pow(kValue);
-      BigInteger diameter = radio;
-
       /** That issue can print the pi **/
-      recursivePi(nValue, diameter,index+1);
-
+      recursivePi(kValue, nValue,index+1);
   }
-  public static void recursivePi(int nValue, BigInteger diameter,int index)
+  public static void recursivePi(int kValue, int nValue, int index)
   {
       /** Lets's check that the diameter value is the same of radio taken before **/
-      BigInteger radio = diameter;
+      BigInteger radio = BigInteger.valueOf(10).pow(kValue);
 
       /** The conditiona if works properly at this recursion **/
-      if(index>nValue)
+      if(index<nValue)
       {
-        return;
+          BigInteger middle = radio.divide(BigInteger.valueOf(2));
+          BigInteger newIssue = radio.pow(2).subtract(middle.pow(2));
+
+          BigDecimal sqRoot = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
+          BigDecimal powMiddle =  new BigDecimal(Math.pow(middle.doubleValue(),2));
+
+          /** Debbuging this code **/
+          System.out.println(index+": "+middle+" "+newIssue);
+          recursivePi(kValue,nValue,index+1);
       }
-      BigInteger middle = diameter.divide(BigInteger.valueOf(2));
-      BigInteger newIssue = radio.pow(2).subtract(middle.pow(2));
-
-      BigDecimal sqRoot = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
-      BigDecimal powMiddle =  new BigDecimal(Math.pow(middle.doubleValue(),2));
-
-      /** Debbuging this code **/
-      System.out.println(index+": "+middle+" "+newIssue);
-
-
-      recursivePi(nValue, diameter,index+1);
-
   }
 }

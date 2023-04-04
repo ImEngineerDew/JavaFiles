@@ -13,10 +13,10 @@ public class piRecursive {
         BigInteger diameter = radio;
 
         /** Space to call the recursive method **/
-        System.out.println(pi(kValue,nValue,radio,diameter,1));
+        System.out.println(pi(kValue, nValue, radio, diameter, 1));
     }
-    public static BigInteger pi(int k, int n, BigInteger rd, BigInteger dm, int i)
-    {
+
+    public static BigInteger pi(int k, int n, BigInteger rd, BigInteger dm, int i) {
         /** Prepare the BigInteger to calculate **/
         BigInteger middle = dm.divide(BigInteger.valueOf(2));
         BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
@@ -35,12 +35,10 @@ public class piRecursive {
         BigInteger productPi = BigInteger.valueOf(2).pow(n);
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
-        if(i==n)
-        {
+        if (i == n) {
             return pi;
-        }
-        else {
-            return pi(k,n,rd,dm, i+1);
+        } else {
+            return pi(k, n, rd, dm, i + 1);
         }
     }
 }

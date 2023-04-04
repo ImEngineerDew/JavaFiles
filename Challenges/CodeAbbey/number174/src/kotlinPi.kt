@@ -23,4 +23,23 @@ fun pi(k: Int,n: Int,radio: BigInteger,diameter: BigInteger,index: Int): BigInte
 
     val root = BigDecimal(Math.sqrt(newIssue.toDouble()))
     val powMid = BigDecimal(Math.pow(middle.toDouble(), 2.0))
+
+    /** Convert the BigDecimal's to BigInteger **/
+    val newRoot = root.toBigInteger()
+    val newPowMid = powMid.toBigInteger()
+    val diameter = newPowMid.add(radio.subtract(newRoot).pow(2)).sqrt()
+
+    val sixValue = BigInteger.valueOf(6)
+    val divideByTwo = BigInteger.TWO
+    val productPi = BigInteger.valueOf(2).pow(n)
+    val pi = diameter.multiply(sixValue).multiply(productPi).divide(divideByTwo)
+
+    if(index==n)
+    {
+        return pi
+    }
+    else
+    {
+        return pi(k,n,radio,diameter,index+1)
+    }
 }

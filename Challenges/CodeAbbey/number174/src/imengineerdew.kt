@@ -1,7 +1,8 @@
 /* kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar */
+
 import java.math.BigDecimal
 import java.math.BigInteger
-import java.util.*
+import java.util.Scanner
 import kotlin.math.pow
 import kotlin.math.sqrt
 

@@ -11,7 +11,6 @@ public class piRecursive {
 
         BigInteger radio = BigInteger.TEN.pow(kValue);
         BigInteger diameter = radio;
-        BigInteger pi = BigInteger.ZERO;
 
         /** Space to call the recursive method **/
         System.out.println(pi(kValue,nValue,radio,diameter,1));

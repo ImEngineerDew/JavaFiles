@@ -34,6 +34,9 @@ public class piRecursive{
       BigDecimal sqRoot = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
       BigDecimal powMiddle =  new BigDecimal(Math.pow(middle.doubleValue(),2));
 
+      BigInteger sqRootInt = sqRoot.toBigInteger();
+      BigInteger sqPowMid  = powMiddle.toBigInteger();
+
       System.out.println(index+": "+sqRoot+" "+powMiddle);
       recursivePi(nValue, diameter,index+1);
   }

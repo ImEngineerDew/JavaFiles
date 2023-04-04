@@ -35,9 +35,15 @@ public class piRecursive{
       BigDecimal powMiddle =  new BigDecimal(Math.pow(middle.doubleValue(),2));
 
       BigInteger sqRootInt = sqRoot.toBigInteger();
-      BigInteger sqPowMid  = powMiddle.toBigInteger();
+      BigInteger powMidInt = powMiddle.toBigInteger();
+      diameter = powMidInt.add(radio.subtract(sqRootInt).pow(2)).sqrt();
 
-      System.out.println(index+": "+sqRoot+" "+powMiddle);
+      BigInteger sixValue = BigInteger.valueOf(6);
+      BigInteger divideByTwo = BigInteger.TWO;
+      BigInteger productPi = BigInteger.TWO.pow(nValue);
+      BigInteger pi = diameter.multiply(sixValue).multiply(productPi).divide(divideByTwo);
+
+      System.out.println(index+": "+powMidInt+" "+diameter);
       recursivePi(nValue, diameter,index+1);
   }
 }

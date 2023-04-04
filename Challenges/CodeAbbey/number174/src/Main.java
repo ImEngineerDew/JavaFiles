@@ -34,6 +34,8 @@ public class Main {
       BigInteger divideByTwo = BigInteger.TWO;
       BigInteger productPi = BigInteger.valueOf(2).pow(nValue);
       pi = diameter.multiply(sixValue).multiply(productPi).divide(divideByTwo);
+
+      System.out.println(i+": "+middle+" "+newIssue);
     }
     System.out.println(pi);
   }

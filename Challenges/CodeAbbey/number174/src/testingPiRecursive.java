@@ -31,18 +31,28 @@ public class testingPiRecursive {
 
   public static Integer pi(int k, int n, Double rd, Double dm, int i) {
     Double middle = dm/2.0;
-    Double newIssue = (Math.pow(rd,2)-Math.pow(dm,2));
+    Double newIssue = (Math.pow(rd,2)-Math.pow(middle,2));
+    Double root = Math.sqrt(newIssue);
+    Double powMiddle = Math.pow(middle,2);
+
+    DecimalFormat rootFormat = new DecimalFormat("0");
+    rootFormat.setMaximumIntegerDigits(100);
+
+    DecimalFormat powMiddleFormat = new DecimalFormat("0");
+    powMiddleFormat.setMaximumIntegerDigits(100);
 
     DecimalFormat middleFormat= new DecimalFormat("0");
-    middleFormat.setMaximumIntegerDigits(1000);
+    middleFormat.setMaximumIntegerDigits(100);
 
     DecimalFormat newIssueFormat = new DecimalFormat("0");
-    newIssueFormat.setMaximumIntegerDigits(1000);
+    newIssueFormat.setMaximumIntegerDigits(100);
 
     if(i == n)
     {
       System.out.println("Middle: "+middleFormat.format(middle));
       System.out.println("New Issue: "+newIssueFormat.format(newIssue));
+      System.out.println("Square root: " + rootFormat.format(root));
+      System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
       return 0;
     }
     return pi(k,n,rd,dm,i+1);

@@ -39,6 +39,7 @@ public class piRecursive {
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if (i == n) {
+            System.out.println(newIssue);
             return pi;
         } else {
             return pi(k, n, rd, dm, i + 1);

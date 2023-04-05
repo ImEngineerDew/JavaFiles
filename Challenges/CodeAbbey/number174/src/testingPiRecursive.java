@@ -35,11 +35,16 @@ public class testingPiRecursive {
     Double root = Math.sqrt(newIssue);
     Double powMiddle = Math.pow(middle,2);
 
+    dm = Math.sqrt(powMiddle+Math.pow((rd-root),2));
+
     DecimalFormat rootFormat = new DecimalFormat("0");
     rootFormat.setMaximumIntegerDigits(100);
 
     DecimalFormat powMiddleFormat = new DecimalFormat("0");
     powMiddleFormat.setMaximumIntegerDigits(100);
+
+    DecimalFormat newDiameterFormat = new DecimalFormat("0");
+    newDiameterFormat.setMaximumIntegerDigits(100);
 
     DecimalFormat middleFormat= new DecimalFormat("0");
     middleFormat.setMaximumIntegerDigits(100);
@@ -47,12 +52,17 @@ public class testingPiRecursive {
     DecimalFormat newIssueFormat = new DecimalFormat("0");
     newIssueFormat.setMaximumIntegerDigits(100);
 
+    /** Print inside the recursive loop **/
+    System.out.println(" ");
+    System.out.println("Iteration: "+i);
+    System.out.println("Middle: "+middleFormat.format(middle));
+    System.out.println("New Issue: "+newIssueFormat.format(newIssue));
+    System.out.println("Square root: " + rootFormat.format(root));
+    System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
+    System.out.println("New diameter: "+newDiameterFormat.format(dm));
+
     if(i == n)
     {
-      System.out.println("Middle: "+middleFormat.format(middle));
-      System.out.println("New Issue: "+newIssueFormat.format(newIssue));
-      System.out.println("Square root: " + rootFormat.format(root));
-      System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
       return 0;
     }
     return pi(k,n,rd,dm,i+1);

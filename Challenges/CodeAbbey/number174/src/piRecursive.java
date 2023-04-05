@@ -24,7 +24,6 @@ public class piRecursive {
         BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
 
         MathContext context = MathContext.DECIMAL128;
-
         BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()), context);
         BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2), context);
 

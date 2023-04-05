@@ -29,13 +29,16 @@ public class testingPiRecursive {
     System.out.println(pi(kValue,nValue,radio,diameter,1));
   }
 
-  public static Integer pi(int k, int n, Double rd, Double dm, int i) {
+  public static String pi(int k, int n, Double rd, Double dm, int i) {
     Double middle = dm/2.0;
     Double newIssue = (Math.pow(rd,2)-Math.pow(middle,2));
     Double root = Math.sqrt(newIssue);
     Double powMiddle = Math.pow(middle,2);
 
     dm = Math.sqrt(powMiddle+Math.pow((rd-root),2));
+
+    Double productPi = Math.pow(2.0,n);
+    Double pi = dm*6*productPi/2.0;
 
     DecimalFormat rootFormat = new DecimalFormat("0");
     rootFormat.setMaximumIntegerDigits(100);
@@ -52,6 +55,9 @@ public class testingPiRecursive {
     DecimalFormat newIssueFormat = new DecimalFormat("0");
     newIssueFormat.setMaximumIntegerDigits(100);
 
+    DecimalFormat piFormat = new DecimalFormat("0.0");
+    piFormat.setMaximumIntegerDigits(100);
+
     /** Print inside the recursive loop **/
     System.out.println(" ");
     System.out.println("Iteration: "+i);
@@ -60,11 +66,12 @@ public class testingPiRecursive {
     System.out.println("Square root: " + rootFormat.format(root));
     System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
     System.out.println("New diameter: "+newDiameterFormat.format(dm));
+    System.out.println(" ");
     /** ALRIGHT IT WORKS NOW **/
 
     if(i == n)
     {
-      return 0;
+      return piFormat.format(pi);
     }
     return pi(k,n,rd,dm,i+1);
   }

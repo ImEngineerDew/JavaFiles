@@ -41,7 +41,7 @@ fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, i: Int): alpha {
   if (i == n) {
     return pi
   } else {
-    return pi(k, n, rd, newDm, i + 1)
+    return pi(k, n, rd, newDiameter, i + 1)
   }
 }
 

@@ -60,6 +60,7 @@ public class testingPiRecursive {
     System.out.println("Square root: " + rootFormat.format(root));
     System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
     System.out.println("New diameter: "+newDiameterFormat.format(dm));
+    /** ALRIGHT IT WORKS NOW **/
 
     if(i == n)
     {

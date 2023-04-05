@@ -1,7 +1,7 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.MathContext;
 import java.util.Scanner;
-import java.math.BigInteger;
-import java.math.BigDecimal;
 
 public class piRecursive {
     public static void main(String args[]) {
@@ -23,8 +23,10 @@ public class piRecursive {
         BigInteger middle = dm.divide(BigInteger.valueOf(2));
         BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
 
-        BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()), MathContext.DECIMAL128);
-        BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2),MathContext.DECIMAL128);
+        MathContext context = MathContext.DECIMAL128;
+
+        BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()), context);
+        BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2), context);
 
         /** Convert the BigDecimal's to BigInteger **/
         BigInteger newRoot = root.toBigInteger();
@@ -38,11 +40,13 @@ public class piRecursive {
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if (i == n) {
+            /** This is a depuration code line **/
+            System.out.println("Root: " + root);
+            System.out.println("PowMiddle: " + powMiddle);
             return pi;
         } else {
-            System.out.println("Root: "+root);
-            System.out.println("PowMiddle: "+powMiddle);
             return pi(k, n, rd, dm, i + 1);
+
         }
     }
 }

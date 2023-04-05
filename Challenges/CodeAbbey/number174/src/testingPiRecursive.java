@@ -29,7 +29,7 @@ public class testingPiRecursive {
     System.out.println(pi(kValue,nValue,radio,diameter,1));
   }
 
-  public static String pi(int k, int n, Double rd, Double dm, int i) {
+  public static Double pi(int k, int n, Double rd, Double dm, int i) {
     Double middle = dm/2.0;
     Double newIssue = (Math.pow(rd,2)-Math.pow(middle,2));
     Double root = Math.sqrt(newIssue);
@@ -41,22 +41,22 @@ public class testingPiRecursive {
     Double pi = dm*6*productPi/2.0;
 
     DecimalFormat rootFormat = new DecimalFormat("0");
-    rootFormat.setMaximumIntegerDigits(100);
+    rootFormat.setMaximumIntegerDigits(5);
 
     DecimalFormat powMiddleFormat = new DecimalFormat("0");
-    powMiddleFormat.setMaximumIntegerDigits(100);
+    powMiddleFormat.setMaximumIntegerDigits(5);
 
     DecimalFormat newDiameterFormat = new DecimalFormat("0");
-    newDiameterFormat.setMaximumFractionDigits(100);
+    newDiameterFormat.setMaximumFractionDigits(5);
 
     DecimalFormat middleFormat= new DecimalFormat("0");
-    middleFormat.setMaximumFractionDigits(100);
+    middleFormat.setMaximumFractionDigits(5);
 
     DecimalFormat newIssueFormat = new DecimalFormat("0");
-    newIssueFormat.setMaximumFractionDigits(100);
+    newIssueFormat.setMaximumFractionDigits(5);
 
     DecimalFormat piFormat = new DecimalFormat("0");
-    piFormat.setMaximumFractionDigits(100);
+    piFormat.setMaximumFractionDigits(5);
 
     /** Print inside the recursive loop **/
     System.out.println(" ");
@@ -71,7 +71,7 @@ public class testingPiRecursive {
 
     if(i == n)
     {
-      return piFormat.format(pi);
+      return pi/100;
     }
     return pi(k,n,rd,dm,i+1);
   }

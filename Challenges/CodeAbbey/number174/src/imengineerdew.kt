@@ -2,6 +2,7 @@
 
 import java.math.BigDecimal
 import java.math.BigInteger
+import java.math.MathContext
 import java.util.Scanner
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -25,8 +26,9 @@ fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, i: Int): alpha {
   val middle = dm.divide(BigInteger.valueOf(2))
   val newIssue = rd.pow(2).subtract(middle.pow(2))
 
-  val root = BigDecimal(sqrt(newIssue.toDouble()))
-  val powMiddle = BigDecimal(middle.toDouble().pow(2.0))
+  val context = MathContext.UNLIMITED
+  val root = BigDecimal(sqrt(newIssue.toDouble()),context)
+  val powMiddle = BigDecimal(middle.toDouble().pow(2.0),context)
 
   /** Convert the BigDecimal's to BigInteger **/
   val newRoot = root.toBigInteger()

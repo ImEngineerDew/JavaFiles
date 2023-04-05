@@ -18,9 +18,9 @@ public class RandomBigDecimal {
         BigDecimal resultDown = decimalA.divide(decimalB, new MathContext(30, RoundingMode.DOWN));
         BigDecimal resultFloor = decimalA.divide(decimalB, new MathContext(30, RoundingMode.FLOOR));
         BigDecimal resultBase32 = decimalA.divide(decimalB, new MathContext(32, RoundingMode.HALF_EVEN));
-        BigDecimal resultBase64 = decimalA.divide(decimalB,new MathContext(64,RoundingMode.HALF_EVEN));
+        BigDecimal resultBase64 = decimalA.divide(decimalB, new MathContext(64, RoundingMode.HALF_EVEN));
         BigDecimal resultBase128 = decimalA.divide(decimalB, new MathContext(128, RoundingMode.HALF_EVEN));
-        BigDecimal resultUnlimited = decimalA.divide(decimalB,(MathContext.UNLIMITED));
+        BigDecimal resultUnlimited = decimalA.divide(decimalB, (MathContext.UNLIMITED));
 
         BigDecimal multiply32 = resultBase32.multiply(BigDecimal.valueOf(1000000000));
         BigDecimal multiply64 = resultBase64.multiply(BigDecimal.valueOf(1000000000));
@@ -33,8 +33,8 @@ public class RandomBigDecimal {
         BigInteger unlimited = multiplyUnlimited.toBigInteger();
 
         System.out.println("Base 32: " + base32);
-        System.out.println("Base 64: "+base64);
-        System.out.println("Base 128: " +base128);
-        System.out.println("Unlimited: "+unlimited);
+        System.out.println("Base 64: " + base64);
+        System.out.println("Base 128: " + base128);
+        System.out.println("Unlimited: " + unlimited);
     }
 }

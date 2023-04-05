@@ -20,7 +20,7 @@ fun main() {
   print(pi(kVal, nVal, radio, radio, index))
 }
 
-fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, index: Int): alpha {
+fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, i: Int): alpha {
   /** Prepare to BigInteger to calculate **/
   val middle = dm.divide(BigInteger.valueOf(2))
   val newIssue = rd.pow(2).subtract(middle.pow(2))
@@ -38,10 +38,10 @@ fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, index: Int): alpha {
   val productPi = BigInteger.valueOf(2).pow(n)
   val pi = newDm.multiply(sixValue).multiply(productPi).divide(divideByTwo)
 
-  if (index == n) {
+  if (i == n) {
     return pi
   } else {
-    return pi(k, n, rd, newDm, index + 1)
+    return pi(k, n, rd, newDm, i + 1)
   }
 }
 

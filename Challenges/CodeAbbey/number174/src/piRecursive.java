@@ -6,6 +6,7 @@ public class piRecursive {
     public static void main(String args[]) {
         Scanner object = new Scanner(System.in);
 
+        /** Input values of K and N **/
         int kValue = object.nextInt();
         int nValue = object.nextInt();
 

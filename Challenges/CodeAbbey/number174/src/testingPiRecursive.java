@@ -1,7 +1,7 @@
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import java.lang.*;
 
 public class testingPiRecursive {
   public static void main(String args[]) {
@@ -22,42 +22,42 @@ public class testingPiRecursive {
     Double diameter = bigDiameter.doubleValue();
     DecimalFormat diameterFormat = new DecimalFormat("0");
     diameterFormat.setMaximumIntegerDigits(1000);
-    System.out.println(pi(kValue,nValue,radio,diameter,1));
+
+    System.out.println(pi(kValue, nValue, radio, diameter, 1));
   }
 
-  public static String pi(int k, int n, Double rd, Double dm, int i) {
-    Double middle = dm/2.0;
-    Double newIssue = (Math.pow(rd,2)-Math.pow(middle,2));
+  public static Double pi(int k, int n, Double rd, Double dm, int i) {
+    Double middle = dm / 2.0;
+    Double newIssue = (Math.pow(rd, 2) - Math.pow(middle, 2));
     Double root = Math.sqrt(newIssue);
-    Double powMiddle = Math.pow(middle,2);
+    Double powMiddle = Math.pow(middle, 2);
 
-    dm = Math.sqrt(powMiddle+Math.pow((rd-root),2));
+    dm = Math.sqrt(powMiddle + Math.pow((rd - root), 2));
 
-    Double productPi = Math.pow(2.0,n);
-    Double pi = dm*6*productPi/2.0;
+    Double productPi = Math.pow(2.0, n);
+    Double pi = dm * 6 * productPi / 2.0;
 
     DecimalFormat rootFormat = new DecimalFormat("0");
-    rootFormat.setMaximumIntegerDigits(5);
+    rootFormat.setMaximumIntegerDigits(1000);
 
     DecimalFormat powMiddleFormat = new DecimalFormat("0");
-    powMiddleFormat.setMaximumIntegerDigits(5);
+    powMiddleFormat.setMaximumIntegerDigits(1000);
 
     DecimalFormat newDiameterFormat = new DecimalFormat("0");
-    newDiameterFormat.setMaximumFractionDigits(5);
+    newDiameterFormat.setMaximumFractionDigits(1000);
 
-    DecimalFormat middleFormat= new DecimalFormat("0");
-    middleFormat.setMaximumFractionDigits(5);
+    DecimalFormat middleFormat = new DecimalFormat("0");
+    middleFormat.setMaximumFractionDigits(1000);
 
     DecimalFormat newIssueFormat = new DecimalFormat("0");
-    newIssueFormat.setMaximumFractionDigits(5);
+    newIssueFormat.setMaximumFractionDigits(1000);
 
     DecimalFormat piFormat = new DecimalFormat("0");
-    piFormat.setMaximumFractionDigits(2);
+    piFormat.setMaximumFractionDigits(1000);
 
-    if(i == n)
-    {
-      return piFormat.format(pi);
+    if (i == n) {
+      return pi;
     }
-    return pi(k,n,rd,dm,i+1);
+    return pi(k, n, rd, dm, i + 1);
   }
 }

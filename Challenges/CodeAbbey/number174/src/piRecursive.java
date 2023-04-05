@@ -25,18 +25,8 @@ public class piRecursive {
         BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
 
         MathContext context = MathContext.UNLIMITED;
-        MathContext up = new MathContext(100,RoundingMode.UP);
-        MathContext floor = new MathContext(100,RoundingMode.FLOOR);
-        MathContext ceil = new MathContext(100,RoundingMode.CEILING);
-
         BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()), context);
         BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2), context);
-
-        /** Rounding values **/
-        BigDecimal rootUP = new BigDecimal(Math.sqrt(newIssue.doubleValue()),up);
-        BigDecimal rootFloor = new BigDecimal (Math.sqrt(newIssue.doubleValue()),floor);
-        BigDecimal rootCeil = new BigDecimal (Math.sqrt(newIssue.doubleValue()),ceil);
-
 
         /** Convert the BigDecimal's to BigInteger **/
         BigInteger newRoot = root.toBigInteger();
@@ -50,13 +40,6 @@ public class piRecursive {
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if (i == n) {
-            /** This is a depuration code line **/
-            System.out.println(" ");
-            System.out.println("Middle: "+middle);
-            System.out.println("Root unlimited: " + root);
-            System.out.println("Root up: "+rootUP);
-            System.out.println("Root floor: "+rootFloor);
-            System.out.println("Root ceil: "+rootCeil);
             return pi;
         } else {
             return pi(k, n, rd, dm, i + 1);

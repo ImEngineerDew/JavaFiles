@@ -1,3 +1,5 @@
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.Scanner;
 import java.math.BigInteger;
 import java.math.BigDecimal;
@@ -12,15 +14,15 @@ public class RandomBigDecimal
         BigDecimal decimalA = new BigDecimal(valueA);
         BigDecimal decimalB = new BigDecimal(valueB);
 
-        BigDecimal resultCeiling = decimalA.divide(decimalB,BigDecimal.ROUND_CEILING);
-        BigDecimal resulTHalf = decimalA.divide(decimalB,BigDecimal.ROUND_HALF_EVEN);
-        BigDecimal resultDown = decimalA.divide(decimalB,BigDecimal.ROUND_DOWN);
+        BigDecimal resultCeiling = decimalA.divide(decimalB, new MathContext(20, RoundingMode.CEILING));
+        BigDecimal resultHalf = decimalA.divide(decimalB,new MathContext(20,RoundingMode.HALF_UP));
+        BigDecimal resultDown = decimalA.divide(decimalB, new MathContext(20,RoundingMode.DOWN));
         BigDecimal resultFloor = decimalA.divide(decimalB,BigDecimal.ROUND_FLOOR);
 
-        System.out.println("Result with ceiling: "+resultOne);
-        System.out.println("Result with half even: "+resultTwo);
-        System.out.println("Result with round down: "+resultThree);
-        System.out.println("Result with round floor: "+resultFour);
+        System.out.println("Result with ceiling: "+resultCeiling);
+        System.out.println("Result with half even: "+resultHalf);
+        System.out.println("Result with round down: "+resultDown);
+        System.out.println("Result with round floor: "+resultFloor);
 
 
 

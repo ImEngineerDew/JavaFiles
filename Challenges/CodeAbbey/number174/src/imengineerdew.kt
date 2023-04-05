@@ -26,17 +26,17 @@ fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, i: Int): alpha {
   val newIssue = rd.pow(2).subtract(middle.pow(2))
 
   val root = BigDecimal(sqrt(newIssue.toDouble()))
-  val powMid = BigDecimal(middle.toDouble().pow(2.0))
+  val powMiddle = BigDecimal(middle.toDouble().pow(2.0))
 
   /** Convert the BigDecimal's to BigInteger **/
   val newRoot = root.toBigInteger()
-  val newPowMid = powMid.toBigInteger()
-  val newDm = newPowMid.add(rd.subtract(newRoot).pow(2)).sqrt()
+  val newPowMid = powMiddle.toBigInteger()
+  val newDiameter = newPowMid.add(rd.subtract(newRoot).pow(2)).sqrt()
 
-  val sixValue = BigInteger.valueOf(6)
+  val sixVal = BigInteger.valueOf(6)
   val divideByTwo = BigInteger.TWO
   val productPi = BigInteger.valueOf(2).pow(n)
-  val pi = newDm.multiply(sixValue).multiply(productPi).divide(divideByTwo)
+  val pi = newDiameter.multiply(sixVal).multiply(productPi).divide(divideByTwo)
 
   if (i == n) {
     return pi

@@ -22,14 +22,10 @@ public class testingPiRecursive {
     Double diameter = bigDiameter.doubleValue();
     DecimalFormat diameterFormat = new DecimalFormat("0");
     diameterFormat.setMaximumIntegerDigits(1000);
-
-    //System.out.println("Radio like BigInteger: " + bigRadio);
-    //System.out.println("Radio like Double: " + radioFormat.format(radio));
-    System.out.println("Diameter like Double: "+diameterFormat.format(diameter));
     System.out.println(pi(kValue,nValue,radio,diameter,1));
   }
 
-  public static Double pi(int k, int n, Double rd, Double dm, int i) {
+  public static String pi(int k, int n, Double rd, Double dm, int i) {
     Double middle = dm/2.0;
     Double newIssue = (Math.pow(rd,2)-Math.pow(middle,2));
     Double root = Math.sqrt(newIssue);
@@ -56,22 +52,11 @@ public class testingPiRecursive {
     newIssueFormat.setMaximumFractionDigits(5);
 
     DecimalFormat piFormat = new DecimalFormat("0");
-    piFormat.setMaximumFractionDigits(5);
-
-    /** Print inside the recursive loop **/
-    System.out.println(" ");
-    System.out.println("Iteration: "+i);
-    System.out.println("Middle: "+middleFormat.format(middle));
-    System.out.println("New Issue: "+newIssueFormat.format(newIssue));
-    System.out.println("Square root: " + rootFormat.format(root));
-    System.out.println("Pow middle: "+powMiddleFormat.format(powMiddle));
-    System.out.println("New diameter: "+newDiameterFormat.format(dm));
-    System.out.println(" ");
-    /** ALRIGHT IT WORKS NOW **/
+    piFormat.setMaximumFractionDigits(2);
 
     if(i == n)
     {
-      return pi/100;
+      return piFormat.format(pi);
     }
     return pi(k,n,rd,dm,i+1);
   }

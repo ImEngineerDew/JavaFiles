@@ -23,8 +23,8 @@ public class testingPiRecursive {
     DecimalFormat diameterFormat = new DecimalFormat("0");
     diameterFormat.setMaximumIntegerDigits(1000);
 
-    System.out.println("Radio like BigInteger: " + bigRadio);
-    System.out.println("Radio like Double: " + radioFormat.format(radio));
+    //System.out.println("Radio like BigInteger: " + bigRadio);
+    //System.out.println("Radio like Double: " + radioFormat.format(radio));
     System.out.println("Diameter like Double: "+diameterFormat.format(diameter));
     System.out.println(pi(kValue,nValue,radio,diameter,1));
   }
@@ -36,10 +36,13 @@ public class testingPiRecursive {
     DecimalFormat middleFormat= new DecimalFormat("0");
     middleFormat.setMaximumIntegerDigits(1000);
 
+    DecimalFormat newIssueFormat = new DecimalFormat("0");
+    newIssueFormat.setMaximumIntegerDigits(1000);
+
     if(i == n)
     {
       System.out.println("Middle: "+middleFormat.format(middle));
-      System.out.println("New Issue: "+newIssue);
+      System.out.println("New Issue: "+newIssueFormat.format(newIssue));
       return 0;
     }
     return pi(k,n,rd,dm,i+1);

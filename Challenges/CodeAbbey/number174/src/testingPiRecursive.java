@@ -1,4 +1,3 @@
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.util.Scanner;
@@ -26,7 +25,7 @@ public class testingPiRecursive {
     System.out.println(pi(kValue, nValue, radio, diameter, 1));
   }
 
-  public static Double pi(int k, int n, Double rd, Double dm, int i) {
+  public static String pi(int k, int n, Double rd, Double dm, int i) {
     Double middle = dm / 2.0;
     Double newIssue = (Math.pow(rd, 2) - Math.pow(middle, 2));
     Double root = Math.sqrt(newIssue);
@@ -55,8 +54,11 @@ public class testingPiRecursive {
     DecimalFormat piFormat = new DecimalFormat("0");
     piFormat.setMaximumFractionDigits(1000);
 
+    String piNotification = piFormat.format(pi);
+    String newPi = piNotification.replaceAll("0+$","");
+
     if (i == n) {
-      return pi;
+      return newPi;
     }
     return pi(k, n, rd, dm, i + 1);
   }

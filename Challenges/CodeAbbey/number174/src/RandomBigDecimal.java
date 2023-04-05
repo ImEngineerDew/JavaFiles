@@ -20,11 +20,12 @@ public class RandomBigDecimal {
         BigDecimal resultBase32 = decimalA.divide(decimalB, new MathContext(32, RoundingMode.HALF_EVEN));
         BigDecimal resultBase128 = decimalA.divide(decimalB, new MathContext(128, RoundingMode.HALF_EVEN));
 
+
         System.out.println("ceiling: " + resultCeiling);
         System.out.println("Half up: " + resultHalf);
         System.out.println("round down: " + resultDown);
         System.out.println("round floor: " + resultFloor);
-        System.out.println("Base 32: " + resultBase32);
+        System.out.println("Base 32: " + resultBase32.multiply(BigDecimal.valueOf(1000000000)));
         System.out.println("Base 128: " + resultBase128);
     }
 }

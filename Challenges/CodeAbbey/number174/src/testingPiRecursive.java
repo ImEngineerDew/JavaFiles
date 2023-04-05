@@ -47,16 +47,16 @@ public class testingPiRecursive {
     powMiddleFormat.setMaximumIntegerDigits(100);
 
     DecimalFormat newDiameterFormat = new DecimalFormat("0");
-    newDiameterFormat.setMaximumIntegerDigits(100);
+    newDiameterFormat.setMaximumFractionDigits(100);
 
     DecimalFormat middleFormat= new DecimalFormat("0");
-    middleFormat.setMaximumIntegerDigits(100);
+    middleFormat.setMaximumFractionDigits(100);
 
     DecimalFormat newIssueFormat = new DecimalFormat("0");
-    newIssueFormat.setMaximumIntegerDigits(100);
+    newIssueFormat.setMaximumFractionDigits(100);
 
-    DecimalFormat piFormat = new DecimalFormat("0.0");
-    piFormat.setMaximumIntegerDigits(100);
+    DecimalFormat piFormat = new DecimalFormat("0");
+    piFormat.setMaximumFractionDigits(100);
 
     /** Print inside the recursive loop **/
     System.out.println(" ");

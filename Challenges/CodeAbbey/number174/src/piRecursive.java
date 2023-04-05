@@ -51,6 +51,8 @@ public class piRecursive {
 
         if (i == n) {
             /** This is a depuration code line **/
+            System.out.println(" ");
+            System.out.println("Middle: "+middle);
             System.out.println("Root unlimited: " + root);
             System.out.println("Root up: "+rootUP);
             System.out.println("Root floor: "+rootFloor);

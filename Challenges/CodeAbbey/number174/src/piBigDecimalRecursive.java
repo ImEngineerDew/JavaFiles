@@ -19,12 +19,9 @@ public class piBigDecimalRecursive {
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
     BigDecimal powMiddle = middle.pow(2);
 
-    BigDecimal secondData = rd.subtract(root);
-    BigDecimal powSecondData = secondData.pow(2);
-    BigDecimal sumPowMiddle = powMiddle.add(powSecondData);
-    
-
-
+    BigDecimal secondData = rd.subtract(root);                /** Like radio-root **/
+    BigDecimal powSecondData = secondData.pow(2);          /** Like (radio-root)² **/
+    BigDecimal sumPowMiddle = powMiddle.add(powSecondData);   /** Like powMiddle+ (radio-root)² **/
 
     if(i == n)
     {

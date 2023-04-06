@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class piBigDecimalRecursive {
@@ -7,10 +8,13 @@ public class piBigDecimalRecursive {
     Integer kValue = object.nextInt();
     Integer nValue = object.nextInt();
 
-    BigDecimal radio = BigDecimal.TEN.pow(kValue);
-    BigDecimal diameter = radio;
+    BigInteger radio = BigInteger.TEN.pow(kValue);
+    BigInteger diameter = radio;
 
-    System.out.println(pi(kValue, nValue, radio, diameter, 1));
+    BigDecimal newRadio = new BigDecimal(radio);
+    BigDecimal newDiameter = new BigDecimal(diameter);
+
+    System.out.println(pi(kValue, nValue, newRadio, newDiameter, 1));
   }
 
   public static BigDecimal pi(int k, int n, BigDecimal rd, BigDecimal dmt, int i) {
@@ -19,20 +23,15 @@ public class piBigDecimalRecursive {
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
     BigDecimal powMiddle = middle.pow(2);
 
-    if(i == n)
-    {
+    if (i == n) {
       System.out.println("Middle value: " + middle);
       System.out.println("newIssue: " + newIssue);
       System.out.println("Square root of newIssue: " + root);
-      System.out.println("Pow of middle value: "+powMiddle);
-      System.out.println("New diamter: "+dmt);
+      System.out.println("Pow of middle value: " + powMiddle);
+      System.out.println("New diamter: " + dmt);
       return BigDecimal.valueOf(0);
+    } else {
+      return pi(k, n, rd, dmt, i + 1);
     }
-    else
-    {
-      return pi(k,n,rd,dmt,i+1);
-    }
-
   }
-
 }

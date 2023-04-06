@@ -22,6 +22,7 @@ public class piBigDecimalRecursive {
     BigDecimal newIssue = rd.pow(2).subtract(middle.pow(2));
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
     BigDecimal powMiddle = middle.pow(2);
+    //dmt = powMiddle.add(rd.subtract(root).pow(2)).sqrt();
 
     if (i == n) {
       System.out.println("Middle value: " + middle);

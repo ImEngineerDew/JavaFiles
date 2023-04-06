@@ -23,14 +23,10 @@ public class piRecursive {
         BigInteger middle = dm.divide(BigInteger.valueOf(2));
         BigInteger newIssue = rd.pow(2).subtract(middle.pow(2));
 
-        MathContext context = MathContext.UNLIMITED;
-        BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()), context);
-        BigDecimal powMiddle = new BigDecimal(Math.pow(middle.doubleValue(), 2), context);
+        BigInteger root = newIssue.sqrt();
+        BigInteger powMiddle = middle.pow(2);
 
-        /** Convert the BigDecimal's to BigInteger **/
-        BigInteger newRoot = root.toBigInteger();
-        BigInteger newPowMiddle = powMiddle.toBigInteger();
-        dm = newPowMiddle.add(rd.subtract(newRoot).pow(2)).sqrt();
+        dm = powMiddle.add(rd.subtract(root).pow(2)).sqrt();
 
         /** Let's calculate the pi number **/
         BigInteger sixValue = BigInteger.valueOf(6);
@@ -39,11 +35,6 @@ public class piRecursive {
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if (i == n) {
-            System.out.println("Middle value: " + middle);
-            System.out.println("newIssue: " + newIssue);
-            System.out.println("Square root of newIssue: " + root);
-            System.out.println("Pow of middle value: "+powMiddle);
-            System.out.println("New diamter: "+dm);
             return pi;
         } else {
             return pi(k, n, rd, dm, i + 1);

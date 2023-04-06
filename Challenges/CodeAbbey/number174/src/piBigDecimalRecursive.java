@@ -19,21 +19,14 @@ public class piBigDecimalRecursive {
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
     BigDecimal powMiddle = middle.pow(2);
 
-    Double radio = rd.doubleValue();
-    Double middleDouble = middle.doubleValue();
-    Double newIssueDouble = newIssue.doubleValue();
-    Double rootDouble = root.doubleValue();
-    Double powDouble = powMiddle.doubleValue();
-
-
     if(i == n)
     {
-      System.out.println("Middle value: " + middleDouble);
-      System.out.println("newIssue: " + newIssueDouble);
-      System.out.println("Square root of newIssue: " + rootDouble);
-      System.out.println("Pow of middle value: "+powDouble);
+      System.out.println("Middle value: " + middle);
+      System.out.println("newIssue: " + newIssue);
+      System.out.println("Square root of newIssue: " + root);
+      System.out.println("Pow of middle value: "+powMiddle);
       System.out.println("New diamter: "+dmt);
-      return BigDecimal.ZERO;
+      return BigDecimal.valueOf(0);
     }
     else
     {

@@ -1,11 +1,7 @@
 /* kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar */
 
-import java.math.BigDecimal
 import java.math.BigInteger
-import java.math.MathContext
-import java.util.Scanner
-import kotlin.math.pow
-import kotlin.math.sqrt
+import java.util.*
 
 typealias alpha = BigInteger
 
@@ -22,24 +18,19 @@ fun main() {
 }
 
 fun pi(k: Int, n: Int, rd: BigInteger, dm: BigInteger, i: Int): alpha {
-  /** Prepare to BigInteger to calculate **/
+  /** Using the BigInteger to calculate **/
   val middle = dm.divide(BigInteger.valueOf(2))
   val newIssue = rd.pow(2).subtract(middle.pow(2))
 
-  val context = MathContext.UNLIMITED
-  val root = BigDecimal(sqrt(newIssue.toDouble()),context)
-  val powMiddle = BigDecimal(middle.toDouble().pow(2.0),context)
+  val root = newIssue.sqrt()
+  val powMiddle = middle.pow(2)
+  var newDiameter = powMiddle.add(rd.subtract(root).pow(2)).sqrt()
 
-  /** Convert the BigDecimal's to BigInteger **/
-  val newRoot = root.toBigInteger()
-  val newPowMid = powMiddle.toBigInteger()
-  val newDiameter = newPowMid.add(rd.subtract(newRoot).pow(2)).sqrt()
-
-  val sixVal = BigInteger.valueOf(6)
+  /** Let's calculate the pi number **/
+  val sixValue = BigInteger.valueOf(6)
   val divideByTwo = BigInteger.TWO
   val productPi = BigInteger.valueOf(2).pow(n)
-  val pi = newDiameter.multiply(sixVal).multiply(productPi).divide(divideByTwo)
-
+  val pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo)
   if (i == n) {
     return pi
   } else {

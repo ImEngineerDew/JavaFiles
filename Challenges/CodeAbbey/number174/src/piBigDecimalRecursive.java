@@ -17,11 +17,21 @@ public class piBigDecimalRecursive {
     BigDecimal middle = dmt.divide(BigDecimal.valueOf(2));
     BigDecimal newIssue = rd.pow(2).subtract(middle.pow(2));
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
-    
-    System.out.println("Middle value: " + middle);
-    System.out.println("newIssue: " + newIssue);
-    System.out.println("Square root of newIssue: " + root);
-    return BigDecimal.valueOf(0);
+    BigDecimal powMiddle = middle.pow(2);
+    BigDecimal newDm = 
+
+    if(i == n)
+    {
+      System.out.println("Middle value: " + middle);
+      System.out.println("newIssue: " + newIssue);
+      System.out.println("Square root of newIssue: " + root);
+      System.out.println("Pow of middle value: "+powMiddle);
+      return BigDecimal.valueOf(0);
+    }
+    else
+    {
+      return pi(k,n,rd,newDm,i+1);
+    }
 
   }
 

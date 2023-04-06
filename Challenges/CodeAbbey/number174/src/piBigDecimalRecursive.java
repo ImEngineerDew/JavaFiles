@@ -18,7 +18,13 @@ public class piBigDecimalRecursive {
     BigDecimal newIssue = rd.pow(2).subtract(middle.pow(2));
     BigDecimal root = new BigDecimal(Math.sqrt(newIssue.doubleValue()));
     BigDecimal powMiddle = middle.pow(2);
-    BigDecimal newDm = 
+
+    BigDecimal secondData = rd.subtract(root);
+    BigDecimal powSecondData = secondData.pow(2);
+    BigDecimal sumPowMiddle = powMiddle.add(powSecondData);
+    
+
+
 
     if(i == n)
     {
@@ -30,7 +36,7 @@ public class piBigDecimalRecursive {
     }
     else
     {
-      return pi(k,n,rd,newDm,i+1);
+      return pi(k,n,rd,dmt,i+1);
     }
 
   }

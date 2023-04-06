@@ -39,7 +39,11 @@ public class piRecursive {
         BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
         if (i == n) {
-            System.out.println(newIssue);
+            System.out.println("Middle value: " + middle);
+            System.out.println("newIssue: " + newIssue);
+            System.out.println("Square root of newIssue: " + root);
+            System.out.println("Pow of middle value: "+powMiddle);
+            System.out.println("New diamter: "+dm);
             return pi;
         } else {
             return pi(k, n, rd, dm, i + 1);

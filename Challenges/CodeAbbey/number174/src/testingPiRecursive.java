@@ -58,6 +58,11 @@ public class testingPiRecursive {
     String newPi = piNotification.replaceAll("0+$","");
 
     if (i == n) {
+      System.out.println("Middle value: " + middle);
+      System.out.println("newIssue: " + newIssue);
+      System.out.println("Square root of newIssue: " + root);
+      System.out.println("Pow of middle value: "+powMiddle);
+      System.out.println("New diamter: "+dm);
       return newPi;
     }
     return pi(k, n, rd, dm, i + 1);

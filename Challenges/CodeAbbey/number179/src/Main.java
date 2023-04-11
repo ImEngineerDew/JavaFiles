@@ -22,11 +22,8 @@ public class Main {
         for (int i = 0; i < answer.length(); i++) {
             if (answer.charAt(i) == '1') {
                 onesCount++;
-            } else if (answer.charAt(i) == '0') {
-                zerosCount++;
             }
         }
         System.out.println("Ones count: "+onesCount);
-        System.out.println("Zeros count: "+zerosCount);
     }
 }

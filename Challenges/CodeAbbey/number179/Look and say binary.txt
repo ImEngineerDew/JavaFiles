@@ -30,3 +30,13 @@ Repeat the procedure, and the steps are next:
 
 The result is equals to: 110100
 ======================================================================
+Repeat the procedure, and the steps are the next:
+
+-10 binary digit of 1 (2¹=2)
+-1 binary digit of 0 (2⁰=1)
+-1 binary digit of 1 (2⁰=1)
+-10 binary digit of 0 (2¹=2)
+
+The result is equals to: 101110
+
+And stays here quiet

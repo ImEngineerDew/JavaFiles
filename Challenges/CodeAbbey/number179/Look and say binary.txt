@@ -1,6 +1,6 @@
 The algorithm of Look and say in binary number is the following
 
-See the next binary number:  100011001
+See the next binary number:  100011001 = 281
 
 The steps are the next:
 
@@ -10,7 +10,7 @@ The steps are the next:
 -10 binary digit of 0 (2¹=2)
 -1 binary digit of 1 (2⁰=1)
 
-The result is equals to: 11110101
+The result is equals to: 11110101  = 245
 ======================================================================
 Repeat the procedure, and the steps are next:
 
@@ -20,7 +20,7 @@ Repeat the procedure, and the steps are next:
 -1 binary digit of 0 (2⁰ = 1)
 -1 binary digit of 1 (2⁰ = 1)
 
-The result is equals to: 1001111
+The result is equals to: 1001111 = 79
 ======================================================================
 Repeat the procedure, and the steps are next:
 
@@ -28,7 +28,7 @@ Repeat the procedure, and the steps are next:
 -10 binary digit of 0 (2¹ = 2)
 -100 binary digit of 1 (2² = 4)
 
-The result is equals to: 110100
+The result is equals to: 110100 = 52
 ======================================================================
 Repeat the procedure, and the steps are the next:
 
@@ -37,6 +37,14 @@ Repeat the procedure, and the steps are the next:
 -1 binary digit of 1 (2⁰=1)
 -10 binary digit of 0 (2¹=2)
 
-The result is equals to: 101110
+The result is equals to: 101110 = 46
+======================================================================
+Repeat the procedure, and the steps are the next:
+-1 binary digit of 1 (2⁰=1)
+-1 binary digit of 0 (2⁰=1)
+-11 binary digit of 1 (2¹=2 + 2⁰=1 equals to 3)
+-1 binary digit of 1 (2⁰=1)
+
+The result is equals to 11111 = 31
 
 And stays here quiet

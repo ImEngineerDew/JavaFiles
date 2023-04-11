@@ -46,5 +46,23 @@ Repeat the procedure, and the steps are the next:
 -1 binary digit of 1 (2⁰=1)
 
 The result is equals to 11111 = 31
+======================================================================
+Repeat the procedure, and the steps are the next:
+-101 binary digits of 1 (2²=4 + 2⁰=1 equals to 5)
+
+The result is equals to 101 = 5
+======================================================================
+Repeat the procedure, and the steps are the next:
+-1 binary digit is equals to 1 (2⁰=1)
+-1 binary digit is equals to 0 (2⁰=1)
+-1 binary digit is equals to 1 (2¹=1)
+
+The result is equals to 111 = 7
+======================================================================
+Repeat the procedure, and the steps are the next:
+-11 binary digits is equals to 1 (2¹=2 + 2⁰=1 equals to 3)
+
+The result is equals to 11 = 3
+
 
 And stays here quiet

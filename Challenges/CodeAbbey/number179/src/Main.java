@@ -12,5 +12,6 @@ public class Main {
 
         String answer = integerToBinary(intToBin);
         System.out.println(intToBin+" is equals to: "+answer);
+        System.out.println("Length of this binary: "+answer.length());
     }
 }

@@ -10,14 +10,23 @@ The steps are the next:
 -10 binary digit of 0 (2¹=2)
 -1 binary digit of 1 (2⁰=1)
 
+The result is equals to: 11110101
+======================================================================
+Repeat the procedure, and the steps are next:
 
+-100 binary digit of 1 (2² = 4)
+-1 binary digit of 0 (2⁰ = 1)
+-1 binary digit of 1 (2⁰ = 1)
+-1 binary digit of 0 (2⁰ = 1)
+-1 binary digit of 1 (2⁰ = 1)
 
+The result is equals to: 1001111
+======================================================================
+Repeat the procedure, and the steps are next:
 
+-1 binary digit of 1 (2⁰ = 1)
+-10 binary digit of 0 (2¹ = 2)
+-100 binary digit of 1 (2² = 4)
 
-
-
-
-
-
-
-
+The result is equals to: 110100
+======================================================================

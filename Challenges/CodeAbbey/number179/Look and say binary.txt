@@ -1,0 +1,23 @@
+The algorithm of Look and say in binary number is the following
+
+See the next binary number:  100011001
+
+The steps are the next:
+
+-1 binary digit of 1 (2⁰=1)
+-11 binary digit of 0 (2¹ and 2⁰ = 2+1=3)
+-10 binary digit of 1 (2¹=2)
+-10 binary digit of 0 (2¹=2)
+-1 binary digit of 1 (2⁰=1)
+
+
+
+
+
+
+
+
+
+
+
+

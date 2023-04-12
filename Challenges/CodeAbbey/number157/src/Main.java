@@ -12,12 +12,21 @@ public class Main {
     boolean isPrime[] = new boolean[size];
 
     for (int i = 0; i < isPrime.length; i++) {
-      System.out.println("Please write the follow numbers: ");
+      System.out.print("Please write the follow numbers: ");
       BigInteger primes = object.nextBigInteger();
-
       isPrime[i] = isPrime(primes);
     }
-    System.out.println(Arrays.toString(isPrime));
+
+    for (int j = 0; j < isPrime.length; j++) {
+      BigInteger primes = object.nextBigInteger();
+      isPrime[j] = isPrime(primes);
+
+      if (isPrime[j] == true) {
+        System.out.println(primes + " is a prime number");
+      } else if (isPrime[j] == false) {
+        System.out.println(primes+ " isn't a prime number");
+      }
+    }
   }
 
   public static boolean isPrime(BigInteger num) {

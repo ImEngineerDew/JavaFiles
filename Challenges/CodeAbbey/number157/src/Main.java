@@ -8,23 +8,28 @@ public class Main {
     System.out.print("Please write the size of your array: ");
     Integer size = object.nextInt();
 
+    BigInteger inputNumbers[] = new BigInteger[size];
     boolean isPrime[] = new boolean[size];
 
-    for (int i = 0; i < isPrime.length; i++) {
+    for (int i = 0; i < size; i++) {
       System.out.print("Please write the follow numbers: ");
       BigInteger primes = object.nextBigInteger();
+      inputNumbers[i] = primes;
       isPrime[i] = isPrime(primes);
-
-      if (isPrime[i] == true) {
-        System.out.println(primes + " is a prime number");
-      } else if (isPrime[i] == false) {
-        System.out.println(primes + " isn't a prime number");
+    }
+    for (int j = 0; j < size; j++) {
+      BigInteger number = inputNumbers[j];
+      if (isPrime[j] == true) {
+        System.out.println(number + " is a prime number");
+      } else if (isPrime[j] == false) {
+        System.out.println(number + " isn't a prime number");
       }
     }
   }
+
   public static boolean isPrime(BigInteger num) {
     int numFor = num.intValue();
-    if (num == BigInteger.ZERO || num == BigInteger.ONE || num.intValue()==4) {
+    if (num == BigInteger.ZERO || num == BigInteger.ONE || num.intValue() == 4) {
       return false;
     }
     for (int i = 2; i < numFor / 2; i++) {

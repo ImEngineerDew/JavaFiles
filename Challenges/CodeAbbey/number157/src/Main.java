@@ -1,5 +1,4 @@
 import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -15,20 +14,14 @@ public class Main {
       System.out.print("Please write the follow numbers: ");
       BigInteger primes = object.nextBigInteger();
       isPrime[i] = isPrime(primes);
-    }
 
-    for (int j = 0; j < isPrime.length; j++) {
-      BigInteger primes = object.nextBigInteger();
-      isPrime[j] = isPrime(primes);
-
-      if (isPrime[j] == true) {
+      if (isPrime[i] == true) {
         System.out.println(primes + " is a prime number");
-      } else if (isPrime[j] == false) {
-        System.out.println(primes+ " isn't a prime number");
+      } else if (isPrime[i] == false) {
+        System.out.println(primes + " isn't a prime number");
       }
     }
   }
-
   public static boolean isPrime(BigInteger num) {
     int numFor = num.intValue();
     if (num == BigInteger.ZERO || num == BigInteger.ONE || num == BigInteger.valueOf(4)) {

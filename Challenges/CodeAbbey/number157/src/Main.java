@@ -9,20 +9,20 @@ public class Main {
     Integer size = object.nextInt();
 
     BigInteger inputNumbers[] = new BigInteger[size];
-    boolean isPrime[] = new boolean[size];
+    boolean numPrime[] = new boolean[size];
 
     for (int i = 0; i < size; i++) {
       System.out.print("Please write the follow numbers: ");
       BigInteger primes = object.nextBigInteger();
       inputNumbers[i] = primes;
-      isPrime[i] = isPrime(primes);
+      numPrime[i] = isPrime(primes);
     }
     for (int j = 0; j < size; j++) {
       BigInteger primes = inputNumbers[j];
-      if (isPrime[j] == true) {
-        System.out.println(primes + " is a prime number");
-      } else if (isPrime[j] == false) {
-        System.out.println(primes + " isn't a prime number");
+      if (numPrime[j] == true || eMirpNum(primes) == true) {
+        System.out.println(primes + " is a prime number and eMrip too");
+      } else if (numPrime[j] == true || eMirpNum(primes) == false) {
+        System.out.println(primes + " is a prime number and isn't an eMrip");
       }
     }
   }
@@ -40,7 +40,18 @@ public class Main {
     return true;
   }
 
-  public static int eMirpNum(BigInteger number) {
-    return 0;
+  //This is a code stub that backwards their number prior to calculate if this number is prime or not
+  public static boolean eMirpNum(BigInteger number) {
+    int n = number.intValue();
+    if (isPrime(number) == false) {
+      return false;
+    }
+    int backwards = 0;
+    while (n != 0) {
+      int d = n % 10;
+      backwards = backwards * 10 + d;
+      n /= 10;
+    }
+    return isPrime(BigInteger.valueOf(backwards));
   }
 }

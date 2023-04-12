@@ -11,6 +11,16 @@ public class Main {
 
         BigInteger isPrime[] = new BigInteger[size];
 
+    }
+    public static boolean isPrime(BigInteger num)
+    {
+        if(num==BigInteger.ZERO||num==BigInteger.ONE||num==BigInteger.valueOf(4))
+        {
+            return false;
+        }
+        for(int i=2; i<num/2;i++)
+        {
 
+        }
     }
 }

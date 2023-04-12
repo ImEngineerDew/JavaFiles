@@ -1,22 +1,23 @@
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
 
-    System.out.println("Please write the size of your array: ");
+    System.out.print("Please write the size of your array: ");
     Integer size = object.nextInt();
-
-    System.out.println("Please write the follow numbers: ");
-    BigInteger primes = object.nextBigInteger();
 
     boolean isPrime[] = new boolean[size];
 
     for (int i = 0; i < isPrime.length; i++) {
+      System.out.println("Please write the follow numbers: ");
+      BigInteger primes = object.nextBigInteger();
+
       isPrime[i] = isPrime(primes);
     }
-    System.out.println(isPrime.toString());
+    System.out.println(Arrays.toString(isPrime));
   }
 
   public static boolean isPrime(BigInteger num) {

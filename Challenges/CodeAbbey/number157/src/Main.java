@@ -24,7 +24,7 @@ public class Main {
   }
   public static boolean isPrime(BigInteger num) {
     int numFor = num.intValue();
-    if (num == BigInteger.ZERO || num == BigInteger.ONE || num == BigInteger.valueOf(4)) {
+    if (num == BigInteger.ZERO || num == BigInteger.ONE || num.intValue()==4) {
       return false;
     }
     for (int i = 2; i < numFor / 2; i++) {

@@ -18,11 +18,11 @@ public class Main {
       isPrime[i] = isPrime(primes);
     }
     for (int j = 0; j < size; j++) {
-      BigInteger number = inputNumbers[j];
+      BigInteger primes = inputNumbers[j];
       if (isPrime[j] == true) {
-        System.out.println(number + " is a prime number");
+        System.out.println(primes + " is a prime number");
       } else if (isPrime[j] == false) {
-        System.out.println(number + " isn't a prime number");
+        System.out.println(primes + " isn't a prime number");
       }
     }
   }

@@ -15,7 +15,7 @@ public class Main {
       System.out.print("Please write the follow numbers: ");
       BigInteger primes = object.nextBigInteger();
       inputNumbers[i] = primes;
-      numPrime[i] = isPrime(primes);
+      numPrime[i] = isPrime(primes,2);
     }
     for (int j = 0; j < size; j++) {
       BigInteger primes = inputNumbers[j];
@@ -27,12 +27,12 @@ public class Main {
     }
   }
 
-  public static boolean isPrime(BigInteger num) {
+  public static boolean isPrime(BigInteger num,int i) {
     int numFor = num.intValue();
     if (num == BigInteger.ZERO || num == BigInteger.ONE || num.intValue() == 4) {
       return false;
     }
-    for (int i = 2; i < numFor / 2; i++) {
+    for (;i < numFor / 2; i++) {
       if (numFor % i == 0) {
         return false;
       }
@@ -43,7 +43,7 @@ public class Main {
   //This is a code stub that backwards their number prior to calculate if this number is prime or no
   public static boolean eMirpNum(BigInteger number) {
     int n = number.intValue();
-    if(!isPrime(number))
+    if(!isPrime(number,2))
     {
       return false;
     }
@@ -54,6 +54,6 @@ public class Main {
       backwards = backwards*10+d;
       n/=10;
     }
-    return isPrime(BigInteger.valueOf(backwards));
+    return isPrime(BigInteger.valueOf(backwards),2);
   }
 }

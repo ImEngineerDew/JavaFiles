@@ -51,4 +51,14 @@ public class testingMain {
     }
     return isPrime(num, index + 1);
   }
+
+  public static int eMirp(BigInteger number)
+  {
+    /**There is a blank space to
+     * create an algorithm that check if
+     * the nonPrime must to be backwards
+     * and re-check if this number is prime yet
+     */
+     return 0;
+  }
 }

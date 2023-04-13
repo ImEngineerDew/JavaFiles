@@ -28,6 +28,10 @@ public class testingMain {
       BigInteger primes = input[j];
       if (pri[j]) {
         System.out.println(primes + " is a prime number");
+      } else {
+        BigInteger show = backWards(primes);
+        System.out.print(show);
+        System.out.println(" ");
       }
       /** I guess that this space must put here the method
        * that catches the non-prime number and backwards itself to
@@ -39,8 +43,11 @@ public class testingMain {
 
   public static boolean isPrime(BigInteger num, int index) {
     int numFor = num.intValue();
-
-    if (num == BigInteger.ZERO || num == BigInteger.ONE || num.intValue() == 4) {
+    int compareIfZero = num.compareTo(BigInteger.ZERO);
+    int compareIfOne = num.compareTo(BigInteger.ONE);
+    int compareIfFour = num.compareTo(BigInteger.valueOf(4));
+    /** This code line must compare between those issues **/
+    if (compareIfZero == 0 || compareIfOne == 0 || compareIfFour == 0) {
       return false;
     }
     if (index >= ((numFor) / 2)) {
@@ -52,13 +59,15 @@ public class testingMain {
     return isPrime(num, index + 1);
   }
 
-  public static int eMirp(BigInteger number)
-  {
-    /**There is a blank space to
-     * create an algorithm that check if
-     * the nonPrime must be backwards
-     * and re-check if this number is prime yet
-     */
-    return 0;
+  public static BigInteger backWards(BigInteger number) {
+    int firstCompare = number.compareTo(BigInteger.valueOf(10));
+    /**Check if the number is minus than 10**/
+    if (firstCompare == -1) {
+      return number;
+    /**If the number is greater than 10, then flip the number **/
+    } else {
+      System.out.print(number.mod(BigInteger.valueOf(10)));
+      return backWards(number.divide(BigInteger.valueOf(10)));
+    }
   }
 }

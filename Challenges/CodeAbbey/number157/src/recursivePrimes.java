@@ -28,9 +28,7 @@ public class recursivePrimes {
     /** j<input.length **/
     if (compareJtoInput == -1) {
       BigInteger primes = input[j];
-      if (pri[j]) {
-        System.out.println(primes+" it's a prime number");
-      }
+      /** Pending space **/
       showNumbers(input, pri, j + 1);
     }
   }

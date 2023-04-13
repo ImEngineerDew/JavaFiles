@@ -28,8 +28,6 @@ public class testingMain {
       BigInteger primes = input[j];
       if (pri[j] == true) {
         System.out.println(primes + " is a prime number");
-      } else {
-        System.out.println(primes + " isn't a prime number");
       }
       showNumbers(input, pri, j+1);
     }

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.math.BigInteger;
 
-public class testingMain {
+public class recursivePrimes {
   public static void main(String args[]) {
     Scanner object = new Scanner(System.in);
 
@@ -48,10 +48,15 @@ public class testingMain {
   }
 
   public static boolean isPrime(BigInteger num, int index) {
+    /** List of variables that compare both values **/
     int numFor = num.intValue();
     int compareIfZero = num.compareTo(BigInteger.ZERO);
     int compareIfOne = num.compareTo(BigInteger.ONE);
     int compareIfFour = num.compareTo(BigInteger.valueOf(4));
+    BigInteger modules = num.mod(BigInteger.valueOf(index));
+
+    int compareModule = modules.compareTo(BigInteger.ZERO);
+
     /** This code line must compare between those issues **/
     if (compareIfZero == 0 || compareIfOne == 0 || compareIfFour == 0) {
       return false;
@@ -59,7 +64,7 @@ public class testingMain {
     if (index >= ((numFor) / 2)) {
       return true;
     }
-    if (numFor % index == 0) {
+    if (compareModule==0) {
       return false;
     }
     return isPrime(num, index + 1);

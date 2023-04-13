@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Main {
+public class nonRecursivePrimes {
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
 

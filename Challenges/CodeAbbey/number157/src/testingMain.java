@@ -24,7 +24,9 @@ public class testingMain {
   }
 
   public static void showNumbers(BigInteger input[], boolean pri[], Integer j) {
-    if (j < input.length) {
+    int compareJtoInput = j.compareTo(input.length);
+    /** j<input.length **/
+    if (compareJtoInput == -1) {
       BigInteger primes = input[j];
       if (pri[j]) {
         System.out.println(primes + " is a prime number");

@@ -56,9 +56,9 @@ public class testingMain {
   {
     /**There is a blank space to
      * create an algorithm that check if
-     * the nonPrime must to be backwards
+     * the nonPrime must be backwards
      * and re-check if this number is prime yet
      */
-     return 0;
+    return 0;
   }
 }

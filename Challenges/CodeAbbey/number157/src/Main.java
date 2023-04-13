@@ -43,7 +43,7 @@ public class Main {
   //This is a code stub that backwards their number prior to calculate if this number is prime or no
   public static boolean eMirpNum(BigInteger number) {
     int n = number.intValue();
-    if(isPrime(number)==false)
+    if(!isPrime(number))
     {
       return false;
     }

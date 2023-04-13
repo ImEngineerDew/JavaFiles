@@ -26,7 +26,7 @@ public class testingMain {
   public static void showNumbers(BigInteger input[], boolean pri[], Integer j) {
     if (j < input.length) {
       BigInteger primes = input[j];
-      if (pri[j] == true) {
+      if (pri[j]) {
         System.out.println(primes + " is a prime number");
       }
       /** I guess that this space must put here the method

@@ -28,7 +28,14 @@ public class recursivePrimes {
     /** j<input.length **/
     if (compareJtoInput == -1) {
       BigInteger primes = input[j];
-      /** Pending space **/
+      BigInteger oMirp = backWards(primes);
+      boolean isOmrip = isPrime(oMirp, 2);
+      System.out.println(primes.toString() + " ");
+      if (isOmrip) {
+        System.out.println(oMirp.toString());
+      } else {
+        System.out.println("This omrip doesn't exist!");
+      }
       showNumbers(input, pri, j + 1);
     }
   }
@@ -50,7 +57,7 @@ public class recursivePrimes {
     if (index >= ((numFor) / 2)) {
       return true;
     }
-    if (compareModule==0) {
+    if (compareModule == 0) {
       return false;
     }
     return isPrime(num, index + 1);
@@ -61,10 +68,14 @@ public class recursivePrimes {
     /**Check if the number is minus than 10**/
     if (firstCompare == -1) {
       return number;
-    /**If the number is greater than 10, then flip the number **/
+      /**If the number is greater than 10, then flip the number **/
     } else {
-      System.out.print(number.mod(BigInteger.valueOf(10)));
-      return backWards(number.divide(BigInteger.valueOf(10)));
+      String reversedString = "";
+      BigInteger reversedNumber;
+      reversedString = reversedString.concat(number.mod(BigInteger.valueOf(10)).toString());
+      reversedNumber = backWards(number.divide(BigInteger.valueOf(10)));
+      reversedString = reversedString.concat(reversedNumber.toString());
+      return new BigInteger(reversedString);
     }
   }
 }

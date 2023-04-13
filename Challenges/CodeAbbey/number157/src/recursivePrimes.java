@@ -29,18 +29,8 @@ public class recursivePrimes {
     if (compareJtoInput == -1) {
       BigInteger primes = input[j];
       if (pri[j]) {
-        System.out.println(primes);
-        BigInteger show = backWards(primes);
-        System.out.println(show);
+        System.out.println(primes+" it's a prime number");
       }
-      /** I guess that this space must put here the method
-       * that catches the non-prime number and backwards itself to
-       * calculate their prime number
-       *
-       * News: I did make the backwards numbers, Now I am going
-       * to make an algorithm that verification if these numbers
-       * are an eMrip
-       */
       showNumbers(input, pri, j + 1);
     }
   }

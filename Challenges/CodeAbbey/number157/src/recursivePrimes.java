@@ -28,12 +28,11 @@ public class recursivePrimes {
     /** j<input.length **/
     if (compareJtoInput == -1) {
       BigInteger primes = input[j];
+      BigInteger show = backWards(primes);
       if (pri[j]) {
-        System.out.println(primes + " is a prime number");
+        System.out.print(primes + " is a prime number");
       } else {
-        BigInteger show = backWards(primes);
-        System.out.print(show);
-        System.out.println(" ");
+        System.out.println(show);
       }
       /** I guess that this space must put here the method
        * that catches the non-prime number and backwards itself to
@@ -77,7 +76,7 @@ public class recursivePrimes {
       return number;
     /**If the number is greater than 10, then flip the number **/
     } else {
-      System.out.print(number.mod(BigInteger.valueOf(10)));
+      number.mod(BigInteger.valueOf(10));
       return backWards(number.divide(BigInteger.valueOf(10)));
     }
   }

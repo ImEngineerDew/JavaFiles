@@ -16,14 +16,6 @@ public class Main {
       BigInteger primes = object.nextBigInteger();
       inputNumbers[i] = primes;
       numPrime[i] = isPrime(primes);
-      if(eMirpNum(primes)==true)
-      {
-        System.out.println("It's a eMirp number");
-      }
-      else
-      {
-        System.out.println("Isn't a eMirp number");
-      }
     }
     for (int j = 0; j < size; j++) {
       BigInteger primes = inputNumbers[j];

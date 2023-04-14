@@ -29,12 +29,12 @@ public class recursivePrimes {
     if (compareJtoInput == -1) {
       BigInteger primes = input[j];
       BigInteger oMirp = backWards(primes);
-      boolean isOmrip = isPrime(oMirp, 2);
+      boolean isOmrip = isPrime(oMirp, 2) && isPrime(primes,2);
       //System.out.println(primes.toString() + " ");
       if (isOmrip) {
-        System.out.println(oMirp.toString());
+        System.out.println(oMirp.toString()+" is a prime of: "+primes.toString());
       } else {
-        System.out.println("This omrip doesn't exist!");
+        System.out.println(primes.toString()+" doesn't have an oMirp");
       }
       showNumbers(input, pri, j + 1);
     }

@@ -8,8 +8,8 @@ public class recursivePrimes {
 
     Integer size = object.nextInt();
     BigInteger arrayBigs[] = new BigInteger[size];
-    readBigsVector(arrayBigs,object,0);  //readVector starting here
-    showBigsVector(arrayBigs,0);
+    readBigsVector(arrayBigs, object, 0);  //readVector starting here
+    showBigsVector(arrayBigs, 0);
   }
 
   public static void readBigsVector(BigInteger vec[], Scanner sc, int i) {
@@ -20,12 +20,25 @@ public class recursivePrimes {
     }
   }
 
-  public static void showBigsVector(BigInteger vec[], int i)
-  {
-    if(i<vec.length)
-    {
+  public static void showBigsVector(BigInteger vec[], int i) {
+    if (i < vec.length) {
       System.out.println(vec[i]);
-      showBigsVector(vec,i+1);
+      showBigsVector(vec, i + 1);
+    }
+  }
+  /** Check if the number typed by keyboard is an omrip or not **/
+  public static BigInteger isOmirp(BigInteger number) {
+    BigInteger answer = isPrime(number);
+    return answer;
+  }
+
+  /** Check if the number typed by keyboard is a prime or not **/
+  public static BigInteger isPrime(BigInteger number) {
+    boolean checkIsPrime = number.isProbablePrime(10);
+    if (checkIsPrime) {
+      return isOmirp(number);
+    } else {
+      return isPrime(number.nextProbablePrime());
     }
   }
 }

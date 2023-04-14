@@ -22,17 +22,23 @@ public class recursivePrimes {
 
   public static void showBigsVector(BigInteger vec[], int i) {
     if (i < vec.length) {
+      BigInteger result = oMirp(vec[i]);
       System.out.println(vec[i]);
       showBigsVector(vec, i + 1);
     }
   }
-  /** Check if the number typed by keyboard is an omrip or not **/
-  public static BigInteger isOmirp(BigInteger number) {
+
+  /**
+   * Check if the number typed by keyboard is an omrip or not
+   **/
+  public static BigInteger oMirp(BigInteger number) {
     BigInteger answer = isPrime(number);
     return answer;
   }
 
-  /** Check if the number typed by keyboard is a prime or not **/
+  /**
+   * Check if the number typed by keyboard is a prime or not
+   **/
   public static BigInteger isPrime(BigInteger number) {
     boolean checkIsPrime = number.isProbablePrime(10);
     if (checkIsPrime) {
@@ -40,5 +46,19 @@ public class recursivePrimes {
     } else {
       return isPrime(number.nextProbablePrime());
     }
+  }
+
+  public static BigInteger isOmirp(BigInteger primeNum) {
+    BigInteger emirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
+    boolean checkIsOmirp = emirp.isProbablePrime(10);
+    if (checkIsOmirp) {
+      return primeNum;
+    } else {
+        return isPrime(primeIfs(primeNum.nextProbablePrime()));
+    }
+  }
+  public static BigInteger primeIfs(BigInteger primeNum)
+  {
+      return null;
   }
 }

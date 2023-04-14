@@ -30,7 +30,7 @@ public class recursivePrimes {
       BigInteger primes = input[j];
       BigInteger oMirp = backWards(primes);
       boolean isOmrip = isPrime(oMirp, 2);
-      System.out.println(primes.toString() + " ");
+      //System.out.println(primes.toString() + " ");
       if (isOmrip) {
         System.out.println(oMirp.toString());
       } else {

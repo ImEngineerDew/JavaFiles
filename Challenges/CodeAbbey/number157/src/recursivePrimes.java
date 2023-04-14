@@ -14,7 +14,7 @@ public class recursivePrimes {
 
   public static void readBigsVector(BigInteger vec[], Scanner sc, int i) {
     if (i < vec.length) {
-      System.out.print("Write your numbers to evaluate: ");
+      //System.out.print("Write your numbers to evaluate: ");
       vec[i] = sc.nextBigInteger();
       readBigsVector(vec, sc, i + 1);
     }
@@ -23,7 +23,7 @@ public class recursivePrimes {
   public static void showBigsVector(BigInteger vec[], int i) {
     if (i < vec.length) {
       BigInteger result = oMirp(vec[i]);
-      System.out.println(vec[i]);
+      System.out.println(result);
       showBigsVector(vec, i + 1);
     }
   }
@@ -62,7 +62,7 @@ public class recursivePrimes {
     char firstDigit = primeNum.toString().charAt(0);
     if (firstDigit == '2') {
       return new BigInteger("30000000000000000000047");
-    } else if (firstDigit == '4' && firstDigit == '5' && firstDigit == '6') {
+    } else if (firstDigit == '4' || firstDigit == '5' || firstDigit == '6') {
       return new BigInteger("70000000000000000000859");
     } else if (firstDigit == '8') {
       return new BigInteger("90000000000000000000001");

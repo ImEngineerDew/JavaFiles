@@ -28,9 +28,6 @@ public class recursivePrimes {
     }
   }
 
-  /**
-   * Check if the number typed by keyboard is an omrip or not
-   **/
   public static BigInteger oMirp(BigInteger number) {
     BigInteger answer = isPrime(number);
     return answer;
@@ -48,17 +45,31 @@ public class recursivePrimes {
     }
   }
 
+  /**
+   * Check if the number typed by keyboard is an omrip or not
+   **/
   public static BigInteger isOmirp(BigInteger primeNum) {
     BigInteger emirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
     boolean checkIsOmirp = emirp.isProbablePrime(10);
     if (checkIsOmirp) {
       return primeNum;
     } else {
-        return isPrime(primeIfs(primeNum.nextProbablePrime()));
+      return isPrime(primeIfs(primeNum.nextProbablePrime()));
     }
   }
-  public static BigInteger primeIfs(BigInteger primeNum)
-  {
-      return null;
+
+  public static BigInteger primeIfs(BigInteger primeNum) {
+    char firstDigit = primeNum.toString().charAt(0);
+    if (firstDigit == '2') {
+      return new BigInteger("30000000000000000000047");
+    } else if (firstDigit == '4' && firstDigit == '5' && firstDigit == '6') {
+      return new BigInteger("70000000000000000000859");
+    } else if (firstDigit == '8') {
+      return new BigInteger("90000000000000000000001");
+    }
+    else
+    {
+      return primeNum;
+    }
   }
 }

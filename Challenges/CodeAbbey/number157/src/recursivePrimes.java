@@ -66,9 +66,7 @@ public class recursivePrimes {
       return new BigInteger("70000000000000000000859");
     } else if (firstDigit == '8') {
       return new BigInteger("90000000000000000000001");
-    }
-    else
-    {
+    } else {
       return primeNum;
     }
   }

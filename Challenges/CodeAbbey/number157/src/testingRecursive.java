@@ -10,7 +10,7 @@ public class testingRecursive {
     Integer size = object.nextInt();
     BigInteger arrayBigs[] = new BigInteger[size];
     readBig(arrayBigs, object, 0);
-    showBig(arrayBigs,0);
+    showBig(arrayBigs, 0);
   }
 
   public static void readBig(BigInteger vec[], Scanner sc, Integer index) {
@@ -51,6 +51,7 @@ public class testingRecursive {
         return isOmirp(next);
       } else {
         BigInteger candidate = number.add(BigInteger.ONE);
+        /** Here is placed a second recursive while **/
         while (true) {
           if (miller(candidate, certainly, rand)) {
             return isOmirp(candidate);
@@ -60,18 +61,16 @@ public class testingRecursive {
       }
     }
   }
-  public static void recursiveWhile(BigInteger d, int s)
-  {
-    if(s<=0)
-    {
+
+  public static void firstWhileRec(BigInteger d, int s) {
+    if (s <= 0) {
       return;
-    }
-    else if(d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO))
-    {
-      d =d.divide(BigInteger.valueOf(2));
-      recursiveWhile(d,s+1);
+    } else if (d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
+      d = d.divide(BigInteger.valueOf(2));
+      firstWhileRec(d, s + 1);
     }
   }
+
   public static boolean miller(BigInteger n, int k, SecureRandom rand) {
     if (n.compareTo(BigInteger.valueOf(2)) < 0) {
       return false;
@@ -82,9 +81,10 @@ public class testingRecursive {
     if (n.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
       return false;
     }
+    /** Here is placed a first recursive while **/
     BigInteger d = n.subtract(BigInteger.ONE);
     int sValue = 0;
-    recursiveWhile(d,sValue);
+    firstWhileRec(d, sValue);
 
     for (int i = 0; i < k; i++) {
       BigInteger a = new BigInteger(n.bitLength(), rand);

@@ -60,7 +60,18 @@ public class testingRecursive {
       }
     }
   }
-
+  public static void recursiveWhile(BigInteger d, int s)
+  {
+    if(s<=0)
+    {
+      return;
+    }
+    else if(d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO))
+    {
+      d =d.divide(BigInteger.valueOf(2));
+      recursiveWhile(d,s+1);
+    }
+  }
   public static boolean miller(BigInteger n, int k, SecureRandom rand) {
     if (n.compareTo(BigInteger.valueOf(2)) < 0) {
       return false;
@@ -72,11 +83,9 @@ public class testingRecursive {
       return false;
     }
     BigInteger d = n.subtract(BigInteger.ONE);
-    int s = 0;
-    while (d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
-      d = d.divide(BigInteger.valueOf(2));
-      s++;
-    }
+    int sValue = 0;
+    recursiveWhile(d,sValue);
+
     for (int i = 0; i < k; i++) {
       BigInteger a = new BigInteger(n.bitLength(), rand);
       a = a.mod(n.subtract(BigInteger.valueOf(3))).add(BigInteger.valueOf(2));
@@ -85,7 +94,7 @@ public class testingRecursive {
         continue;
       }
       boolean composite = true;
-      for (int j = 0; j < s - 1; j++) {
+      for (int j = 0; j < sValue - 1; j++) {
         x = x.modPow(BigInteger.valueOf(2), n);
         if (x.equals(BigInteger.ONE)) {
           return false;

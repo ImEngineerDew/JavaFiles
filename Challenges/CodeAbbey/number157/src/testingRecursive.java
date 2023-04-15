@@ -73,6 +73,13 @@ public class testingRecursive {
     }
   }
 
+  public static boolean secondFor(BigInteger x, int sValue, int j) {
+    if (j < sValue) {
+      return false;
+    }
+    return true;
+  }
+
   /**
    * This method is a perfect analog of the Java predesigned method isProbablePrime
    **/
@@ -99,6 +106,7 @@ public class testingRecursive {
         continue;
       }
       boolean composite = true;
+      secondFor(x, sValue, j + 1);
       for (int j = 0; j < sValue - 1; j++) {
         x = x.modPow(BigInteger.valueOf(2), n);
         if (x.equals(BigInteger.ONE)) {

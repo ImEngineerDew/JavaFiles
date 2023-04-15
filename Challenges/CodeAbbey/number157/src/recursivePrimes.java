@@ -33,9 +33,7 @@ public class recursivePrimes {
     return answer;
   }
 
-  /**
-   * Check if the number typed by keyboard is a prime or not
-   **/
+  /**Check if the number typed by keyboard is a prime or not**/
   public static BigInteger isPrime(BigInteger number) {
     boolean checkIsPrime = number.isProbablePrime(10);
     if (checkIsPrime) {
@@ -45,9 +43,7 @@ public class recursivePrimes {
     }
   }
 
-  /**
-   * Check if the number typed by keyboard is an omrip or not
-   **/
+  /** Check if the number typed by keyboard is an omrip or not**/
   public static BigInteger isOmirp(BigInteger primeNum) {
     BigInteger emirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
     boolean checkIsOmirp = emirp.isProbablePrime(10);

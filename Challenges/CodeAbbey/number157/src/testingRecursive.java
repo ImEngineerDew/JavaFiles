@@ -96,7 +96,6 @@ public class testingRecursive {
     if (composite) {
       return false;
     }
-
     return firstLoop(k, d, n, sValue, rand, i + 1);
   }
 

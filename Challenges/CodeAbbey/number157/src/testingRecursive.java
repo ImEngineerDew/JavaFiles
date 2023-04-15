@@ -79,7 +79,7 @@ public class testingRecursive {
     return true;
   }
 
-  private static boolean recursiveLoop(int k, BigInteger d, BigInteger n, int sValue, SecureRandom rand, int i) {
+  public static boolean firstLoop(int k, BigInteger d, BigInteger n, int sValue, SecureRandom rand, int i) {
     if (i >= k) {
       return true;
     }
@@ -88,7 +88,7 @@ public class testingRecursive {
     BigInteger x = a.modPow(d, n);
 
     if (x.equals(BigInteger.ONE) || x.equals(n.subtract(BigInteger.ONE))) {
-      return recursiveLoop(k, d, n, sValue, rand, i + 1);
+      return firstLoop(k, d, n, sValue, rand, i + 1);
     }
     boolean composite = true;
     for (int j = 0; j < sValue - 1; j++) {
@@ -105,7 +105,7 @@ public class testingRecursive {
       return false;
     }
 
-    return recursiveLoop(k, d, n, sValue, rand, i + 1);
+    return firstLoop(k, d, n, sValue, rand, i + 1);
   }
 
   /**This method is a perfect analog of the Java predesigned method isProbablePrime **/
@@ -124,7 +124,7 @@ public class testingRecursive {
     int sValue = 0;
     whileOne(d, sValue);
 
-    boolean isPrime = recursiveLoop(k, d, n, sValue, rand, 0);
+    boolean isPrime = firstLoop(k, d, n, sValue, rand, 0);
     return isPrime;
   }
 

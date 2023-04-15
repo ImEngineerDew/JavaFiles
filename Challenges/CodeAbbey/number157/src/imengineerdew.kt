@@ -50,7 +50,7 @@ fun isOmirp(primeN: BigInteger?): BigInteger? {
   }
 }
 
-/**If the first digit is fitted on these options, the program will print this answer **/
+/**If the first digit is fitted here, the program will print this answer **/
 fun primeIfs(primeNum: BigInteger): BigInteger {
   return when (primeNum.toString()[0]) {
     '2' -> {

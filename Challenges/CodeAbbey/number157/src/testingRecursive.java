@@ -9,23 +9,23 @@ public class testingRecursive {
 
     Integer size = object.nextInt();
     BigInteger arrayBigs[] = new BigInteger[size];
-    readBig(arrayBigs, object, 0);
-    showBig(arrayBigs, 0);
+    readBigs(arrayBigs, object, 0);
+    showBigs(arrayBigs, 0);
   }
 
-  public static void readBig(BigInteger vec[], Scanner sc, Integer index) {
+  public static void readBigs(BigInteger vec[], Scanner sc, Integer index) {
     if (!index.equals(vec.length)) {
       //System.out.print("Write your numbers to evaluate: ");
       vec[index] = sc.nextBigInteger();
-      readBig(vec, sc, index + 1);
+      readBigs(vec, sc, index + 1);
     }
   }
 
-  public static void showBig(BigInteger vec[], Integer index) {
+  public static void showBigs(BigInteger vec[], Integer index) {
     if (!index.equals(vec.length)) {
       BigInteger result = Omirp(vec[index]);
       System.out.println(result);
-      showBig(vec, index + 1);
+      showBigs(vec, index + 1);
     }
   }
 
@@ -73,7 +73,9 @@ public class testingRecursive {
     }
   }
 
-  /** This method is a perfect analog of the Java predesigned method isProbablePrime **/
+  /**
+   * This method is a perfect analog of the Java predesigned method isProbablePrime
+   **/
   public static boolean miller(BigInteger n, int k, SecureRandom rand) {
     if (n.compareTo(BigInteger.valueOf(2)) < 0) {
       return false;
@@ -115,13 +117,25 @@ public class testingRecursive {
   }
 
   public static BigInteger isOmirp(BigInteger primeNum) {
-    BigInteger emirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
-    boolean checkIsOmirp = emirp.isProbablePrime(10);
+    boolean checkIsOmirp = checkIsPrime(primeNum);
     if (checkIsOmirp) {
       return primeNum;
     } else {
       return isPrime(primeIfs(primeNum.nextProbablePrime()));
     }
+  }
+
+  public static boolean checkIsPrime(BigInteger number) {
+    SecureRandom rand = new SecureRandom();
+    BigInteger emirp = new BigInteger(new StringBuilder(number.toString()).reverse().toString());
+    if (emirp.compareTo(BigInteger.ONE) <= 0) {
+      return false;
+    }
+    if (emirp.compareTo(BigInteger.valueOf(3)) <= 0) {
+      return true;
+    }
+    int certainly = 10;
+    return miller(emirp, certainly, rand);
   }
 
   public static BigInteger primeIfs(BigInteger primeNum) {

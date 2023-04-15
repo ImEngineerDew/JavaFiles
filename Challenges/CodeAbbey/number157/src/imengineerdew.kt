@@ -1,7 +1,7 @@
 import java.math.BigInteger
 import java.util.Scanner
 
-fun main(args: Array<String>) {
+fun main() {
   val `object` = Scanner(System.`in`)
   print("Please write the size of your array: ")
   val size = `object`.nextInt()
@@ -52,14 +52,18 @@ fun isOmirp(primeNum: BigInteger?): BigInteger? {
 
 /**If the first digit is fitted on these options, the program will print this answer **/
 fun primeIfs(primeNum: BigInteger): BigInteger {
-  val firstDigit = primeNum.toString()[0]
-  return if (firstDigit == '2') {
-    BigInteger("30000000000000000000047")
-  } else if (firstDigit == '4' || firstDigit == '5' || firstDigit == '6') {
-    BigInteger("70000000000000000000859")
-  } else if (firstDigit == '8') {
-    BigInteger("90000000000000000000001")
-  } else {
-    primeNum
+  return when (primeNum.toString()[0]) {
+    '2' -> {
+      BigInteger("30000000000000000000047")
+    }
+    '4', '5', '6' -> {
+      BigInteger("70000000000000000000859")
+    }
+    '8' -> {
+      BigInteger("90000000000000000000001")
+    }
+    else -> {
+      primeNum
+    }
   }
 }

@@ -40,13 +40,13 @@ fun isPrime(number: BigInteger?): BigInteger? {
 }
 
 /** Check if the number typed by keyboard is an omrip or not **/
-fun isOmirp(primeNum: BigInteger?): BigInteger? {
-  val emirp = BigInteger(StringBuilder(primeNum.toString()).reverse().toString())
+fun isOmirp(primeN: BigInteger?): BigInteger? {
+  val emirp = BigInteger(StringBuilder(primeN.toString()).reverse().toString())
   val checkIsOmirp = emirp.isProbablePrime(10)
   return if (checkIsOmirp) {
-    primeNum
+    primeN
   } else {
-    isPrime(primeIfs(primeNum!!.nextProbablePrime()))
+    isPrime(primeIfs(primeN!!.nextProbablePrime()))
   }
 }
 

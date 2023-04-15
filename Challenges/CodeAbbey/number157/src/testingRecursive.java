@@ -71,14 +71,6 @@ public class testingRecursive {
       }
     }
   }
-
-  public static boolean secondFor(BigInteger x, int sValue, int j) {
-    if (j < sValue) {
-      return false;
-    }
-    return true;
-  }
-
   public static boolean firstLoop(int k, BigInteger d, BigInteger n, int sValue, SecureRandom rand, int i) {
     if (i >= k) {
       return true;

@@ -73,6 +73,7 @@ public class testingRecursive {
     }
   }
 
+  /** This method is a perfect analog of the Java predesigned method isProbablePrime **/
   public static boolean miller(BigInteger n, int k, SecureRandom rand) {
     if (n.compareTo(BigInteger.valueOf(2)) < 0) {
       return false;

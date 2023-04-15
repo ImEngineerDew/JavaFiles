@@ -34,6 +34,22 @@ public class testingRecursive {
     return answer;
   }
 
+  public static void whileOne(BigInteger d, int s) {
+    if (d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
+      d = d.divide(BigInteger.valueOf(2));
+      whileOne(d, s + 1);
+    }
+  }
+
+  public static BigInteger whileTwo(BigInteger cd, int ct, SecureRandom rnd) {
+    if (miller(cd, ct, rnd)) {
+      return isOmirp(cd);
+    }
+    cd = cd.nextProbablePrime();
+    return whileTwo(cd, ct, rnd);
+  }
+
+
   public static BigInteger isPrime(BigInteger number) {
     SecureRandom rand = new SecureRandom();
     if (number.compareTo(BigInteger.ONE) <= 0) {
@@ -52,22 +68,8 @@ public class testingRecursive {
       } else {
         BigInteger candidate = number.add(BigInteger.ONE);
         /** Here is placed a second recursive while **/
-        while (true) {
-          if (miller(candidate, certainly, rand)) {
-            return isOmirp(candidate);
-          }
-          candidate = candidate.nextProbablePrime();
-        }
+        return whileTwo(candidate, certainly, rand);
       }
-    }
-  }
-
-  public static void firstWhileRec(BigInteger d, int s) {
-    if (s <= 0) {
-      return;
-    } else if (d.mod(BigInteger.valueOf(2)).equals(BigInteger.ZERO)) {
-      d = d.divide(BigInteger.valueOf(2));
-      firstWhileRec(d, s + 1);
     }
   }
 
@@ -84,7 +86,7 @@ public class testingRecursive {
     /** Here is placed a first recursive while **/
     BigInteger d = n.subtract(BigInteger.ONE);
     int sValue = 0;
-    firstWhileRec(d, sValue);
+    whileOne(d, sValue);
 
     for (int i = 0; i < k; i++) {
       BigInteger a = new BigInteger(n.bitLength(), rand);

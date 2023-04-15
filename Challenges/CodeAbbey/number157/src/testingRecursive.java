@@ -49,7 +49,6 @@ public class testingRecursive {
     return whileTwo(cd, ct, rnd);
   }
 
-
   public static BigInteger isPrime(BigInteger number) {
     SecureRandom rand = new SecureRandom();
     if (number.compareTo(BigInteger.ONE) <= 0) {
@@ -80,9 +79,36 @@ public class testingRecursive {
     return true;
   }
 
-  /**
-   * This method is a perfect analog of the Java predesigned method isProbablePrime
-   **/
+  private static boolean recursiveLoop(int k, BigInteger d, BigInteger n, int sValue, SecureRandom rand, int i) {
+    if (i >= k) {
+      return true;
+    }
+    BigInteger a = new BigInteger(n.bitLength(), rand);
+    a = a.mod(n.subtract(BigInteger.valueOf(3))).add(BigInteger.valueOf(2));
+    BigInteger x = a.modPow(d, n);
+
+    if (x.equals(BigInteger.ONE) || x.equals(n.subtract(BigInteger.ONE))) {
+      return recursiveLoop(k, d, n, sValue, rand, i + 1);
+    }
+    boolean composite = true;
+    for (int j = 0; j < sValue - 1; j++) {
+      x = x.modPow(BigInteger.valueOf(2), n);
+      if (x.equals(BigInteger.ONE)) {
+        return false;
+      }
+      if (x.equals(n.subtract(BigInteger.ONE))) {
+        composite = false;
+        break;
+      }
+    }
+    if (composite) {
+      return false;
+    }
+
+    return recursiveLoop(k, d, n, sValue, rand, i + 1);
+  }
+
+  /**This method is a perfect analog of the Java predesigned method isProbablePrime **/
   public static boolean miller(BigInteger n, int k, SecureRandom rand) {
     if (n.compareTo(BigInteger.valueOf(2)) < 0) {
       return false;
@@ -98,30 +124,8 @@ public class testingRecursive {
     int sValue = 0;
     whileOne(d, sValue);
 
-    for (int i = 0; i < k; i++) {
-      BigInteger a = new BigInteger(n.bitLength(), rand);
-      a = a.mod(n.subtract(BigInteger.valueOf(3))).add(BigInteger.valueOf(2));
-      BigInteger x = a.modPow(d, n);
-      if (x.equals(BigInteger.ONE) || x.equals(n.subtract(BigInteger.ONE))) {
-        continue;
-      }
-      boolean composite = true;
-      secondFor(x, sValue, j + 1);
-      for (int j = 0; j < sValue - 1; j++) {
-        x = x.modPow(BigInteger.valueOf(2), n);
-        if (x.equals(BigInteger.ONE)) {
-          return false;
-        }
-        if (x.equals(n.subtract(BigInteger.ONE))) {
-          composite = false;
-          break;
-        }
-      }
-      if (composite) {
-        return false;
-      }
-    }
-    return true;
+    boolean isPrime = recursiveLoop(k, d, n, sValue, rand, 0);
+    return isPrime;
   }
 
   public static BigInteger isOmirp(BigInteger primeNum) {

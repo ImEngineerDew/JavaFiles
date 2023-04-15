@@ -6,13 +6,12 @@ fun main(args: Array<String>) {
   print("Please write the size of your array: ")
   val size = `object`.nextInt()
   val arrayBigs = arrayOfNulls<BigInteger>(size)
-  readBigsVector(arrayBigs, `object`, 0) //readVector starting here
+  readBigsVector(arrayBigs, `object`, 0)
   showBigsVector(arrayBigs, 0)
 }
 
 fun readBigsVector(vec: Array<BigInteger?>, sc: Scanner, i: Int) {
   if (i < vec.size) {
-    //System.out.print("Write your numbers to evaluate: ");
     vec[i] = sc.nextBigInteger()
     readBigsVector(vec, sc, i + 1)
   }
@@ -30,9 +29,7 @@ fun oMirp(number: BigInteger?): BigInteger? {
   return isPrime(number)
 }
 
-/**
- * Check if the number typed by keyboard is a prime or not
- */
+/** Check if the number typed by keyboard is a prime or not **/
 fun isPrime(number: BigInteger?): BigInteger? {
   val checkIsPrime = number!!.isProbablePrime(10)
   return if (checkIsPrime) {
@@ -42,9 +39,7 @@ fun isPrime(number: BigInteger?): BigInteger? {
   }
 }
 
-/**
- * Check if the number typed by keyboard is an omrip or not
- */
+/** Check if the number typed by keyboard is an omrip or not **/
 fun isOmirp(primeNum: BigInteger?): BigInteger? {
   val emirp = BigInteger(StringBuilder(primeNum.toString()).reverse().toString())
   val checkIsOmirp = emirp.isProbablePrime(10)
@@ -55,6 +50,7 @@ fun isOmirp(primeNum: BigInteger?): BigInteger? {
   }
 }
 
+/**If the first digit is fitted on these options, the program will print this answer **/
 fun primeIfs(primeNum: BigInteger): BigInteger {
   val firstDigit = primeNum.toString()[0]
   return if (firstDigit == '2') {

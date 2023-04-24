@@ -12,7 +12,6 @@ public class BubbleSort {
 
     readArray(vectorList, obj, 0);
     bubbleSortRecursive(vectorList, size - 1, swapsAndPasses);
-    showBubble(vectorList, 0);
 
     System.out.println(swapsAndPasses[1]);
     System.out.println(" ");

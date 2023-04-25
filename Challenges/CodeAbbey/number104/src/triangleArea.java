@@ -12,18 +12,18 @@ public class triangleArea
     Double vector[] = new Double[6];
 
     /** This line code call the method readVector and invokes calculateArea to reading this vector **/
-    calculateTr(result,vector,obj,0);
+    showVector(result,vector,obj,0);
     /** This line code must print the result **/
     resultTriangle(result,index);
   }
 
-  public static void calculateTr(Double res[], Double vec[], Scanner sc, Integer index)
+  public static void showVector(Double res[], Double vec[], Scanner sc, Integer index)
   {
     if(!index.equals(res.length))
     {
       readVector(vec,sc,0);
       res[index] = calculateArea(vec);
-      calculateTr(res,vec,sc,index+1);
+      showVector(res,vec,sc,index+1);
     }
   }
   public static void resultTriangle(Double result[],Integer index)

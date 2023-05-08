@@ -36,7 +36,7 @@ public class recursiveGCD {
   public static void shV(Integer vA[], Integer vB[], Integer rs[], Integer i) {
     if (!i.equals(vA.length)) {
       int[] coe = bezout(vA[i], vB[i], vA[i], 1, 0, vB[i], 0, 1);
-      System.out.println(rs[i] + " " + coe[1] + " " + coe[2]);
+      System.out.println(rs[i] + " " + coe[1] + " " + coe[2]+" ");
       shV(vA, vB, rs, i + 1);
     }
   }

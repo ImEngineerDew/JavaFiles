@@ -1,0 +1,15 @@
+Según la secuencia planteada en el problema, va a ser de números binarios implementando el método de look and say, su número binario viene ser siendo este:
+
+100011001
+
+Lo cuál vendrá siendo desglosado de la siguiente forma:
+
+1)  1 dígito binario de 1 (2^0 es igual a 1 en decimal)
+2)  11 digitos binarios de 0 ( 2^1 es igual a 2 y 2^0 es igual a 1 dando como resultado un 3 en decimal)
+3)  10 digitos binarios de 1 (2^1 es igual a 2 en decimal)
+4)  10 digitos binarios de 0 (2^1 es igual a 2 en decimal)
+5)  1 digito binario de 1 (2^0 es igual a 1 en decimal)
+
+Según el método Look and Say, su resultado va a ser el siguiente:
+
+11110101

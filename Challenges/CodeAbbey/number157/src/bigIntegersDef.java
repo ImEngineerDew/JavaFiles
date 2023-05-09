@@ -12,14 +12,14 @@ public class bigIntegersDef {
     readBigVectors(arrayBig, object, 0);
     showBigVector(arrayBig, 0);
   }
-
+  /** Method that read and storage the values of this vector **/
   public static void readBigVectors(BigInteger[] vec, Scanner sc, Integer i) {
     if (i < vec.length) {
       vec[i] = sc.nextBigInteger();
       readBigVectors(vec, sc, i + 1);
     }
   }
-
+  /** Method that show the number storage of that vector **/
   public static void showBigVector(BigInteger[] vec, Integer i) {
     if (i < vec.length) {
       BigInteger result = oMirp(vec[i]);
@@ -137,7 +137,7 @@ public class bigIntegersDef {
       return isPrime(primeIfs(nextProbablePrime(primeNum)));
     }
   }
-
+  /** Checking with those conditionals **/
   public static BigInteger primeIfs(BigInteger primeNum) {
     char firstDigit = primeNum.toString().charAt(0);
     if (firstDigit == '2') {

@@ -26,49 +26,67 @@ public class bigIntegersDef {
     if (number.equals(BigInteger.TWO) || number.equals(BigInteger.valueOf(3))) {
       return true;
     }
-    if (number.compareTo(BigInteger.TWO )<0 || number.mod(BigInteger.TWO).equals(BigInteger.ZERO)){
+    if (number.compareTo(BigInteger.TWO) < 0 || number.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
       return false;
     }
     int rValue = 0;
     BigInteger d = number.subtract(BigInteger.ONE);
-    while (d.mod(BigInteger.TWO).equals(BigInteger.ZERO)){
+    while (d.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
       d = d.divide(BigInteger.TWO);
       rValue++;
     }
-    for (int i = 0; i <confidence; i++)
-    {
+    for (int i = 0; i < confidence; i++) {
       BigInteger aValue = generateRand(number.subtract(BigInteger.TWO));
       BigInteger xValue = aValue.modPow(d, number);
 
-      if (xValue.equals(BigInteger.ONE) || xValue.equals(number.subtract(BigInteger.ONE))){
+      if (xValue.equals(BigInteger.ONE) || xValue.equals(number.subtract(BigInteger.ONE))) {
         continue;
       }
 
       boolean isWitness = false;
-      for (int j =0; j<rValue -1; j++)
-      {
-        xValue = xValue.modPow(BigInteger.TWO,number);
-        if(xValue.equals(BigInteger.ONE)){
+      for (int j = 0; j < rValue - 1; j++) {
+        xValue = xValue.modPow(BigInteger.TWO, number);
+        if (xValue.equals(BigInteger.ONE)) {
           return false;
         }
-        if(xValue.equals(number.subtract(BigInteger.ONE))){
+        if (xValue.equals(number.subtract(BigInteger.ONE))) {
           isWitness = true;
           break;
         }
       }
-      if(!isWitness){
+      if (!isWitness) {
         return false;
       }
     }
     return true;
   }
-  private static BigInteger generateRand(BigInteger edge){
+
+  private static BigInteger generateRand(BigInteger edge) {
     Random rnd = new Random();
-    BigInteger result = BigInteger.ZERO;
-    while(result.compareTo(edge)>=0)
-    {
-      result = new BigInteger(edge.bitLength(),rnd);
-    }
+    BigInteger result;
+    do {
+      result = new BigInteger(edge.bitLength(), rnd);
+    } while (result.compareTo(edge) >= 0);
     return result;
+  }
+
+  public static BigInteger nextProbablePrime(BigInteger number) {
+    if (number.compareTo(BigInteger.TWO) < 0) {
+      return BigInteger.TWO;
+    }
+    if (number.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
+      number = number.add(BigInteger.ONE); /** This is a counter**/
+    } else {
+      number = number.add(BigInteger.TWO); /** Another counter**/
+    }
+    while (!isProbablePrime(number, 10)) {
+      number = number.add(BigInteger.TWO);
+    }
+    return number;
+  }
+  public static BigInteger oMirp (BigInteger number)
+  {
+    BigInteger  answer = isPrime(number);
+    return answer;
   }
 }

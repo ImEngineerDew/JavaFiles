@@ -19,20 +19,20 @@ public class MillerRabin {
     }
 
     for (int i = 0; i < certainty; i++) {
-      BigInteger a = generateRandom(number.subtract(BigInteger.TWO));
-      BigInteger x = a.modPow(d, number);
+      BigInteger a = generateRand(number.subtract(BigInteger.TWO));
+      BigInteger xValue = a.modPow(d, number);
 
-      if (x.equals(BigInteger.ONE) || x.equals(number.subtract(BigInteger.ONE))) {
+      if (xValue.equals(BigInteger.ONE) || xValue.equals(number.subtract(BigInteger.ONE))) {
         continue;
       }
 
       boolean isWitness = false;
       for (int j = 0; j < rValue - 1; j++) {
-        x = x.modPow(BigInteger.TWO, number);
-        if (x.equals(BigInteger.ONE)) {
+        xValue = xValue.modPow(BigInteger.TWO, number);
+        if (xValue.equals(BigInteger.ONE)) {
           return false;
         }
-        if (x.equals(number.subtract(BigInteger.ONE))) {
+        if (xValue.equals(number.subtract(BigInteger.ONE))) {
           isWitness = true;
           break;
         }
@@ -46,12 +46,12 @@ public class MillerRabin {
     return true;
   }
 
-  private static BigInteger generateRandom(BigInteger limit) {
+  private static BigInteger generateRand(BigInteger edge) {
     Random random = new Random();
     BigInteger result;
     do {
-      result = new BigInteger(limit.bitLength(), random);
-    } while (result.compareTo(limit) >= 0);
+      result = new BigInteger(edge.bitLength(), random);
+    } while (result.compareTo(edge) >= 0);
     return result;
   }
 

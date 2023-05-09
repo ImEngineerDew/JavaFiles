@@ -45,6 +45,31 @@ public class bigIntegersDef {
     }
   }
 
+  public static boolean perfomIterations(int confidence, BigInteger number, BigInteger d, int rValue, int i) {
+    if (i >= confidence) {
+      return true;
+    }
+    BigInteger aValue = generateRand(number.subtract(BigInteger.TWO));
+    BigInteger xValue = aValue.modPow(d, number);
+
+    if (xValue.equals(BigInteger.ONE) || xValue.equals(number.subtract(BigInteger.ONE))) {
+      return perfomIterations(confidence, number, d, rValue, i + 1);
+    }
+    boolean isWitness = false;
+    for (int j = 0; j < rValue - 1; j++) {
+      if (xValue.equals(BigInteger.ONE)) {
+        return false;
+      }
+      if (xValue.equals(number.subtract(BigInteger.ONE))) {
+        isWitness = true;
+        break;
+      }
+    }
+    if (!isWitness) {
+      return false;
+    }
+    return perfomIterations(confidence, number, d, rValue, i + 1);
+  }
 
   public static boolean isProbablePrime(BigInteger number, int confidence) {
     if (number.equals(BigInteger.TWO) || number.equals(BigInteger.valueOf(3))) {
@@ -57,30 +82,7 @@ public class bigIntegersDef {
     BigInteger d = number.subtract(BigInteger.ONE);
 
     divideAndCount(d, rValue); /** Calling this recursion method **/
-
-    for (int i = 0; i < confidence; i++) {
-      BigInteger aValue = generateRand(number.subtract(BigInteger.TWO));
-      BigInteger xValue = aValue.modPow(d, number);
-
-      if (xValue.equals(BigInteger.ONE) || xValue.equals(number.subtract(BigInteger.ONE))) {
-        continue;
-      }
-      boolean isWitness = false;
-      for (int j = 0; j < rValue - 1; j++) {
-        xValue = xValue.modPow(BigInteger.TWO, number);
-        if (xValue.equals(BigInteger.ONE)) {
-          return false;
-        }
-        if (xValue.equals(number.subtract(BigInteger.ONE))) {
-          isWitness = true;
-          break;
-        }
-      }
-      if (!isWitness) {
-        return false;
-      }
-    }
-    return true;
+    return perfomIterations(confidence,number,d,rValue,0);
   }
 
   private static BigInteger generateRand(BigInteger edge) {
@@ -107,10 +109,6 @@ public class bigIntegersDef {
       number = number.add(BigInteger.TWO); /** Another counter**/
     }
     findNextProbablePrime(number);
-    /**
-     while (!isProbablePrime(number, 10)) {
-     number = number.add(BigInteger.TWO);
-     }**/
     return number;
   }
 

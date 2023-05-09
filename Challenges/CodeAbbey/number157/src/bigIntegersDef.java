@@ -8,9 +8,9 @@ public class bigIntegersDef {
     System.out.println("Please write the size of your array: ");
     Integer size = object.nextInt();
 
-    BigInteger arrayBigs[] = new BigInteger[size];
-    readBigVectors(arrayBigs, object, 0);
-    showBigVector(arrayBigs, 0);
+    BigInteger arrayBig[] = new BigInteger[size];
+    readBigVectors(arrayBig, object, 0);
+    showBigVector(arrayBig, 0);
   }
 
   public static void readBigVectors(BigInteger vec[], Scanner sc, Integer i) {
@@ -44,6 +44,7 @@ public class bigIntegersDef {
       return generates(edge, rnd);
     }
   }
+
 
   public static boolean isProbablePrime(BigInteger number, int confidence) {
     if (number.equals(BigInteger.TWO) || number.equals(BigInteger.valueOf(3))) {
@@ -84,8 +85,16 @@ public class bigIntegersDef {
 
   private static BigInteger generateRand(BigInteger edge) {
     Random rnd = new Random();
-    BigInteger result = generates(edge, rnd);
+    BigInteger result = generates(edge, rnd); /** Instead of do-while**/
     return result;
+  }
+
+  public static BigInteger findNextProbablePrime(BigInteger number) {
+    if (isProbablePrime(number, 10)) {
+      return number;
+    } else {
+      return findNextProbablePrime(number.add(BigInteger.TWO));
+    }
   }
 
   public static BigInteger nextProbablePrime(BigInteger number) {
@@ -97,9 +106,11 @@ public class bigIntegersDef {
     } else {
       number = number.add(BigInteger.TWO); /** Another counter**/
     }
-    while (!isProbablePrime(number, 10)) {
-      number = number.add(BigInteger.TWO);
-    }
+    findNextProbablePrime(number);
+    /**
+     while (!isProbablePrime(number, 10)) {
+     number = number.add(BigInteger.TWO);
+     }**/
     return number;
   }
 

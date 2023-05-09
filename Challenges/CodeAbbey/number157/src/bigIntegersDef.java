@@ -89,4 +89,13 @@ public class bigIntegersDef {
     BigInteger  answer = isPrime(number);
     return answer;
   }
+  public static BigInteger isPrime(BigInteger number){
+    boolean checkIsPrime = isProbablePrime(number,10);
+    if(checkIsPrime){
+      return isOmirp(number);
+    }
+    else{
+      return isPrime(nextProbablePrime(number));
+    }
+  }
 }

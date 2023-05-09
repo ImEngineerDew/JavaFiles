@@ -3,24 +3,24 @@ import java.util.Scanner;
 import java.math.BigInteger;
 
 public class bigIntegersDef {
-  public static void main(String args[]) {
+  public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
     System.out.println("Please write the size of your array: ");
-    Integer size = object.nextInt();
+    int size = object.nextInt();
 
-    BigInteger arrayBig[] = new BigInteger[size];
+    BigInteger[] arrayBig = new BigInteger[size];
     readBigVectors(arrayBig, object, 0);
     showBigVector(arrayBig, 0);
   }
 
-  public static void readBigVectors(BigInteger vec[], Scanner sc, Integer i) {
+  public static void readBigVectors(BigInteger[] vec, Scanner sc, Integer i) {
     if (i < vec.length) {
       vec[i] = sc.nextBigInteger();
       readBigVectors(vec, sc, i + 1);
     }
   }
 
-  public static void showBigVector(BigInteger vec[], Integer i) {
+  public static void showBigVector(BigInteger[] vec, Integer i) {
     if (i < vec.length) {
       BigInteger result = oMirp(vec[i]);
       System.out.println(result);
@@ -81,14 +81,17 @@ public class bigIntegersDef {
     int rValue = 0;
     BigInteger d = number.subtract(BigInteger.ONE);
 
-    divideAndCount(d, rValue); /** Calling this recursion method **/
-    return perfomIterations(confidence,number,d,rValue,0);
+    /* Calling this recursion method **/
+    divideAndCount(d, rValue);
+    /* Calling this recursion for **/
+    return perfomIterations(confidence, number, d, rValue, 0);
   }
 
+  /** Generate random values **/
   private static BigInteger generateRand(BigInteger edge) {
     Random rnd = new Random();
-    BigInteger result = generates(edge, rnd); /** Instead of do-while**/
-    return result;
+    /* Instead of do-while**/
+    return generates(edge, rnd);
   }
 
   public static BigInteger findNextProbablePrime(BigInteger number) {
@@ -104,19 +107,18 @@ public class bigIntegersDef {
       return BigInteger.TWO;
     }
     if (number.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
-      number = number.add(BigInteger.ONE); /** This is a counter**/
+      number = number.add(BigInteger.ONE); /* This is a counter**/
     } else {
-      number = number.add(BigInteger.TWO); /** Another counter**/
+      number = number.add(BigInteger.TWO); /* Another counter**/
     }
     findNextProbablePrime(number);
     return number;
   }
 
   public static BigInteger oMirp(BigInteger number) {
-    BigInteger answer = isPrime(number);
-    return answer;
+    return isPrime(number);
   }
-
+  /** Checking if the number typed by keyboard is prime or not**/
   public static BigInteger isPrime(BigInteger number) {
     boolean checkIsPrime = isProbablePrime(number, 10);
     if (checkIsPrime) {
@@ -125,7 +127,7 @@ public class bigIntegersDef {
       return isPrime(nextProbablePrime(number));
     }
   }
-
+  /** Check if the number has an Omirp **/
   public static BigInteger isOmirp(BigInteger primeNum) {
     BigInteger omirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
     boolean checkIsOmirp = isProbablePrime(omirp, 10);

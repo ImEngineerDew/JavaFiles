@@ -4,6 +4,13 @@ import java.math.BigInteger;
 
 public class bigIntegersDef {
   public static void main(String args[]) {
+    Scanner object = new Scanner(System.in);
+    System.out.println("Please write the size of your array: ");
+    Integer size = object.nextInt();
+
+    BigInteger arrayBigs[] = new BigInteger[size];
+    readBigVectors(arrayBigs,object,0);
+    showBigsVector(arrayBigs,0);
 
   }
 
@@ -16,8 +23,8 @@ public class bigIntegersDef {
 
   public static void showBigsVector(BigInteger vec[], Integer i) {
     if (i < vec.length) {
-      //BigInteger result = oMirp(vec[i]);
-      //System.out.println(result);
+      BigInteger result = oMirp(vec[i]);
+      System.out.println(result);
       showBigsVector(vec, i + 1);
     }
   }

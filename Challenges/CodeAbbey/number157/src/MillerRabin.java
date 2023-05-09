@@ -11,11 +11,11 @@ public class MillerRabin {
       return false;
     }
 
-    int r = 0;
+    int rValue = 0;
     BigInteger d = number.subtract(BigInteger.ONE);
     while (d.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
       d = d.divide(BigInteger.TWO);
-      r++;
+      rValue++;
     }
 
     for (int i = 0; i < certainty; i++) {
@@ -27,7 +27,7 @@ public class MillerRabin {
       }
 
       boolean isWitness = false;
-      for (int j = 0; j < r - 1; j++) {
+      for (int j = 0; j < rValue - 1; j++) {
         x = x.modPow(BigInteger.TWO, number);
         if (x.equals(BigInteger.ONE)) {
           return false;

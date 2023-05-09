@@ -9,30 +9,40 @@ public class bigIntegersDef {
     Integer size = object.nextInt();
 
     BigInteger arrayBigs[] = new BigInteger[size];
-    readBigVectors(arrayBigs,object,0);
-    showBigsVector(arrayBigs,0);
+    readBigVectors(arrayBigs, object, 0);
+    showBigVector(arrayBigs, 0);
   }
+
   public static void readBigVectors(BigInteger vec[], Scanner sc, Integer i) {
     if (i < vec.length) {
       vec[i] = sc.nextBigInteger();
       readBigVectors(vec, sc, i + 1);
     }
   }
-  public static void showBigsVector(BigInteger vec[], Integer i) {
+
+  public static void showBigVector(BigInteger vec[], Integer i) {
     if (i < vec.length) {
       BigInteger result = oMirp(vec[i]);
       System.out.println(result);
-      showBigsVector(vec, i + 1);
+      showBigVector(vec, i + 1);
     }
   }
 
-  public static int divideAndCount(BigInteger d, Integer rValue)
-  {
+  public static int divideAndCount(BigInteger d, Integer rValue) {
     if (!d.mod(BigInteger.TWO).equals(BigInteger.ZERO)) {
       return rValue;
     }
     BigInteger newD = d.divide(BigInteger.TWO);
     return divideAndCount(newD, rValue + 1);
+  }
+
+  public static BigInteger generates(BigInteger edge, Random rnd) {
+    BigInteger res = new BigInteger(edge.bitLength(), rnd);
+    if (res.compareTo(edge) < 0) {
+      return res;
+    } else {
+      return generates(edge, rnd);
+    }
   }
 
   public static boolean isProbablePrime(BigInteger number, int confidence) {
@@ -45,7 +55,7 @@ public class bigIntegersDef {
     int rValue = 0;
     BigInteger d = number.subtract(BigInteger.ONE);
 
-    divideAndCount(d,rValue); /** Calling this recursion method **/
+    divideAndCount(d, rValue); /** Calling this recursion method **/
 
     for (int i = 0; i < confidence; i++) {
       BigInteger aValue = generateRand(number.subtract(BigInteger.TWO));
@@ -74,10 +84,7 @@ public class bigIntegersDef {
 
   private static BigInteger generateRand(BigInteger edge) {
     Random rnd = new Random();
-    BigInteger result;
-    do {
-      result = new BigInteger(edge.bitLength(), rnd);
-    } while (result.compareTo(edge) >= 0);
+    BigInteger result = generates(edge, rnd);
     return result;
   }
 
@@ -95,30 +102,31 @@ public class bigIntegersDef {
     }
     return number;
   }
-  public static BigInteger oMirp (BigInteger number)
-  {
-    BigInteger  answer = isPrime(number);
+
+  public static BigInteger oMirp(BigInteger number) {
+    BigInteger answer = isPrime(number);
     return answer;
   }
-  public static BigInteger isPrime(BigInteger number){
-    boolean checkIsPrime = isProbablePrime(number,10);
-    if(checkIsPrime){
+
+  public static BigInteger isPrime(BigInteger number) {
+    boolean checkIsPrime = isProbablePrime(number, 10);
+    if (checkIsPrime) {
       return isOmirp(number);
-    }
-    else{
+    } else {
       return isPrime(nextProbablePrime(number));
     }
   }
 
-  public static BigInteger isOmirp(BigInteger primeNum){
+  public static BigInteger isOmirp(BigInteger primeNum) {
     BigInteger omirp = new BigInteger(new StringBuilder(primeNum.toString()).reverse().toString());
-    boolean checkIsOmirp =isProbablePrime(omirp,10);
-    if(checkIsOmirp){
+    boolean checkIsOmirp = isProbablePrime(omirp, 10);
+    if (checkIsOmirp) {
       return primeNum;
-    }else {
+    } else {
       return isPrime(primeIfs(nextProbablePrime(primeNum)));
     }
   }
+
   public static BigInteger primeIfs(BigInteger primeNum) {
     char firstDigit = primeNum.toString().charAt(0);
     if (firstDigit == '2') {

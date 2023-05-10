@@ -1,2 +1,27 @@
+import java.math.BigInteger;
+
 public class backwardsBigInt {
+  public static void main(String[] args) {
+
+    /** Put their original BigInteger **/
+    BigInteger number = new BigInteger("1234567890");
+
+    /** Convert this BigInteger into String **/
+    String bigString = number.toString();
+
+    /** Apply the backwards method **/
+    String backwards = backwardsString(bigString);
+
+    System.out.println("Original number: " + number);
+    System.out.println("Backwards number: " + backwards);
+  }
+
+  public static String backwardsString(String number) {
+    StringBuilder backwards = new StringBuilder();
+
+    for (int i = number.length() - 1; i >= 0; i--) {
+      backwards.append(number.charAt(i));
+    }
+    return backwards.toString();
+  }
 }

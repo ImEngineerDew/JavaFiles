@@ -139,7 +139,9 @@ public class bigIntegersDef {
   }
   /** Check if the number has an Omirp **/
   public static BigInteger isOmirp(BigInteger primeNum) {
+    /** Initializing the String that store the BigIntegers **/
     String bigString = primeNum.toString();
+    /** Another initialization to calling the backwardsString() method **/
     String backwards = backwardsString(bigString);
     BigInteger omirp = new BigInteger(backwards);
     boolean checkIsOmirp = isProbablePrime(omirp, 10);

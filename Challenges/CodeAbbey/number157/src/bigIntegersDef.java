@@ -28,8 +28,14 @@ public class bigIntegersDef {
     }
   }
 
+  /** This method can convert the BigInt and reverse it **/
   public static String backwardsString (String number){
+     StringBuilder backwards = new StringBuilder();
 
+     for (int i= number.length()-1; i>=0;i--){
+       backwards.append(number.charAt(i));
+     }
+     return backwards.toString();
   }
 
   public static int divideAndCount(BigInteger d, Integer rValue) {

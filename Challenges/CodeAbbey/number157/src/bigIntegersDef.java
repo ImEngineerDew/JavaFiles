@@ -28,6 +28,10 @@ public class bigIntegersDef {
     }
   }
 
+  public static String backwardsString (String number){
+
+  }
+
   public static int divideAndCount(BigInteger d, Integer rValue) {
     if (!d.mod(BigInteger.TWO).equals(BigInteger.ZERO)) { //d%2 != 0
       return rValue;

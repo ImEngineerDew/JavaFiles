@@ -1,4 +1,9 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class rubikRecursive {
   private static HashMap<String, List<Integer>> rubikCube = new HashMap<>();
@@ -19,12 +24,14 @@ public class rubikRecursive {
     rubikCube.put("B", Arrays.asList(60, 61, 62, 63, 64, 65, 66, 67, 68));
 
     List<String> movingList = Arrays.asList(moveSides.split(" "));
-    Map<String, List<Integer>> cubeResult = rotateMany(movingList, size, 0, rubikCube);
-    System.out.println(String.join(" "), findStickers(cubeResult));
+    HashMap<String, List<Integer>> cubeResult = rotateMany(movingList, size, 0, rubikCube);
+    System.out.println(String.join("", findStickers(cubeResult)));
   }
 
-  /** Check the amount of rotations **/
-  public static Map<String, List<Integer>> rotateMany(List<String> moves, int size, int index, HashMap<String, List<Integer>> rubikCube) {
+  /**
+   * Check the amount of rotations
+   **/
+  public static HashMap<String, List<Integer>> rotateMany(List<String> moves, int size, int index, HashMap<String, List<Integer>> rubikCube) {
     if (index == size) {
       return rubikCube;
     } else {
@@ -33,5 +40,28 @@ public class rubikRecursive {
     }
   }
 
+  public static HashMap<String, List<Integer>> rotates(String faces, HashMap<String, List<Integer>> rubikCube) {
+    return rotateFace(faces, rotateSides(faces, rubikCube));
+  }
 
+  public static String findSticker(HashMap<String, List<Integer>> rubikCube, int sticker, int index) {
+    List<String> faces = Arrays.asList("F", "R", "D", "L", "U", "B");
+
+    if (rubikCube.get(faces.get(index)).contains(sticker) || index == faces.size() - 1) {
+      return faces.get(index);
+    } else {
+      return findSticker(rubikCube, sticker, index + 1);
+    }
+  }
+
+  public static List<String> findStickers(HashMap<String, List<Integer>> rubikCube) {
+    List<String> res = IntStream.range(0, 9)
+            .mapToObj(index -> findSticker(rubikCube, index + 10, 0))
+            .collect(Collectors.toList());
+    return res;
+  }
+
+  public static HashMap<String, List<Integer>> rotateSides(String face, HashMap<String, List<Integer>> rubikCube) {
+
+  }
 }

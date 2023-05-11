@@ -116,7 +116,15 @@ public class rubikRecursive {
               Arrays.asList(6, 7, 8)
       );
     }
+    HashMap <String, List<Integer>> newRubikCube = new HashMap<>();
+    newRubikCube.put("F", new ArrayList<>(rubikCube.get("F")));
+    newRubikCube.put("R", new ArrayList<>(rubikCube.get("R")));
+    newRubikCube.put("D", new ArrayList<>(rubikCube.get("D")));
+    newRubikCube.put("L", new ArrayList<>(rubikCube.get("L")));
+    newRubikCube.put("U", new ArrayList<>(rubikCube.get("U")));
+    newRubikCube.put("B", new ArrayList<>(rubikCube.get("B")));
 
+    /** Space to put the distribution codes **/
+    return newRubikCube;
   }
 }
-

@@ -32,8 +32,8 @@ public class rubikRecursive {
     if (index == size) {
       return rubikCube;
     } else {
-      HashMap<String, List<Integer>> newCube = rotates(moves.get(index), rubikCube);
-      return rotateMany(moves, size, index + 1, newCube);
+      HashMap<String, List<Integer>> newRubikCube = rotates(moves.get(index), rubikCube);
+      return rotateMany(moves, size, index + 1, newRubikCube);
     }
   }
 
@@ -116,7 +116,7 @@ public class rubikRecursive {
               Arrays.asList(6, 7, 8)
       );
     }
-    HashMap <String, List<Integer>> newRubikCube = new HashMap<>();
+    HashMap<String, List<Integer>> newRubikCube = new HashMap<>();
     newRubikCube.put("F", new ArrayList<>(rubikCube.get("F")));
     newRubikCube.put("R", new ArrayList<>(rubikCube.get("R")));
     newRubikCube.put("D", new ArrayList<>(rubikCube.get("D")));
@@ -124,7 +124,21 @@ public class rubikRecursive {
     newRubikCube.put("U", new ArrayList<>(rubikCube.get("U")));
     newRubikCube.put("B", new ArrayList<>(rubikCube.get("B")));
 
-    /** Space to put the distribution codes **/
+    newRubikCube.get(sides.get(0)).set(newPosition.get(0).get(0), rubikCube.get(sides.get(3)).get(newPosition.get(3).get(0)));
+    newRubikCube.get(sides.get(0)).set(newPosition.get(0).get(1), rubikCube.get(sides.get(3)).get(newPosition.get(3).get(1)));
+    newRubikCube.get(sides.get(0)).set(newPosition.get(0).get(2), rubikCube.get(sides.get(3)).get(newPosition.get(3).get(2)));
+
+    newRubikCube.get(sides.get(1)).set(newPosition.get(1).get(0), rubikCube.get(sides.get(0)).get(newPosition.get(0).get(0)));
+    newRubikCube.get(sides.get(1)).set(newPosition.get(1).get(1), rubikCube.get(sides.get(0)).get(newPosition.get(0).get(1)));
+    newRubikCube.get(sides.get(1)).set(newPosition.get(1).get(2), rubikCube.get(sides.get(0)).get(newPosition.get(0).get(2)));
+
+    newRubikCube.get(sides.get(2)).set(newPosition.get(2).get(0), rubikCube.get(sides.get(1)).get(newPosition.get(1).get(0)));
+    newRubikCube.get(sides.get(2)).set(newPosition.get(2).get(1), rubikCube.get(sides.get(1)).get(newPosition.get(1).get(1)));
+    newRubikCube.get(sides.get(2)).set(newPosition.get(2).get(2), rubikCube.get(sides.get(1)).get(newPosition.get(1).get(2)));
+
+    newRubikCube.get(sides.get(3)).set(newPosition.get(3).get(0), rubikCube.get(sides.get(2)).get(newPosition.get(2).get(0)));
+    newRubikCube.get(sides.get(3)).set(newPosition.get(3).get(1), rubikCube.get(sides.get(2)).get(newPosition.get(2).get(1)));
+    newRubikCube.get(sides.get(3)).set(newPosition.get(3).get(2), rubikCube.get(sides.get(2)).get(newPosition.get(2).get(2)));
     return newRubikCube;
   }
 }

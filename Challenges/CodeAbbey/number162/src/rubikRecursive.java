@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -40,10 +37,16 @@ public class rubikRecursive {
     }
   }
 
+  /**
+   * This method can rotate the sides
+   **/
   public static HashMap<String, List<Integer>> rotates(String faces, HashMap<String, List<Integer>> rubikCube) {
     return rotateFace(faces, rotateSides(faces, rubikCube));
   }
 
+  /**
+   * Find the stickers of Rubik cube's
+   **/
   public static String findSticker(HashMap<String, List<Integer>> rubikCube, int sticker, int index) {
     List<String> faces = Arrays.asList("F", "R", "D", "L", "U", "B");
 
@@ -62,6 +65,58 @@ public class rubikRecursive {
   }
 
   public static HashMap<String, List<Integer>> rotateSides(String face, HashMap<String, List<Integer>> rubikCube) {
+    List<String> sides = new ArrayList<>();
+    List<List<Integer>> newPosition = new ArrayList<>();
+    if (face.equals("F")) {
+      sides = Arrays.asList("R", "D", "L", "U");
+      newPosition = Arrays.asList(
+              Arrays.asList(0, 3, 6),
+              Arrays.asList(6, 7, 8),
+              Arrays.asList(8, 5, 2),
+              Arrays.asList(2, 1, 0)
+      );
+    } else if (face.equals("R")) {
+      sides = Arrays.asList("B", "D", "U", "F");
+      newPosition = Arrays.asList(
+              Arrays.asList(0, 3, 6),
+              Arrays.asList(8, 5, 2),
+              Arrays.asList(8, 5, 2),
+              Arrays.asList(8, 5, 2)
+      );
+    } else if (face.equals("D")) {
+      sides = Arrays.asList("R", "B", "L", "F");
+      newPosition = Arrays.asList(
+              Arrays.asList(0, 1, 2),
+              Arrays.asList(0, 1, 2),
+              Arrays.asList(0, 1, 2),
+              Arrays.asList(0, 1, 2)
+      );
+    } else if (face.equals("L")) {
+      sides = Arrays.asList("F", "D", "B", "U");
+      newPosition = Arrays.asList(
+              Arrays.asList(0, 3, 6),
+              Arrays.asList(0, 3, 6),
+              Arrays.asList(8, 5, 2),
+              Arrays.asList(0, 3, 6)
+      );
+    } else if (face.equals("U")) {
+      sides = Arrays.asList("R", "F", "L", "B");
+      newPosition = Arrays.asList(
+              Arrays.asList(6, 7, 8),
+              Arrays.asList(6, 7, 8),
+              Arrays.asList(6, 7, 8),
+              Arrays.asList(6, 7, 8)
+      );
+    } else {
+      sides = Arrays.asList("L", "D", "R", "U");
+      newPosition = Arrays.asList(
+              Arrays.asList(0, 3, 6),
+              Arrays.asList(2, 1, 0),
+              Arrays.asList(8, 5, 2),
+              Arrays.asList(6, 7, 8)
+      );
+    }
 
   }
 }
+

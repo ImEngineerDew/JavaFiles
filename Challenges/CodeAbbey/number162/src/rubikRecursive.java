@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class rubikRecursive {
-  public static Map<String, List<Integer>> rotateFace(String face, Map<String, List<Integer>> rubikCube) {
+  public static HashMap<String, List<Integer>> rotateFace(String face, HashMap<String, List<Integer>> rubikCube) {
     List<Integer> newFace = Arrays.asList(
             rubikCube.get(face).get(2),
             rubikCube.get(face).get(5),
@@ -18,7 +18,7 @@ public class rubikRecursive {
     rubikCube.put(face, newFace);
     return rubikCube;
   }
-  public static Map<String, List<Integer>> rotateSides(String face, Map<String, List<Integer>> rubikCube) {
+  public static HashMap<String, List<Integer>> rotateSides(String face, HashMap<String, List<Integer>> rubikCube) {
     List<String> sides = new ArrayList<>();
     List<List<Integer>> newPosition = new ArrayList<>();
     if (face.equals("F")) {
@@ -70,7 +70,7 @@ public class rubikRecursive {
               Arrays.asList(6, 7, 8)
       );
     }
-    Map<String, List<Integer>> newRubikCube = new HashMap<>();
+    HashMap<String, List<Integer>> newRubikCube = new HashMap<>();
     newRubikCube.put("F", new ArrayList<>(rubikCube.get("F")));
     newRubikCube.put("R", new ArrayList<>(rubikCube.get("R")));
     newRubikCube.put("D", new ArrayList<>(rubikCube.get("D")));
@@ -98,11 +98,11 @@ public class rubikRecursive {
   /**
    * Check the number of rotations
    **/
-  public static Map<String, List<Integer>> rotateMany(List<String> moves, int size, int index, Map<String, List<Integer>> rubikCube) {
+  public static HashMap<String, List<Integer>> rotateMany(List<String> moves, int size, int index, HashMap<String, List<Integer>> rubikCube) {
     if (index == size) {
       return rubikCube;
     } else {
-      Map<String, List<Integer>> newRubikCube = rotates(moves.get(index), rubikCube);
+      HashMap<String, List<Integer>> newRubikCube = rotates(moves.get(index), rubikCube);
       Integer newIndex = index + 1;
       return rotateMany(moves, size, newIndex , newRubikCube);
     }
@@ -111,14 +111,14 @@ public class rubikRecursive {
   /**
    * This method can rotate the sides
    **/
-  public static Map<String, List<Integer>> rotates(String faces, Map<String, List<Integer>> rubikCube) {
+  public static HashMap<String, List<Integer>> rotates(String faces, HashMap<String, List<Integer>> rubikCube) {
     return rotateFace(faces, rotateSides(faces, rubikCube));
   }
 
   /**
    * Find the stickers of Rubik's cube
    **/
-  public static String findSticker(Map<String, List<Integer>> rubikCube, int sticker, int index) {
+  public static String findSticker(HashMap<String, List<Integer>> rubikCube, int sticker, int index) {
     List<String> faces = Arrays.asList("F", "R", "D", "L", "U", "B");
 
     if (rubikCube.get(faces.get(index)).contains(sticker) || index == faces.size() - 1) {
@@ -128,14 +128,14 @@ public class rubikRecursive {
     }
   }
 
-  public static List<String> findStickers(Map<String, List<Integer>> rubikCube) {
+  public static List<String> findStickers(HashMap<String, List<Integer>> rubikCube) {
     List<String> res = IntStream.range(0, 9)
             .mapToObj(index -> findSticker(rubikCube, index + 10, 0))
             .collect(Collectors.toList());
     return res;
   }
   public static void main(String[] args) {
-    Map<String, List<Integer>> rubikCube = new HashMap<>();
+    HashMap<String, List<Integer>> rubikCube = new HashMap<>();
     rubikCube.put("F", Arrays.asList(10, 11, 12, 13, 14, 15, 16, 17, 18));
     rubikCube.put("R", Arrays.asList(20, 21, 22, 23, 24, 25, 26, 27, 28));
     rubikCube.put("D", Arrays.asList(30, 31, 32, 33, 34, 35, 36, 37, 38));
@@ -148,7 +148,7 @@ public class rubikRecursive {
     String moveSides = object.nextLine();
 
     List<String> movingList = Arrays.asList(moveSides.split(" "));
-    Map<String, List<Integer>> cubeResult = rotateMany(movingList, size, 0, rubikCube);
+    HashMap<String, List<Integer>> cubeResult = rotateMany(movingList, size, 0, rubikCube);
     System.out.println(String.join(" ", findStickers(cubeResult)));
   }
 }

@@ -29,7 +29,8 @@ public class Main {
       } else {
         result = decimal1 - decimal2;
       }
-      System.out.println(result);
+      String res = intToRoman(result);
+      System.out.println(res);
     }
     System.out.flush();
     object.close();
@@ -66,9 +67,13 @@ public class Main {
     return numberDec;
   }
 
-  public static String intToRoman (int number)
-  {
-     String [] units = {" ","I","II","III","IV","V","VI","VII","VIII","IX"};
-     String [] decs = {" ","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
-     String [] cents = {" ","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
+  public static String intToRoman(int number) {
+    String[] units = {" ", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+    String[] decs = {" ", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    String[] cents = {" ", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    String[] hrns = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    String[] ths = {"", "M", "MM", "MMM"};
+
+    return ths[number / 1000] + hrns[(number % 1000) / 100] + decs[(number % 100) / 10] + units[number % 10];
+  }
 }

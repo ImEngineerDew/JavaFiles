@@ -6,22 +6,31 @@ public class Main {
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
 
-    System.out.println("Please write the quantity of the ops: ");
+    System.out.print("Please write the quantity of the ops: ");
     int opQuantity = object.nextInt();
     object.nextLine(); //It makes a line jump
 
-    for (int i =0; i<opQuantity; i++)
-    {
-      System.out.println("Write the roman numbers: ");
+    for (int i = 0; i < opQuantity; i++) {
+      //System.out.println("Write the roman numbers: ");
       String ops = object.nextLine();
 
-      String [] tokens = ops.split("\\s+");
-      String romNum1 =  tokens[0];
+      String[] tokens = ops.split("\\s+");
+      String romNum1 = tokens[0];
       String symbolOp = tokens[1];
       String romNum2 = tokens[2];
 
-    }
+      int decimal1 = romanToDecimal(romNum1); //Convert roman to decimal
+      int decimal2 = romanToDecimal(romNum2); //Same thing but the second number
+      int result;
 
+      if (symbolOp.equals("+")) {
+        result = decimal1 + decimal2;
+      } else {
+        result = decimal1 - decimal2;
+      }
+      System.out.println(result);
+    }
+   object.close();
   }
 
   private static Map<Character, Integer> romanMap = new HashMap<>();
@@ -41,7 +50,7 @@ public class Main {
     int numberDec = 0;
     int previousVal = 0;
 
-    for (int i = romanNumber.length() - 1; i > 0; i--) {
+    for (int i = romanNumber.length() - 1; i >= 0; i--) {
       char current = romanNumber.charAt(i);
       int currentVal = romanMap.get(current);
 
@@ -54,6 +63,4 @@ public class Main {
     }
     return numberDec;
   }
-
-
 }

@@ -48,4 +48,34 @@ public class romanRecursive {
 
     performOperations(object, remain - 1);
   }
+
+  public static Integer romanToDecimal(String romanNumber) {
+    return romanToDecimalRecursive(romanNumber, romanNumber.length() - 1, 0);
+  }
+
+  private static Integer romanToDecimalRecursive(String romanNumber, int index, int result) {
+    if (index < 0) {
+      return result;
+    }
+    char current = romanNumber.charAt(index);
+    int currentVal = romanMap.get(current);
+    int previousVal = (index > 0) ? romanMap.get(romanNumber.charAt(index - 1)) : 0;
+
+    if (currentVal < previousVal) {
+      result -= currentVal;
+    } else {
+      result += currentVal;
+    }
+    return romanToDecimalRecursive(romanNumber, index - 1, result);
+  }
+
+  public static String intToRoman(int number) {
+    String[] units = {" ", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+    String[] decs = {" ", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    String[] cents = {" ", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    String[] hrns = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    String[] ths = {"", "M", "MM", "MMM"};
+
+    return ths[number / 1000] + hrns[(number % 1000) / 100] + decs[(number % 100) / 10] + units[number % 10];
+  }
 }

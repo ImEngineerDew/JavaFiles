@@ -7,13 +7,10 @@ public class Main {
 
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
-
-    System.out.print("Please write the quantity of the ops: ");
     int opQuantity = object.nextInt();
     object.nextLine(); //It makes a line jump
 
     for (int i = 0; i < opQuantity; i++) {
-      //System.out.println("Write the roman numbers: ");
       String ops = object.nextLine();
 
       String[] tokens = ops.split("\\s+");
@@ -29,7 +26,7 @@ public class Main {
       } else {
         result = decimal1 - decimal2;
       }
-      String res = intToRoman(result);
+      String res = intToRoman(result);  //After to calculate their ops, let's turn to roman again!
       System.out.println(res);
     }
     System.out.flush();

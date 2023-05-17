@@ -3,6 +3,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+  static int result;
+
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
 
@@ -21,7 +23,6 @@ public class Main {
 
       int decimal1 = romanToDecimal(romNum1); //Convert roman to decimal
       int decimal2 = romanToDecimal(romNum2); //Same thing but the second number
-      int result;
 
       if (symbolOp.equals("+")) {
         result = decimal1 + decimal2;
@@ -30,7 +31,8 @@ public class Main {
       }
       System.out.println(result);
     }
-   object.close();
+    System.out.flush();
+    object.close();
   }
 
   private static Map<Character, Integer> romanMap = new HashMap<>();
@@ -63,4 +65,10 @@ public class Main {
     }
     return numberDec;
   }
+
+  public static String intToRoman (int number)
+  {
+     String [] units = {" ","I","II","III","IV","V","VI","VII","VIII","IX"};
+     String [] decs = {" ","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+     String [] cents = {" ","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
 }

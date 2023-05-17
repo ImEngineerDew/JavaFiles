@@ -4,10 +4,24 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    Scanner object = new Scanner (System.in);
+    Scanner object = new Scanner(System.in);
 
     System.out.println("Please write the quantity of the ops: ");
     int opQuantity = object.nextInt();
+    object.nextLine(); //It makes a line jump
+
+    for (int i =0; i<opQuantity; i++)
+    {
+      System.out.println("Write the roman numbers: ");
+      String ops = object.nextLine();
+
+      String [] tokens = ops.split("\\s+");
+      String romNum1 =  tokens[0];
+      String symbolOp = tokens[1];
+      String romNum2 = tokens[2];
+
+    }
+
   }
 
   private static Map<Character, Integer> romanMap = new HashMap<>();

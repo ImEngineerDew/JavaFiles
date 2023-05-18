@@ -1,10 +1,13 @@
+package baseCodes;
 import java.math.BigInteger;
+import java.util.Scanner;
 
 public class backwardsBigInt {
   public static void main(String[] args) {
 
+    Scanner object = new Scanner (System.in);
     /** Put their original BigInteger **/
-    BigInteger number = new BigInteger("1234567890");
+    BigInteger number = object.nextBigInteger();
 
     /** Convert this BigInteger into String **/
     String bigString = number.toString();

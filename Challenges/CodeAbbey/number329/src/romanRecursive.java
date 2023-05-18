@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class romanRecursive {
   public static void main(String[] args) {
     Scanner object = new Scanner(System.in);
-
-    System.out.print("Please write the quantity of the ops: ");
     int opQuantity = object.nextInt();
     object.nextLine(); //It makes a line jump
 
@@ -32,8 +30,6 @@ public class romanRecursive {
     if (remainingOps <= 0) {
       return;
     }
-
-    System.out.print("Write the roman numbers: ");
     String ops = scanner.nextLine();
 
     String[] tokens = ops.split("\\s+");

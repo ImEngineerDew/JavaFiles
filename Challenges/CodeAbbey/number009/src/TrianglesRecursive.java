@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class TrianglesRecursive {
   public static void main(String args[]) {
 
@@ -21,11 +20,11 @@ public class TrianglesRecursive {
     if (i.equals(A.length) || (i.equals(B.length))|| (i.equals(C.length))) {
       return;
     }
-    System.out.print("Write the length of side A: ");
+    //System.out.print("Write the length of side A: ");
     A[i] = sc.nextLong();
-    System.out.print("Write the length of side B: ");
+    //System.out.print("Write the length of side B: ");
     B[i] = sc.nextLong();
-    System.out.print("Write the length of side C ");
+    //System.out.print("Write the length of side C ");
     C[i] = sc.nextLong();
     triRd(A,B,C,sc,i+1);
   }

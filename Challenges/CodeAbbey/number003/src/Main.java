@@ -20,18 +20,6 @@ public class Main {
     /** Print the sums of both arrays **/
     resultSum(vectorA, vectorB, pos);
   }
-
-  public static void showArray(Integer vectorA[], Integer vectorB[], Integer i) {
-    if (i.equals(vectorA.length - 1) || i.equals(vectorB.length - 1)) {
-      System.out.print(vectorA[i] + " ");
-      System.out.print(vectorB[i] + " ");
-    } else {
-      System.out.print(vectorA[i] + " ");
-      System.out.print(vectorB[i] + " ");
-      showArray(vectorA, vectorB, i + 1);   /** Calling its method by themselves**/
-    }
-  }
-
   public static void resultSum(Integer vectorA[], Integer vectorB[], Integer i) {
     if (i.equals(vectorA.length) || i.equals(vectorB.length)) {
       return;

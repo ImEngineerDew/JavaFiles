@@ -14,7 +14,7 @@ public class recursivePythagoras {
   public static void readVector(Double vec[], Scanner sc, Integer index) {
     if (!index.equals(vec.length)) {
       Long s = sc.nextLong();
-      vec[index] = calculateSquaresAux(s, 1, 2);
+      vec[index] = calculateSquares(s, 1, 2);
       readVector(vec, sc, index + 1);
     }
   }
@@ -27,19 +27,29 @@ public class recursivePythagoras {
     }
   }
 
-  public static Double calculateSquaresAux(long s, long m, long n) {
-    for (m = 2; m <= Math.sqrt(s); m++) {
-      for (n = 1; n < m; n++) {
-        Double a = Math.pow(m, 2) - n * n;
-        Double b = 2.0 * m * n;
-        Double c = (Math.pow(m, 2)) + (Math.pow(n, 2));
-
-        if (a + b + c == s) {
-          Double cSquared = Math.pow(c, 2);
-          return cSquared;
-        }
-      }
+  public static Double calculateRecursive(long s, long m, long n) {
+    if (n >= m) {
+      return 0.0;
     }
-    return 0.0;
+    Double a = Math.pow(m, 2) - n * n;
+    Double b = 2.0 * m * n;
+    Double c = (Math.pow(m, 2)) + (Math.pow(n, 2));
+
+    if (a + b + c == s) {
+      Double cSquared = Math.pow(c, 2);
+      return cSquared;
+    }
+    return calculateRecursive(s, m, n + 1);
+  }
+
+  public static Double calculateSquares(long s, long m, long n) {
+    if (m > Math.sqrt(s)) {
+      return 0.0;
+    }
+    Double result = calculateRecursive(s, m, 1);
+    if (result != 0.0) {
+      return result;
+    }
+    return calculateSquares(s, m + 1, 1);
   }
 }

@@ -20,6 +20,9 @@ public class triangleArea
     /** This line code must print the result **/
     resultTriangle(result,index);
   }
+  public static void calculateArea(Double area[], Double vector[], Scanner sc, Integer index){
+
+  }
   public static void resultTriangle(Double result[],Integer index)
   {
     /** Check if the index is equals to length of our array result[] **/

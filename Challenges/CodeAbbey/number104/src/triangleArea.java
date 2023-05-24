@@ -17,7 +17,7 @@ public class triangleArea
     resultTriangle(result,index);
   }
   public static void calculateA(Double area[], Double vector[], Scanner sc, Integer index){
-      if(index.equals(vector.length)){
+      if(index.equals(area.length)){
         return;
       }
       readVector(vector,sc, 0);

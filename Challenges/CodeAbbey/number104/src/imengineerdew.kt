@@ -11,13 +11,20 @@ fun main() {
   val result = arrayOfNulls<Double>(sizeArr)
   val vector = arrayOfNulls<Double>(6)
   /** This line code call the method readVector and invokes calculateArea to reading this vector  */
-  for (i in 0 until sizeArr) {
-    readVector(vector, obj, 0)
-    result[i] = calculateArea(vector)
-  }
+  cal(result, vector, obj)
   /** This line code must print the result  */
   resultTriangle(result, index)
 }
+
+fun cal(res: Array<Double?>, vec: Array<Double?>, sc: Scanner, i: Int = 0) {
+  if (i == res.size) {
+    return
+  }
+  readVector(vec, sc, 0)
+  res[i] = calculateArea(vec)
+  cal(res, vec, sc, i + 1)
+}
+
 
 fun resultTriangle(result: Array<Double?>, index: Int) {
   /** Check if the index is equals to length of our array result[]  */

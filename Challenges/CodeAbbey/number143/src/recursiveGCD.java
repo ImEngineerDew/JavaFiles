@@ -6,9 +6,8 @@ public class recursiveGCD {
     Integer size = object.nextInt();
     Integer index = 0;
 
-    Integer vector[] = new Integer[size];
-    Integer valA[] = new Integer[vector.length];
-    Integer valB[] = new Integer[vector.length];
+    Integer valA[] = new Integer[size];
+    Integer valB[] = new Integer[valA.length];
 
     r(valA, valB, object, index);
     Integer gcdVal[] = calcGCD(valA, valB, index);

@@ -4,7 +4,6 @@ $ kotlinc imengineerdew.kt -include-runtime -d imengineerdew.jar
 
 import java.util.Scanner
 
-typealias alpha = Int
 typealias beta = IntArray
 typealias delta = Array<Int?>
 
@@ -45,7 +44,7 @@ fun shV(vA: Array<Int?>, vB: Array<Int?>, rs: Array<Int?>, i: Int) {
   }
 }
 
-fun commonGreaterDivisor(a: Int, b: Int): alpha {
+fun commonGreaterDivisor(a: Int, b: Int): Int {
   if (a < b) {
     return commonGreaterDivisor(b, a)
   } else if (b == 0) {

@@ -32,6 +32,12 @@ public class piRecursive {
     BigInteger productPi = BigInteger.valueOf(2).pow(n);
     BigInteger pi = dm.multiply(sixValue).multiply(productPi).divide(divideByTwo);
 
+    System.out.println(middle);
+    System.out.println(newIssue);
+    System.out.println(root);
+    System.out.println(powMiddle);
+    System.out.println(pi);
+
     if (i == n) {
       return pi;
     } else {

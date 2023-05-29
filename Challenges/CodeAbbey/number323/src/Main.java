@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.math.BigInteger;
 
 public class Main {
     public static boolean isPalindrome(Integer nValue) {
@@ -16,15 +15,15 @@ public class Main {
         }
     }
 
-    public static void readVector(BigInteger vector[], Scanner sc, Integer index) {
+    public static void readVector(Long vector[], Scanner sc, Integer index) {
         if (index.equals(vector.length)) {
             return;
         }
-        vector[index] = sc.nextBigInteger();
+        vector[index] = sc.nextLong();
         readVector(vector, sc, index + 1);
     }
 
-    public static void showVector(BigInteger vector[], Integer index) {
+    public static void showVector(Long vector[], Integer index) {
         if (index.equals(vector.length)) {
             return;
         }
@@ -34,10 +33,10 @@ public class Main {
     public static void main (String args[])
     {
         Scanner object = new Scanner (System.in);
-        System.out.print("Write the size of your aray: ");
+        System.out.print("Write the size of your array: ");
         int size = object.nextInt();
 
-        BigInteger vector [] = new BigInteger[size];
+        Long vector [] = new Long[size];
 
         readVector(vector, object,0);
         showVector(vector,0);

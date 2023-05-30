@@ -30,12 +30,11 @@ public class romanRecursive {
         if (remainingOps <= 0) {
             return;
         }
-        String ops = scanner.nextLine();
 
-        String[] tokens = ops.split("\\s+");
-        String romNum1 = tokens[0];
-        String symbolOp = tokens[1];
-        String romNum2 = tokens[2];
+        String romNum1 = scanner.next();
+        String symbolOp = scanner.next();
+        String romNum2 = scanner.next();
+        scanner.nextLine();         //Line jump
 
         int decimal1 = romanToDecimal(romNum1); //Convert roman to decimal
         int decimal2 = romanToDecimal(romNum2); //Same thing but the second number

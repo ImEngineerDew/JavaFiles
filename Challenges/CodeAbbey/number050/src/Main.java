@@ -1,13 +1,12 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner object = new Scanner(System.in);
-        Integer size = object.nextInt();
+        Integer size = Integer.parseInt(object.nextLine());
 
-        String vecA[] = new String[size+1];
+        String vecA[] = new String[size];
         readStr(vecA, object, 0);
         showStr(vecA, 0);
     }
@@ -32,23 +31,18 @@ public class Main {
             return;
         }
         String replace = res[index].replaceAll("[^a-zA-Z0-9]", "")
-                                   .replaceAll("\\s","")
-                                           .toLowerCase();
+                .replaceAll("\\s", "")
+                .toLowerCase();
         String backwards = reverseString(replace);
         boolean isPalindrome = backwards.equals(replace);
 
-        if (isPalindrome)
-        {
-            System.out.println("Original and fusion: " +replace);
-            System.out.println("Flipped text: "+backwards);
-            System.out.println("Y");
+        if (isPalindrome) {
+            System.out.print("Y");
+            System.out.print(" ");
+        } else {
+            System.out.print("N");
+            System.out.print(" ");
         }
-        else
-        {
-            System.out.println("Original and fusion: " +replace);
-            System.out.println("Flipped text: "+backwards);
-            System.out.println("N");
-        }
-        showStr(res,  index + 1);
+        showStr(res, index + 1);
     }
 }

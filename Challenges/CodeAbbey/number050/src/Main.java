@@ -1,11 +1,15 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner object = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Please write the amount of you array: ");
+        Scanner object = new Scanner(System.in);
         Integer size = object.nextInt();
+
+        String vecA[] = new String[size+1];
+        readStr(vecA, object, 0);
+        showStr(vecA, 0);
     }
 
     public static String reverseString(String str) {
@@ -19,8 +23,32 @@ public class Main {
         if (index.equals(vecA.length)) {
             return;
         }
-        System.out.println("Please write the next quotes: ");
         vecA[index] = sc.nextLine();
         readStr(vecA, sc, index + 1);
+    }
+
+    public static void showStr(String res[], Integer index) {
+        if (index.equals(res.length)) {
+            return;
+        }
+        String replace = res[index].replaceAll("[^a-zA-Z0-9]", "")
+                                   .replaceAll("\\s","")
+                                           .toLowerCase();
+        String backwards = reverseString(replace);
+        boolean isPalindrome = backwards.equals(replace);
+
+        if (isPalindrome)
+        {
+            System.out.println("Original and fusion: " +replace);
+            System.out.println("Flipped text: "+backwards);
+            System.out.println("Y");
+        }
+        else
+        {
+            System.out.println("Original and fusion: " +replace);
+            System.out.println("Flipped text: "+backwards);
+            System.out.println("N");
+        }
+        showStr(res,  index + 1);
     }
 }
